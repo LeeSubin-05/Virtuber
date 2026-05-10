@@ -1,0 +1,93 @@
+{
+    "hair_outter": {
+        "role": "Main hairstyle and character silhouette provider.",
+        "silhouette": "Mid-length hair slightly past the shoulders with blunt, sharp-edged layered tips. Straight bangs (fringe) covering the forehead down to the eyebrows. Side-locks framing the face curve. Can be extended downwards within the original image boundaries.",
+        "color": "Neon Pink (Primary) with Deep Magenta/Magenta-Purple (Shadow).",
+        "light": "Strong white 'Angel Ring' halo highlight around the crown. Sharp, glossy specular highlights on individual hair strands.",
+        "boundary": "Overlays the forehead and sides of face_head_base. Tips rest on the cloth_collar and upper_body."
+    },
+    "hair_inner": {
+        "role": "Depth provider and occlusion layer for the back of the head.",
+        "silhouette": "Simple, flat shape wrapping the back of the neck. Less detailed edges compared to the outer layer. Can be extended downwards within the original image boundaries.",
+        "color": "Dark Plum or muted Deep Pink. Must be 2-3 tones darker than hair_outter.",
+        "light": "Minimal to none. Uses flat shading to emphasize depth rather than texture.",
+        "boundary": "Fills the gap between the head base and the neck."
+    },
+    "face_head_base_set": {
+        "role": "Structural foundation for the head and skin base.",
+        "silhouette": "Soft V-shaped jawline. Slender, long neck with subtle collarbone definition. Small, rounded ears.",
+        "color": "Extremely fair, translucent skin tone. Pale Purple/Grey-toned soft shadows under the chin and hairline.",
+        "light": "Subtle peach-toned blush on cheeks with a slight glow. Fine highlights along the bridge of the nose and neck muscles.",
+        "boundary": "Must maintain precise coordinates for hair and cloth_collar attachment points."
+    },
+    "face_expression_eye_set": {
+        "role": "Emotional core and focal point.",
+        "silhouette": "Large, sparkling almond-shaped eyes with slightly upturned outer corners. Defined eyelashes and small, rounded mouth.",
+        "color": "Pink gradient iris. Red/Dark Brown eyeliner.",
+        "light": "Multiple sharp white circular catchlights in the upper iris. High-gloss finish.",
+        "boundary": "Floating layer fixed to face_head_base. Must remain below hair layers."
+    },
+    "upper_body_outfit_set": {
+        "role": "Main torso clothing and silhouette.",
+        "silhouette": "Fitted shirt/blouse silhouette. Defined waistline and recessed area in the center chest for ribbon placement.",
+        "color": "Pure White fabric. Shadows in cool Light Grey or Pale Lavender.",
+        "light": "Soft ambient occlusion in fabric folds. Tiny specular highlights on buttons.",
+        "boundary": "Must align perfectly with arm_hand_set sleeves and skirt_outter waistline."
+    },
+    "skirt_outter": {
+        "role": "Primary lower body design and pattern.",
+        "silhouette": "High-waisted pleated A-line skirt. Flared bottom, ending above the knees.",
+        "color": "Red base with Black and White grid patterns (Tartan/Plaid).",
+        "light": "Geometric shading following the pleats. Matte fabric texture with minimal shine.",
+        "boundary": "Connected to upper_body at the top and legs_stockings at the bottom."
+    },
+    "skirt_inner": {
+        "role": "Skirt interior and shadow fill.",
+        "silhouette": "Flat fill area visible through the bottom opening of the outer skirt.",
+        "color": "Very dark Burgundy or Charcoal Red.",
+        "light": "No highlights. 100% shadow area.",
+        "boundary": "Prevents visual gaps between the legs and the outer skirt."
+    },
+    "legs_stockings_pair": {
+        "role": "Lower limb style and proportions.",
+        "silhouette": "Slender, elongated leg lines. Over-the-knee (thigh-high) stockings.",
+        "color": "White stockings with pink horizontal stripe accents at the top. Skin tone matching the face.",
+        "light": "Subtle vertical highlights on thighs and knees to create a satin-like fabric effect.",
+        "boundary": "Starts under the skirt and terminates inside shoes_pair."
+    },
+    "arm_hand_set": {
+        "role": "Articulated limb movement and finger detail.",
+        "silhouette": "Slender fingers with visible joints. Separated segments for VTube-specific rigging.",
+        "color": "Skin tone matching the face. Subtle pinkish tint on fingertips.",
+        "light": "Soft rim lighting along the outer edges of the arms to separate from the torso.",
+        "boundary": "Must match the cuff openings of the upper_body outfit."
+    },
+    "cloth_collar": {
+        "role": "Neckline transition and structure.",
+        "silhouette": "Stiff, upright school-style collar. Symmetrical wings.",
+        "color": "Matching the upper_body (Pure White).",
+        "light": "Sharp, hard-edged shadows cast onto the neck.",
+        "boundary": "Physical bridge between face_head_base and upper_body."
+    },
+    "ribbon_bow_accessory_set": {
+        "role": "Decorative focal point.",
+        "silhouette": "Large butterfly bow with split tail ends. Symmetrical.",
+        "color": "Matching the skirt pattern (Red Plaid) or solid Crimson.",
+        "light": "Specular highlights on the center knot and upper curves of the loops.",
+        "boundary": "Attached to the center of the blouse and on top of the hair."
+    },
+    "headband": {
+        "role": "Head accessory.",
+        "silhouette": "Narrow band across the crown with stylized animal (rabbit) ear attachments.",
+        "color": "White base with Pink polka dot pattern.",
+        "light": "Glossy plastic or fabric shine along the curvature of the band.",
+        "boundary": "Topmost layer of hair_outter."
+    },
+    "shoes_pair": {
+        "role": "Footwear detail.",
+        "silhouette": "Classic student loafers. Rounded toe with low heel.",
+        "color": "Dark Coffee Brown.",
+        "light": "High-contrast specular 'hotspots' on the leather surface.",
+        "boundary": "Encloses the bottom of legs_stockings."
+    }
+}

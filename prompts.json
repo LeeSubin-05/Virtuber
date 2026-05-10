@@ -1,0 +1,15 @@
+{
+    "hair_outter": "change color to deep dark brown, almost black, based on the photo; mid-length hair with natural soft waves and slightly messy ends, less blunt than original; full, straight bangs (fringe) covering the forehead, appearing softer and slightly thicker; remove 'Angel Ring' halo highlight, use subtle, natural specular highlights appropriate for dark hair.",
+    "hair_inner": "change color to very dark brown, nearly black, 2-3 tones darker than hair_outter; maintain flat shading for depth.",
+    "face_head_base_set": "slightly soften the V-shaped jawline to be more rounded, matching the photo's softer facial contours; maintain extremely fair, translucent skin tone; keep subtle peach-toned blush on cheeks with a slight glow and fine highlights along the bridge of the nose and neck muscles, consistent with original Akari's style but applied to the adjusted face shape.",
+    "face_expression_eye_set": "large, roundish eyes with a subtle downturn at the outer corners, matching the photo; change iris color to deep dark brown; maintain defined eyelashes and multiple sharp white circular catchlights; small mouth with a slight pout expression, as seen in the photo.",
+    "upper_body_outfit_set": "change to a classic school uniform blazer in deep navy blue, featuring two rows of gold buttons on the front and a distinct gold school emblem on the left chest, as depicted in the photo; beneath the blazer, show a crisp white collared shirt and a V-neck black knit vest; defined waistline matching the photo's silhouette; shadows in cool dark blue tones for the blazer and soft ambient occlusion for the inner garments.",
+    "skirt_outter": "high-waisted pleated A-line skirt, flared bottom, ending above the knees; change color identity to a grey base plaid/tartan pattern with subtle red and white lines, precisely matching the photo's skirt; maintain geometric shading following the pleats and a matte fabric texture with minimal shine.",
+    "skirt_inner": "change color to very dark charcoal grey, matching the shadow tone of the outer skirt's dominant grey; maintain no highlights and 100% shadow area.",
+    "legs_stockings_pair": "slender, elongated leg lines; change stockings to solid opaque black, over-the-knee (thigh-high) length, matching the photo; skin tone matching the face_head_base_set; remove pink horizontal stripe accents; subtle vertical highlights on thighs and knees to create a satin-like fabric effect on black stockings.",
+    "arm_hand_set": null,
+    "cloth_collar": null,
+    "ribbon_bow_accessory_set": "change to a smaller, classic school uniform necktie bow, not a large butterfly bow; feature a pattern of alternating red and white stripes, precisely matching the photo's bow; symmetrical with clean, defined loops and tails; position at the center of the collar below the face; specular highlights on the fabric's curves.",
+    "headband": null,
+    "shoes_pair": "classic student loafers with rounded toe and low heel; change color to solid black, matching the photo; high-contrast specular 'hotspots' on the leather surface."
+}

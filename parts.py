@@ -9,32 +9,29 @@ extract_parts.py - 텍스처에서 파츠별 영역을 잘라 저장하여 추�
 """
 
 import os
+import json
 from PIL import Image, ImageDraw, ImageFont
 
 # ── 설정 ─────────────────────────────────────────────────
-TEXTURE_PATH = r"D:\swag\akari.png"     # 원본 텍스처
-OUTPUT_DIR   = r"D:\swag\parts"         # 잘라낸 파츠 저장 폴더
+TEXTURE_PATH = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\akari.png"     # 원본 텍스처
+OUTPUT_DIR   = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\parts"         # 잘라낸 파츠 저장 폴더
 
 # 파츠별 영역 좌표 [x1, y1, x2, y2]
 PARTS = {
-    "hair_long_back_left":                              [84, 96, 908, 1732],
-    "hair_bangs_center_set":                            [724, 2014, 2268, 3012],
-    "hair_pink_twin_set":                               [2450, 2200, 3962, 3418],
-    "hair_or_accessory_purple_lower_left_candidate":    [34, 3762, 662, 4062],
-    "bunny_ears_pair":                                  [2890, 80, 3888, 314],
+    "hair_inner":                                       [724, 2014, 2268, 3012],
+    "hair_outter":                                      [2450, 2200, 3962, 3418],
+    "headband":                                         [2890, 80, 3888, 314],
     "face_head_base_set":                               [3016, 356, 3758, 1420],
     "face_expression_eye_set":                          [2290, 3584, 4024, 4014],
     "upper_body_outfit_set":                            [1780, 212, 2866, 1498],
-    "skirt":                                            [1924, 1528, 2614, 2028],
+    "skirt_outter":                                     [1924, 1528, 2614, 2028],
     "legs_stockings_pair":                              [1016, 16, 1678, 1532],
     "shoes_pair":                                       [1194, 1454, 1714, 1876],
-    "shorts_underwear":                                 [40, 1878, 790, 2426],
-    "lower_leg_boots_socks_set":                        [40, 2504, 742, 3782],
+    "skirt_inner":                                      [40, 1878, 790, 2426],
     "arm_hand_set":                                     [766, 3056, 1264, 4062],
-    "small_detached_body_parts":                        [958, 1454, 1896, 1780],
     "ribbon_bow_accessory_set":                         [2770, 1468, 3528, 1790],
-    "effect_symbols_top_right":                         [3836, 324, 4038, 872],
-    "small_top_center_parts":                           [1882, 10, 2662, 258],
+    #"effect_symbols_top_right":                         [3836, 324, 4038, 872],
+    "cloth_collar":                                     [1882, 10, 2662, 258],
 }
 
 # 오버뷰에 사용할 색상 팔레트
@@ -114,6 +111,12 @@ def main():
     # 2) 전체 영역이 표시된 오버뷰 저장
     overview_path = os.path.join(OUTPUT_DIR, "_overview.png")
     make_overview(img, PARTS, overview_path, scale=0.25)
+
+    parts_list_path = os.path.join(OUTPUT_DIR, "parts_list.json")
+    with open(parts_list_path, "w", encoding="utf-8") as f:
+        # PARTS 딕셔너리의 키(keys)만 뽑아서 리스트로 변환 후 저장
+        json.dump(list(PARTS.keys()), f, indent=4, ensure_ascii=False)
+    print(f"[OK] 파츠 키 리스트 저장: {parts_list_path}")
 
     print("\n[DONE] 추출 검증용 파일 생성 완료")
 
