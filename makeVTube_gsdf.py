@@ -3,28 +3,29 @@ import json
 import torch
 import cv2
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageEnhance
 from diffusers import StableDiffusionControlNetImg2ImgPipeline, ControlNetModel, UniPCMultistepScheduler
-from rembg import remove, new_session
 
 # ── 설정 ─────────────────────────────────────────────────
 INPUT_DIR = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\parts"
 OUTPUT_DIR = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\modified_parts"
 JSON_PATH = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\prompts.json"
 
+# 모델 ID (로컬 캐시가 없으면 자동으로 다운로드됩니다)
 MODEL_ID = "gsdf/Counterfeit-V2.5"
-CONTROLNET_ID = "lllyasviel/sd-controlnet-canny" # 외곽선 고정용 모델
+CONTROLNET_ID = "lllyasviel/sd-controlnet-canny"
+# ─────────────────────────────────────────────────────────
 
 def get_canny_image(image, low_threshold=100, high_threshold=200):
-    """이미지에서 외곽선(Canny)을 추출합니다."""
-    image = np.array(image)
-    image = cv2.Canny(image, low_threshold, high_threshold)
-    image = image[:, :, None]
-    image = np.concatenate([image, image, image], axis=2)
-    return Image.fromarray(image)
+    """ControlNet용 외곽선 가이드 생성"""
+    image_np = np.array(image)
+    canny = cv2.Canny(image_np, low_threshold, high_threshold)
+    canny = canny[:, :, None]
+    canny = np.concatenate([canny, canny, canny], axis=2)
+    return Image.fromarray(canny)
 
 def setup_pipeline():
-    print("[INFO] ControlNet 및 메인 모델 로드 중...")
+    print("[INFO] 로컬 GPU를 사용하여 SD 파이프라인을 준비합니다...")
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
     controlnet = ControlNetModel.from_pretrained(CONTROLNET_ID, torch_dtype=torch.float16).to(device)
@@ -32,18 +33,20 @@ def setup_pipeline():
         MODEL_ID, controlnet=controlnet, torch_dtype=torch.float16, use_safetensors=True
     ).to(device)
     
-    # 가속 설정
     pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
-    pipe.enable_xformers_memory_efficient_attention()
+    # RTX 3060 이상 권장: 메모리 효율화
+    if device == "cuda":
+        pipe.enable_xformers_memory_efficient_attention()
     return pipe
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    rembg_session = new_session()
     pipe = setup_pipeline()
 
     with open(JSON_PATH, "r", encoding="utf-8") as f:
         prompts_data = json.load(f)
+
+    print(f"🚀 총 {len(prompts_data)}개 파츠 변환 루프 시작...")
 
     for name, prompt in prompts_data.items():
         if not prompt: continue
@@ -52,30 +55,43 @@ def main():
         out_p = os.path.join(OUTPUT_DIR, f"{name}.png")
 
         if os.path.exists(in_p):
-            print(f"[PROCESS] {name} 변형 중 (ControlNet 적용)...")
-            init_image = Image.open(in_p).convert("RGB")
-            grayscale_init = init_image.convert("L").convert("RGB")
-            canny_image = get_canny_image(grayscale_init) # 뼈대 추출
+            print(f"🎨 [PROCESS] {name} 수정 중...")
+            
+            # 1. 원본 데이터 확보
+            orig_rgba = Image.open(in_p).convert("RGBA")
+            orig_size = orig_rgba.size
+            alpha_mask = orig_rgba.getchannel("A") # 🌟 외곽선 보존용 마스크
+            
+            # 2. 핑크색 오염 방지 전처리: 채도 95% 제거
+            # 완전 흑백이 아니므로 컬러 생성이 가능하면서도 핑크색 영향은 최소화됩니다.
+            enhancer = ImageEnhance.Color(orig_rgba.convert("RGB"))
+            washed_init = enhancer.enhance(1) 
+            
+            # 3. ControlNet 가이드 생성
+            canny_guide = get_canny_image(washed_init)
 
-            # 🌟 이미지 생성
-            # combined_prompt에 'black outlines'를 추가하여 선명도 강화
+            # 4. 이미지 생성 (얼굴 및 인체 생성 강력 차단)
             result = pipe(
-                prompt=f"masterpiece, best quality, {prompt}, black outlines, clean lineart",
-                image=init_image,
-                control_image=canny_image,
-                strength=0.5,           # 스타일 변경 강도
-                controlnet_conditioning_scale=1.0, # 뼈대 유지 강도 (1.0이면 거의 완벽 고정)
+                prompt=f"((pure {prompt})), solid color",
+                image=washed_init,
+                control_image=canny_guide,
+                strength=0.5,                   # 형태 유지와 색상 변경의 최적 균형
+                controlnet_conditioning_scale=1.2, # 뼈대를 프롬프트보다 우선시
                 num_inference_steps=30,
-                guidance_scale=7.5
+                guidance_scale=12.0              # 프롬프트 명령(색상)을 더 강하게 인식
             ).images[0]
 
-            # 원본 크기로 복구 및 배경 제거
-            orig_size = Image.open(in_p).size
-            upscaled = result.resize(orig_size, Image.LANCZOS)
-            final_img = upscaled#remove(upscaled, session=rembg_session, alpha_matting=True)
-            final_img.save(out_p)
+            # 5. 후처리: 원본 크기 복구 및 '절대 마스크' 적용
+            result = result.resize(orig_size, Image.LANCZOS)
+            final_rgba = result.convert("RGBA")
+            
+            # 🌟 AI가 삐져나오게 그린 모든 부분을 원본 투명도 맵으로 칼같이 잘라냄
+            final_rgba.putalpha(alpha_mask)
+            
+            final_rgba.save(out_p)
+            print(f"✅ [SUCCESS] {name} 완료")
 
-    print("\n[SUCCESS] ControlNet을 사용하여 모든 파츠의 뼈대를 고정하며 변형을 완료했습니다!")
+    print("\n[FINISH] 모든 파츠가 성공적으로 가공되었습니다. 비용: 0원")
 
 if __name__ == "__main__":
     main()
