@@ -10,7 +10,7 @@ from diffusers import StableDiffusionControlNetImg2ImgPipeline, ControlNetModel,
 INPUT_DIR = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\parts"
 OUTPUT_DIR = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\modified_parts"
 JSON_PATH = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\prompts.json"
-
+FEATURE_PATH = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\baseFeature.json"
 # 모델 ID (로컬 캐시가 없으면 자동으로 다운로드됩니다)
 MODEL_ID = "gsdf/Counterfeit-V2.5"
 CONTROLNET_ID = "lllyasviel/sd-controlnet-canny"
@@ -43,10 +43,11 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     pipe = setup_pipeline()
 
+    # 데이터 로드 (프롬프트와 베이스 피처 추가)
     with open(JSON_PATH, "r", encoding="utf-8") as f:
         prompts_data = json.load(f)
-
-    print(f"🚀 총 {len(prompts_data)}개 파츠 변환 루프 시작...")
+    with open(FEATURE_PATH, "r", encoding="utf-8") as f: # baseFeature.json 경로
+        base_features = json.load(f)
 
     for name, prompt in prompts_data.items():
         if not prompt: continue
@@ -55,41 +56,49 @@ def main():
         out_p = os.path.join(OUTPUT_DIR, f"{name}.png")
 
         if os.path.exists(in_p):
-            print(f"🎨 [PROCESS] {name} 수정 중...")
+            # 🌟 해당 파츠의 Role 정보 추출
+            part_info = base_features.get(name, {})
+            part_role = part_info.get("role", "VTube asset piece")
             
-            # 1. 원본 데이터 확보
+            print(f"[PROCESS] {name} ({part_role}) 변형 중...")
+            
             orig_rgba = Image.open(in_p).convert("RGBA")
-            orig_size = orig_rgba.size
-            alpha_mask = orig_rgba.getchannel("A") # 🌟 외곽선 보존용 마스크
+            alpha_mask = orig_rgba.getchannel("A")
             
-            # 2. 핑크색 오염 방지 전처리: 채도 95% 제거
-            # 완전 흑백이 아니므로 컬러 생성이 가능하면서도 핑크색 영향은 최소화됩니다.
+            # 핑크색 잔상 제거를 위한 채도 하향 전처리
             enhancer = ImageEnhance.Color(orig_rgba.convert("RGB"))
-            washed_init = enhancer.enhance(1) 
-            
-            # 3. ControlNet 가이드 생성
+            washed_init = enhancer.enhance(0.05) 
             canny_guide = get_canny_image(washed_init)
 
-            # 4. 이미지 생성 (얼굴 및 인체 생성 강력 차단)
+            # 🌟 프롬프트 구성: (Role) + (Gemini가 뽑은 태그) + (고정 키워드)
+            # Role에 가중치를 주어 파츠의 정체성을 강조합니다.
+            combined_prompt = f"name = {name}, (({part_role}:3.5)), {prompt}"
+
+            # 🌟 '색상 변경'과 '형태 고정'에만 몰입하는 설정
             result = pipe(
-                prompt=f"((pure {prompt})), solid color",
+                # 프롬프트: 'flat color'와 'solid'를 넣어 텍스처 변형 방지
+                prompt=f"((pure {combined_prompt})), (flat color:1.3), (solid texture:1.2), clean lineart",
+                
+                # 네거티브: 불필요한 디테일과 입체감을 원천 차단
+                negative_prompt="complex details, 3d, render, gradient, shadow, lighting, ornaments, face, eyes, skin",
+                
                 image=washed_init,
                 control_image=canny_guide,
-                strength=0.5,                   # 형태 유지와 색상 변경의 최적 균형
-                controlnet_conditioning_scale=1.2, # 뼈대를 프롬프트보다 우선시
-                num_inference_steps=30,
-                guidance_scale=12.0              # 프롬프트 명령(색상)을 더 강하게 인식
+                
+                # 🌟 핵심 파라미터 튜닝
+                strength=0.6,                   # 형태 변형 최소화 (0.3 ~ 0.35)
+                controlnet_conditioning_scale=1.6, # 외곽선을 절대적 법으로 삼음
+                num_inference_steps=20,          # 스텝이 짧을수록 불필요한 잔기술을 부리지 않음
+                guidance_scale=15.0              # 프롬프트(색상 명령)를 강제로 수행
             ).images[0]
 
-            # 5. 후처리: 원본 크기 복구 및 '절대 마스크' 적용
-            result = result.resize(orig_size, Image.LANCZOS)
+            # 후처리: 마스크 복구
+            result = result.resize(orig_rgba.size, Image.LANCZOS)
             final_rgba = result.convert("RGBA")
-            
-            # 🌟 AI가 삐져나오게 그린 모든 부분을 원본 투명도 맵으로 칼같이 잘라냄
             final_rgba.putalpha(alpha_mask)
             
             final_rgba.save(out_p)
-            print(f"✅ [SUCCESS] {name} 완료")
+            print(f"✅ {name} 저장 완료")
 
     print("\n[FINISH] 모든 파츠가 성공적으로 가공되었습니다. 비용: 0원")
 
