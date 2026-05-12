@@ -1,5 +1,19 @@
 """
-vtuber.py - prompts.json + PARTS 좌표를 이용해 파츠별 수정 후 최종 texture PNG 저장
+vtuber.py
+
+prompts_cache_meta.json을 읽어서
+- eye 또는 eye_prompt가 있으면 Gemini로 눈 모양 수정
+- iris_rgb 또는 eye-color로 눈 색상 변경
+- skin_rgb 또는 skin-color로 피부색 변경
+- hair_rgb 또는 hair-color로 머리색 변경
+을 수행한 뒤
+
+1 원본 parts 폴더를 parts_modified 폴더로 복사
+2 수정은 parts_modified 폴더 안에서만 진행
+3 원본 parts 폴더는 건드리지 않음
+4 parts 폴더의 parts_bbox_corrected.json 좌표를 참고
+5 parts_modified 안의 파츠들을 합성
+6 EXCLUDE_KEYWORDS에 해당하는 파츠는 합성에서 제외하고 빈 공간으로 둠
 
 설치:
   pip install google-genai pillow numpy
@@ -9,29 +23,11 @@ vtuber.py - prompts.json + PARTS 좌표를 이용해 파츠별 수정 후 최종
 """
 
 import os
-import sys
-import json
 import io
-import time
-import numpy as np
-from PIL import Image
-"""
-vtuber.py - prompts.json + PARTS 좌표를 이용해 파츠별 수정 후 최종 texture PNG 저장
-
-설치:
-  pip install google-genai pillow numpy
-
-실행:
-  python vtuber.py
-"""
-
-import os
-import sys
+import re
 import json
-import io
-import time
+import shutil
 import hashlib
-
 import numpy as np
 from PIL import Image
 
@@ -39,507 +35,512 @@ from google import genai
 from google.genai import types
 
 
-# ── 설정 ─────────────────────────────────────────────────
+# ── 경로 설정 ─────────────────────────────────────────────
 
-TEXTURE_PATH = r"C:\Program Files (x86)\Steam\steamapps\common\VTube Studio\VTube Studio_Data\StreamingAssets\Live2DModels\akari_vts_ai_test\akari.4096\texture_00.png"
+BASE_DIR = r"C:\Users\82106\OneDrive\바탕 화면\Vtube"
 
-# 2번 코드에서 만든 JSON 파일
-PROMPTS_PATH = r"C:\Users\82106\OneDrive\바탕 화면\Vtube\prompt\prompts.json"
+PROMPTS_PATH = os.path.join(BASE_DIR, "prompts_cache_meta.json")
 
-# 결과 저장 위치
-OUTPUT_DIR = r"C:\Users\82106\OneDrive\바탕 화면\Vtube\result"
-EDITED_PARTS_DIR = os.path.join(OUTPUT_DIR, "edited_parts")
-FINAL_TEXTURE_PATH = os.path.join(OUTPUT_DIR, "texture_test_result.png")
+# 원본 parts 폴더
+ORIGINAL_PARTS_DIR = os.path.join(BASE_DIR, "parts")
 
-# Gemini 이미지 모델
+# 수정 작업용 복사본 parts 폴더
+WORK_PARTS_DIR = os.path.join(BASE_DIR, "parts_modified")
+
+PARTS_LOCATION_DIR = os.path.join(BASE_DIR, "parts_location")
+RESULT_DIR = os.path.join(BASE_DIR, "result")
+
+os.makedirs(RESULT_DIR, exist_ok=True)
+
+FINAL_MERGED_PATH = os.path.join(RESULT_DIR, "final_merged_from_bbox.png")
+DEBUG_EYE_SHEET_INPUT = os.path.join(RESULT_DIR, "_debug_eye_sheet_input.png")
+DEBUG_EYE_SHEET_OUTPUT = os.path.join(RESULT_DIR, "_debug_eye_sheet_output.png")
+
+# Gemini 캐시용 수정 눈 파츠 저장 폴더
+EYE_CACHE_DIR = os.path.join(RESULT_DIR, "eye_edit_cache")
+
+os.makedirs(EYE_CACHE_DIR, exist_ok=True)
+
+
+# ── 복사 설정 ─────────────────────────────────────────────
+
+# True면 실행할 때마다 원본 parts를 parts_modified로 새로 복사
+# 원본 보존을 위해 기본 True 권장
+RESET_WORK_PARTS_EACH_RUN = True
+
+
+# ── 제외할 파츠 설정 ─────────────────────────────────────
+
+# 파일명에 아래 단어가 들어가면 최종 합성에서 제외
+# 예: hairband.png, hairband_left.png, hairband_right.png, pin_xxx.png
+EXCLUDE_KEYWORDS = [
+    "pin",
+    "hairband",
+]
+
+# 정확한 파일명으로 제외하고 싶으면 여기에 추가
+EXCLUDE_FILES = [
+    # "hairband.png",
+    # "hairband_left.png",
+    # "hairband_right.png",
+]
+
+
+# ── API 설정 ─────────────────────────────────────────────
+
+API_KEY = os.environ.get("GEMINI_API_KEY")
+
+if not API_KEY:
+    raise RuntimeError(
+        "GEMINI_API_KEY 환경변수가 없습니다\n"
+        "CMD에서 먼저 실행하세요\n"
+        "setx GEMINI_API_KEY \"새_API_KEY\""
+    )
+
 MODEL_NAME = "gemini-2.5-flash-image"
 
-# 테스트할 때 특정 파츠만 하고 싶으면 여기에 이름 넣기
-# 예: ONLY_PARTS = ["face_expression_eye_set"]
-# 전체 prompts.json 기준으로 돌릴 거면 빈 리스트 유지
-ONLY_PARTS = []
+USE_CACHE = True
+MANIFEST_PATH = os.path.join(RESULT_DIR, "vtuber_manifest.json")
 
-# 요청 사이 대기 시간
-# quota 오류가 자주 나면 30 이상으로 늘리기
-REQUEST_SLEEP_SECONDS = 3
-
-# 캐시 설정
-# 같은 원본 파츠 + 같은 프롬프트면 Gemini 호출하지 않고 기존 결과 재사용
-USE_PART_CACHE = True
-
-# True로 바꾸면 캐시 무시하고 Gemini를 다시 호출
-FORCE_REGENERATE_PARTS = False
-
-# 파츠별 캐시 기록 파일
-MANIFEST_PATH = os.path.join(OUTPUT_DIR, "edited_parts_manifest.json")
-
-# 기존 결과를 최대한 유지하기 위해 1024 유지
-# 결과가 조금 달라져도 토큰을 더 줄이고 싶으면 768 또는 512로 변경 가능
-IMAGE_INPUT_SIZE = 1024
+SHEET_PADDING = 30
+COLOR_STRENGTH = 0.95
 
 
-# extract_parts.py에서 가져온 PARTS 좌표
-PARTS = {
-    "hair_long_back_left":                              [84, 96, 908, 1732],
-    "hair_bangs_center_set":                            [724, 2014, 2268, 3012],
-    "hair_pink_twin_set":                               [2450, 2200, 3962, 3418],
-    "hair_or_accessory_purple_lower_left_candidate":    [34, 3762, 662, 4062],
-    "bunny_ears_pair":                                  [2890, 80, 3888, 314],
-    "face_head_base_set":                               [3016, 356, 3758, 1420],
-    "face_expression_eye_set":                          [2290, 3584, 4024, 4014],
-    "upper_body_outfit_set":                            [1780, 212, 2866, 1498],
-    "skirt":                                            [1924, 1528, 2614, 2028],
-    "legs_stockings_pair":                              [1016, 16, 1678, 1532],
-    "shoes_pair":                                       [1194, 1454, 1714, 1876],
-    "shorts_underwear":                                 [40, 1878, 790, 2426],
-    "lower_leg_boots_socks_set":                        [40, 2504, 742, 3782],
-    "arm_hand_set":                                     [766, 3056, 1264, 4062],
-    "small_detached_body_parts":                        [958, 1454, 1896, 1780],
-    "ribbon_bow_accessory_set":                         [2770, 1468, 3528, 1790],
-    "effect_symbols_top_right":                         [3836, 324, 4038, 872],
-    "small_top_center_parts":                           [1882, 10, 2662, 258],
-}
+# ── 파츠 그룹 정의 ───────────────────────────────────────
+
+EYE_PARTS = ["eye_1.png", "eye_2.png","eye_3.png", "eye_4.png"]
+FACE_PARTS = ["face.png"]
+NECK_PARTS = ["neck.png"]
 
 
-def load_prompts():
-    """prompts.json 불러오기"""
-    if not os.path.exists(PROMPTS_PATH):
-        print(f"❌ prompts.json 파일 없음: {PROMPTS_PATH}")
-        sys.exit(1)
+def prepare_work_parts_folder():
+    """
+    원본 parts 폴더를 parts_modified 폴더로 복사한다
+    이후 모든 수정은 parts_modified 안에서만 진행한다
+    """
 
-    with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
-        prompts = json.load(f)
+    if not os.path.exists(ORIGINAL_PARTS_DIR):
+        raise FileNotFoundError(f"원본 parts 폴더가 없습니다: {ORIGINAL_PARTS_DIR}")
 
-    return prompts
+    if RESET_WORK_PARTS_EACH_RUN:
+        if os.path.exists(WORK_PARTS_DIR):
+            shutil.rmtree(WORK_PARTS_DIR)
 
+        shutil.copytree(ORIGINAL_PARTS_DIR, WORK_PARTS_DIR)
 
-def make_gemini_prompt(part_name, part_prompt):
-    """파츠별 Gemini 이미지 수정 프롬프트 생성"""
-    return f"""
-This is one cropped part from a Live2D texture atlas.
+        print(f"[COPY] 원본 parts 폴더 복사 완료")
+        print(f"       from: {ORIGINAL_PARTS_DIR}")
+        print(f"       to  : {WORK_PARTS_DIR}")
 
-Part name:
-{part_name}
-
-Edit instruction:
-{part_prompt}
-
-Strict rules:
-1. Edit only this part according to the edit instruction.
-2. Keep the exact same layout, position, scale, and composition.
-3. Do not move, rotate, resize, crop, or rearrange any visible piece.
-4. Keep the same 2D anime Live2D texture style.
-5. Preserve the original line art and shading direction as much as possible.
-6. Do not add text, logos, signatures, or extra objects.
-7. Keep the background transparent or empty.
-8. The output must keep the same composition as the input image.
-"""
+    else:
+        if not os.path.exists(WORK_PARTS_DIR):
+            shutil.copytree(ORIGINAL_PARTS_DIR, WORK_PARTS_DIR)
+            print(f"[COPY] parts_modified 폴더가 없어 새로 복사했습니다: {WORK_PARTS_DIR}")
+        else:
+            print(f"[INFO] 기존 parts_modified 폴더 사용: {WORK_PARTS_DIR}")
 
 
-def sha256_bytes(data):
-    """bytes 기준 sha256 생성"""
+def get_hair_parts():
+    parts = []
+
+    if not os.path.exists(WORK_PARTS_DIR):
+        return parts
+
+    for name in sorted(os.listdir(WORK_PARTS_DIR)):
+        lower = name.lower()
+
+        if not lower.endswith(".png"):
+            continue
+
+        if lower.startswith("hair_") and not lower.startswith("hair_shadow_"):
+            parts.append(name)
+        elif lower == "hair_back.png":
+            parts.append(name)
+
+    return parts
+
+
+def get_hair_shadow_parts():
+    parts = []
+
+    if not os.path.exists(WORK_PARTS_DIR):
+        return parts
+
+    for name in sorted(os.listdir(WORK_PARTS_DIR)):
+        lower = name.lower()
+
+        if lower.endswith(".png") and lower.startswith("hair_shadow_"):
+            parts.append(name)
+
+    return parts
+
+
+# ── 기본 유틸 ─────────────────────────────────────────────
+
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+
+def extract_prompts(data):
+    """
+    prompts_cache_meta.json에서 아래 키들을 코드가 쓰는 표준 키로 변환한다
+
+    입력 가능:
+    - hair_rgb
+    - iris_rgb
+    - skin_rgb
+    - eye
+    - eye_prompt
+    - eye-shape
+    - eye_shape
+
+    코드 내부 표준 키:
+    - hair-color
+    - eye-color
+    - skin-color
+    - eye
+    """
+
+    if not isinstance(data, dict):
+        raise ValueError("prompts_cache_meta.json 내용은 dict 형식이어야 합니다")
+
+    for key in ["prompts", "prompt", "data", "result"]:
+        value = data.get(key)
+
+        if isinstance(value, dict):
+            data = value
+            break
+
+    normalized = {}
+
+    normalized["eye"] = (
+        data.get("eye")
+        or data.get("eye_prompt")
+        or data.get("eye-shape")
+        or data.get("eye_shape")
+    )
+
+    normalized["eye-color"] = (
+        data.get("eye-color")
+        or data.get("iris_rgb")
+        or data.get("iris-color")
+        or data.get("iris_color")
+    )
+
+    normalized["skin-color"] = (
+        data.get("skin-color")
+        or data.get("skin_rgb")
+        or data.get("skin-color-rgb")
+        or data.get("skin_color")
+    )
+
+    normalized["hair-color"] = (
+        data.get("hair-color")
+        or data.get("hair_rgb")
+        or data.get("hair-color-rgb")
+        or data.get("hair_color")
+    )
+
+    return normalized
+
+
+def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def image_sha256(img):
-    """
-    이미지 내용을 기준으로 해시 생성
-    원본 파츠가 바뀌면 해시도 바뀌어서 캐시를 재사용하지 않음
-    """
+def image_sha256(img: Image.Image) -> str:
     buf = io.BytesIO()
     img.convert("RGBA").save(buf, format="PNG")
     return sha256_bytes(buf.getvalue())
 
 
 def load_manifest():
-    """캐시 manifest 불러오기"""
     if not os.path.exists(MANIFEST_PATH):
         return {}
 
     try:
-        with open(MANIFEST_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    except Exception as e:
-        print(f"[WARN] manifest 로드 실패 새로 시작합니다: {e}")
+        return load_json(MANIFEST_PATH)
+    except Exception:
         return {}
 
 
 def save_manifest(manifest):
-    """캐시 manifest 저장"""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=4, ensure_ascii=False)
+    save_json(MANIFEST_PATH, manifest)
 
 
-def make_part_cache_key(part_name, part_img, part_prompt):
+def parse_rgb(value):
     """
-    같은 파츠 이미지 + 같은 프롬프트 + 같은 모델 + 같은 입력 크기면 같은 캐시 키
+    허용 형식:
+    - "rgb(55, 38, 25)"
+    - [55, 38, 25]
+    - (55, 38, 25)
     """
-    prompt_text = make_gemini_prompt(part_name, part_prompt)
 
-    payload = {
-        "model": MODEL_NAME,
-        "part_name": part_name,
-        "part_prompt": str(part_prompt).strip(),
-        "source_crop_sha256": image_sha256(part_img),
-        "prompt_template_sha256": sha256_bytes(prompt_text.encode("utf-8")),
-        "image_input_size": IMAGE_INPUT_SIZE,
-    }
-
-    text = json.dumps(payload, ensure_ascii=False, sort_keys=True)
-    return sha256_bytes(text.encode("utf-8"))
-
-
-def load_cached_edited_part(part_name, cache_key, crop_size, manifest):
-    """
-    기존에 같은 조건으로 생성된 수정 파츠가 있으면 불러오기
-    """
-    if not USE_PART_CACHE or FORCE_REGENERATE_PARTS:
+    if value is None:
         return None
 
-    entry = manifest.get(part_name)
+    if isinstance(value, (list, tuple)) and len(value) == 3:
+        r, g, b = value
+        return int(r), int(g), int(b)
 
-    if not entry:
-        return None
-
-    if entry.get("cache_key") != cache_key:
-        return None
-
-    cached_path = entry.get("path")
-
-    if not cached_path or not os.path.exists(cached_path):
-        return None
-
-    try:
-        cached_img = Image.open(cached_path).convert("RGBA")
-
-        if cached_img.size != crop_size:
-            return None
-
-        print(f"[CACHE] Gemini 호출 없이 기존 수정 파츠 재사용: {part_name}")
-        return cached_img
-
-    except Exception as e:
-        print(f"[WARN] 캐시 파츠 로드 실패 새로 생성합니다: {part_name} / {e}")
-        return None
-
-
-def edit_part_with_gemini(client, part_name, part_img, part_prompt):
-    """파츠 하나를 Gemini로 수정하고 원래 크기로 되돌림"""
-
-    crop_size = part_img.size
-    crop_arr = np.array(part_img.convert("RGBA"))
-
-    # 원본 알파 저장
-    original_alpha = crop_arr[:, :, 3].copy()
-    has_alpha_bg = (original_alpha < 10).sum() > 0
-
-    # Gemini 입력용 정사각형 이미지
-    # 기존 결과 흐름을 유지하기 위해 기본값 1024x1024 사용
-    input_rgb = part_img.convert("RGB")
-    small = input_rgb.resize((IMAGE_INPUT_SIZE, IMAGE_INPUT_SIZE), Image.LANCZOS)
-
-    buf = io.BytesIO()
-    small.save(buf, format="PNG")
-    img_bytes = buf.getvalue()
-
-    prompt = make_gemini_prompt(part_name, part_prompt)
-
-    print(f"\n⏳ Gemini 요청 중: {part_name}")
-    print(f"   수정 프롬프트: {part_prompt}")
-
-    response = client.models.generate_content(
-        model=MODEL_NAME,
-        contents=[
-            prompt,
-            types.Part.from_bytes(data=img_bytes, mime_type="image/png")
-        ],
-        config=types.GenerateContentConfig(
-            response_modalities=["TEXT", "IMAGE"]
+    if isinstance(value, str):
+        m = re.match(
+            r"rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)",
+            value.strip(),
+            re.IGNORECASE
         )
+
+        if m:
+            return tuple(int(x) for x in m.groups())
+
+    return None
+
+
+def file_exists_in_work_parts(filename):
+    return os.path.exists(os.path.join(WORK_PARTS_DIR, filename))
+
+
+def load_part(filename):
+    path = os.path.join(WORK_PARTS_DIR, filename)
+    return Image.open(path).convert("RGBA")
+
+
+def save_part(img, filename):
+    """
+    원본 parts가 아니라 parts_modified 안에 저장한다
+    """
+    path = os.path.join(WORK_PARTS_DIR, filename)
+    img.save(path, "PNG")
+    print(f"[SAVE] {path}")
+
+
+def list_existing_parts(file_list):
+    return [f for f in file_list if file_exists_in_work_parts(f)]
+
+
+def should_exclude_part(filename):
+    """
+    최종 합성에서 제외할 파츠인지 판단
+    """
+    lower = filename.lower()
+
+    for exact in EXCLUDE_FILES:
+        if lower == exact.lower():
+            return True
+
+    for keyword in EXCLUDE_KEYWORDS:
+        if keyword.lower() in lower:
+            return True
+
+    return False
+
+
+def clear_bbox_area(canvas, x1, y1, x2, y2):
+    """
+    제외 파츠 영역을 투명하게 비운다
+    others.png에 해당 파츠 흔적이 남아 있어도 제거하기 위한 처리
+    """
+    arr = np.array(canvas.convert("RGBA"))
+    h, w = arr.shape[:2]
+
+    x1 = max(0, min(x1, w))
+    x2 = max(0, min(x2, w))
+    y1 = max(0, min(y1, h))
+    y2 = max(0, min(y2, h))
+
+    if x2 <= x1 or y2 <= y1:
+        return canvas
+
+    arr[y1:y2, x1:x2, :] = 0
+    return Image.fromarray(arr, "RGBA")
+
+
+# ── 색상 변경 로직 ───────────────────────────────────────
+
+def recolor_preserve_shading(img_rgba: Image.Image, target_rgb, strength=0.95):
+    """
+    원본의 음영 밝기와 알파를 유지하면서 타겟 색상으로 재색칠
+    """
+
+    arr = np.array(img_rgba.convert("RGBA")).astype(np.float32)
+
+    rgb = arr[:, :, :3]
+    alpha = arr[:, :, 3:4] / 255.0
+
+    lum = (
+        0.299 * rgb[:, :, 0]
+        + 0.587 * rgb[:, :, 1]
+        + 0.114 * rgb[:, :, 2]
+    ) / 255.0
+
+    lum = np.expand_dims(lum, axis=2)
+
+    target = np.array(target_rgb, dtype=np.float32).reshape(1, 1, 3) / 255.0
+
+    shade = 0.25 + 0.95 * lum
+    recolored = target * shade
+
+    original_norm = rgb / 255.0
+    mixed = (1.0 - strength) * original_norm + strength * recolored
+
+    out = np.zeros_like(arr)
+    out[:, :, :3] = np.clip(mixed * 255.0, 0, 255)
+    out[:, :, 3:4] = alpha * 255.0
+
+    return Image.fromarray(out.astype(np.uint8), "RGBA")
+
+
+def recolor_iris_only(img_rgba: Image.Image, target_rgb, strength=0.95):
+    """
+    눈 파츠에서 흰자처럼 밝은 부분은 최대한 보존하고
+    어두운 홍채/라인 쪽만 타겟 색상으로 바꾼다
+    """
+
+    arr = np.array(img_rgba.convert("RGBA")).astype(np.float32)
+
+    rgb = arr[:, :, :3]
+    alpha = arr[:, :, 3]
+
+    lum = (
+        0.299 * rgb[:, :, 0]
+        + 0.587 * rgb[:, :, 1]
+        + 0.114 * rgb[:, :, 2]
+    ) / 255.0
+
+    visible_mask = alpha > 0
+    color_mask = visible_mask & (lum < 0.88)
+
+    if np.count_nonzero(color_mask) < 10:
+        return recolor_preserve_shading(img_rgba, target_rgb, strength=strength)
+
+    target = np.array(target_rgb, dtype=np.float32).reshape(1, 1, 3) / 255.0
+    original_norm = rgb / 255.0
+
+    lum_expanded = np.expand_dims(lum, axis=2)
+    shade = 0.25 + 0.95 * lum_expanded
+    recolored = target * shade
+
+    mixed = (1.0 - strength) * original_norm + strength * recolored
+
+    out = arr.copy()
+    out[:, :, :3][color_mask] = np.clip(
+        mixed[:, :, :3][color_mask] * 255.0,
+        0,
+        255
     )
 
-    result_img = None
-
-    try:
-        for part in response.candidates[0].content.parts:
-            if part.inline_data is not None:
-                result_img = Image.open(io.BytesIO(part.inline_data.data)).convert("RGBA")
-                break
-
-    except Exception as e:
-        print(f"❌ Gemini 응답 처리 중 오류: {part_name}")
-        print(e)
-        return None
-
-    if result_img is None:
-        print(f"❌ Gemini 응답에 이미지 없음: {part_name}")
-        return None
-
-    # 원래 crop 크기로 복원
-    result_img = result_img.resize(crop_size, Image.LANCZOS)
-    result_arr = np.array(result_img.convert("RGBA"))
-
-    # 원본에 투명 배경이 있으면 원본 alpha를 그대로 적용
-    if has_alpha_bg:
-        result_arr[:, :, 3] = original_alpha
-
-    else:
-        # 투명 알파가 없는 경우 기존 코드처럼 어두운 배경을 제거
-        original_bg_mask = crop_arr[:, :, :3].sum(axis=2) < 90
-        result_arr[original_bg_mask, 3] = 0
-
-        result_rgb_sum = result_arr[:, :, :3].sum(axis=2)
-        dark_mask = result_rgb_sum < (60 * 3)
-        result_arr[dark_mask, 3] = 0
-
-        bright_mask = (
-            (result_arr[:, :, 0] > 240) &
-            (result_arr[:, :, 1] > 240) &
-            (result_arr[:, :, 2] > 240)
-        )
-        result_arr[bright_mask, 3] = 0
-
-    edited_part = Image.fromarray(result_arr, mode="RGBA")
-    return edited_part
+    return Image.fromarray(out.astype(np.uint8), "RGBA")
 
 
-def main():
-    api_key = "AIzaSyCw9_Jpa_0hyy3fD8ak1zeeKzoxzRw9fxA"
+# ── 시트 생성 / 분리 ─────────────────────────────────────
 
-    if not api_key:
-        print("❌ GEMINI_API_KEY 환경변수가 없어요")
-        print("예: setx GEMINI_API_KEY \"새_API_KEY\"")
-        sys.exit(1)
+def make_horizontal_sheet(filenames, padding=30):
+    """
+    여러 파츠를 가로로 붙인 투명 시트 생성
+    Gemini 호출 횟수를 줄이기 위해 사용
+    """
 
-    if not os.path.exists(TEXTURE_PATH):
-        print(f"❌ 텍스처 파일 없음: {TEXTURE_PATH}")
-        sys.exit(1)
+    images = []
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(EDITED_PARTS_DIR, exist_ok=True)
+    for name in filenames:
+        img = load_part(name)
+        images.append((name, img))
 
-    prompts = load_prompts()
+    if not images:
+        return None, None
 
-    print(f"✅ 텍스처 로드: {TEXTURE_PATH}")
-    texture = Image.open(TEXTURE_PATH).convert("RGBA")
-    final_texture = texture.copy()
+    total_width = padding
+    max_height = 0
 
-    client = genai.Client(api_key=api_key)
+    for _, img in images:
+        total_width += img.width + padding
+        max_height = max(max_height, img.height)
 
-    manifest = load_manifest()
+    total_height = max_height + padding * 2
 
-    edited_count = 0
-    cached_count = 0
-    skipped_count = 0
+    sheet = Image.new("RGBA", (total_width, total_height), (0, 0, 0, 0))
+    placements = []
 
-    for part_name, box in PARTS.items():
+    x = padding
 
-        # ONLY_PARTS가 있으면 그 파츠만 실행
-        if ONLY_PARTS and part_name not in ONLY_PARTS:
-            continue
+    for name, img in images:
+        y = (total_height - img.height) // 2
 
-        # prompts.json에 없으면 건너뜀
-        if part_name not in prompts:
-            print(f"[SKIP] prompts.json에 없음: {part_name}")
-            skipped_count += 1
-            continue
+        sheet.paste(img, (x, y), img)
 
-        part_prompt = prompts[part_name]
+        placements.append({
+            "filename": name,
+            "x": x,
+            "y": y,
+            "w": img.width,
+            "h": img.height
+        })
 
-        # null 또는 빈 문자열이면 수정 안 함
-        if part_prompt is None or str(part_prompt).strip() == "":
-            print(f"[SKIP] 수정 없음: {part_name}")
-            skipped_count += 1
-            continue
+        x += img.width + padding
 
-        x1, y1, x2, y2 = box
-        part_img = texture.crop((x1, y1, x2, y2))
-
-        edited_part_path = os.path.join(EDITED_PARTS_DIR, f"{part_name}.png")
-        cache_key = make_part_cache_key(part_name, part_img, part_prompt)
-
-        # 먼저 캐시 확인
-        cached_part = load_cached_edited_part(
-            part_name=part_name,
-            cache_key=cache_key,
-            crop_size=part_img.size,
-            manifest=manifest
-        )
-
-        if cached_part is not None:
-            final_texture.paste(cached_part, (x1, y1), cached_part)
-            cached_count += 1
-            continue
-
-        try:
-            edited_part = edit_part_with_gemini(
-                client=client,
-                part_name=part_name,
-                part_img=part_img,
-                part_prompt=part_prompt
-            )
-
-            if edited_part is None:
-                continue
-
-            # 수정 파츠 저장
-            edited_part.save(edited_part_path, "PNG")
-            print(f"💾 수정 파츠 저장: {edited_part_path}")
-
-            # 캐시 기록 저장
-            manifest[part_name] = {
-                "cache_key": cache_key,
-                "path": edited_part_path,
-                "model": MODEL_NAME,
-                "part_prompt": str(part_prompt).strip(),
-                "source_crop_sha256": image_sha256(part_img),
-                "image_input_size": IMAGE_INPUT_SIZE,
-            }
-            save_manifest(manifest)
-
-            # 원본 텍스처에 합성
-            final_texture.paste(edited_part, (x1, y1), edited_part)
-            print(f"🎨 텍스처 합성 완료: {part_name}")
-
-            edited_count += 1
-
-            # quota 방지용 대기
-            time.sleep(REQUEST_SLEEP_SECONDS)
-
-        except Exception as e:
-            print(f"❌ 오류 발생: {part_name}")
-            print(e)
-            continue
-
-    # 최종 텍스처 저장
-    final_texture.save(FINAL_TEXTURE_PATH, "PNG")
-
-    print("\n[DONE]")
-    print(f"새로 수정한 파츠 수: {edited_count}")
-    print(f"캐시로 재사용한 파츠 수: {cached_count}")
-    print(f"건너뛴 파츠 수: {skipped_count}")
-    print(f"최종 결과 저장: {FINAL_TEXTURE_PATH}")
-
-    check = Image.open(FINAL_TEXTURE_PATH)
-    print(f"검증 모드: {check.mode}")
-    print(f"검증 크기: {check.size}")
+    return sheet, placements
 
 
-if __name__ == "__main__":
-    main()
-from google import genai
-from google.genai import types
+def split_sheet(sheet_img, placements):
+    """
+    편집된 시트에서 개별 파츠 재추출
+    """
+
+    result = {}
+
+    for item in placements:
+        x = item["x"]
+        y = item["y"]
+        w = item["w"]
+        h = item["h"]
+
+        crop = sheet_img.crop((x, y, x + w, y + h)).convert("RGBA")
+        result[item["filename"]] = crop
+
+    return result
 
 
-# ── 설정 ─────────────────────────────────────────────────
+# ── Gemini 편집 ──────────────────────────────────────────
 
-TEXTURE_PATH = r"C:\Program Files (x86)\Steam\steamapps\common\VTube Studio\VTube Studio_Data\StreamingAssets\Live2DModels\akari_vts_ai_test\akari.4096\texture_00.png"
-
-# 첫 번째 코드에서 만든 JSON 파일
-PROMPTS_PATH = r"C:\Users\82106\OneDrive\바탕 화면\Vtube\prompt\prompts.json"
-
-# 결과 저장 위치
-OUTPUT_DIR = r"C:\Users\82106\OneDrive\바탕 화면\Vtube\result"
-EDITED_PARTS_DIR = os.path.join(OUTPUT_DIR, "edited_parts")
-FINAL_TEXTURE_PATH = os.path.join(OUTPUT_DIR, "texture_test_result.png")
-
-# Gemini 이미지 모델
-MODEL_NAME = "gemini-2.5-flash-image"
-
-# 테스트할 때 특정 파츠만 하고 싶으면 여기에 이름 넣기
-# 예: ONLY_PARTS = ["face_expression_eye_set"]
-# 전체 prompts.json 기준으로 돌릴 거면 빈 리스트 유지
-ONLY_PARTS = []
-
-# 요청 사이 대기 시간
-# quota 오류가 자주 나면 30 이상으로 늘리기
-REQUEST_SLEEP_SECONDS = 3
-
-
-# extract_parts.py에서 가져온 PARTS 좌표
-PARTS = {
-    "hair_long_back_left":                              [84, 96, 908, 1732],
-    "hair_bangs_center_set":                            [724, 2014, 2268, 3012],
-    "hair_pink_twin_set":                               [2450, 2200, 3962, 3418],
-    "hair_or_accessory_purple_lower_left_candidate":    [34, 3762, 662, 4062],
-    "bunny_ears_pair":                                  [2890, 80, 3888, 314],
-    "face_head_base_set":                               [3016, 356, 3758, 1420],
-    "face_expression_eye_set":                          [2290, 3584, 4024, 4014],
-    "upper_body_outfit_set":                            [1780, 212, 2866, 1498],
-    "skirt":                                            [1924, 1528, 2614, 2028],
-    "legs_stockings_pair":                              [1016, 16, 1678, 1532],
-    "shoes_pair":                                       [1194, 1454, 1714, 1876],
-    "shorts_underwear":                                 [40, 1878, 790, 2426],
-    "lower_leg_boots_socks_set":                        [40, 2504, 742, 3782],
-    "arm_hand_set":                                     [766, 3056, 1264, 4062],
-    "small_detached_body_parts":                        [958, 1454, 1896, 1780],
-    "ribbon_bow_accessory_set":                         [2770, 1468, 3528, 1790],
-    "effect_symbols_top_right":                         [3836, 324, 4038, 872],
-    "small_top_center_parts":                           [1882, 10, 2662, 258],
-}
-
-
-def load_prompts():
-    """prompts.json 불러오기"""
-    if not os.path.exists(PROMPTS_PATH):
-        print(f"❌ prompts.json 파일 없음: {PROMPTS_PATH}")
-        sys.exit(1)
-
-    with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
-        prompts = json.load(f)
-
-    return prompts
-
-
-def make_gemini_prompt(part_name, part_prompt):
-    """파츠별 Gemini 이미지 수정 프롬프트 생성"""
+def make_eye_edit_prompt(eye_prompt):
     return f"""
-This is one cropped part from a Live2D texture atlas.
-
-Part name:
-{part_name}
+You are editing a transparent sprite sheet containing only eye parts for a 2D anime Live2D character.
 
 Edit instruction:
-{part_prompt}
+{eye_prompt}
 
 Strict rules:
-1. Edit only this part according to the edit instruction.
-2. Keep the exact same layout, position, scale, and composition.
-3. Do not move, rotate, resize, crop, or rearrange any visible piece.
-4. Keep the same 2D anime Live2D texture style.
-5. Preserve the original line art and shading direction as much as possible.
-6. Do not add text, logos, signatures, or extra objects.
-7. Keep the background transparent or empty.
-8. The output must keep the same composition as the input image.
+1. Edit only the eye shape and eye line details.
+2. Keep the same number of eye parts.
+3. Keep each eye sprite in the exact same place on the canvas.
+4. Keep the transparent background fully transparent.
+5. Preserve the original anime Live2D style.
+6. Preserve the original shading direction and general lighting.
+7. Do not add extra objects.
+8. Do not change the canvas size.
+9. Do not crop the image.
+10. Keep colors as close as possible because recoloring may happen later.
+
+Return an edited image only.
 """
 
 
-def edit_part_with_gemini(client, part_name, part_img, part_prompt):
-    """파츠 하나를 Gemini로 수정하고 원래 크기로 되돌림"""
-
-    crop_size = part_img.size
-    crop_arr = np.array(part_img.convert("RGBA"))
-
-    # 원본 알파 저장
-    original_alpha = crop_arr[:, :, 3].copy()
-    has_alpha_bg = (original_alpha < 10).sum() > 0
-
-    # Gemini 입력용 1024 이미지
-    # 기존 코드 흐름을 최대한 유지하기 위해 1024x1024로 변환
-    input_rgb = part_img.convert("RGB")
-    small = input_rgb.resize((1024, 1024), Image.LANCZOS)
+def edit_eye_sheet_with_gemini(client, sheet_img, eye_prompt):
+    """
+    눈 모양 수정용 Gemini 호출
+    """
 
     buf = io.BytesIO()
-    small.save(buf, format="PNG")
+    sheet_img.save(buf, format="PNG")
     img_bytes = buf.getvalue()
 
-    prompt = make_gemini_prompt(part_name, part_prompt)
-
-    print(f"\n⏳ Gemini 요청 중: {part_name}")
-    print(f"   수정 프롬프트: {part_prompt}")
+    prompt = make_eye_edit_prompt(eye_prompt)
 
     response = client.models.generate_content(
         model=MODEL_NAME,
@@ -553,126 +554,409 @@ def edit_part_with_gemini(client, part_name, part_img, part_prompt):
     )
 
     result_img = None
+
     for part in response.candidates[0].content.parts:
         if part.inline_data is not None:
             result_img = Image.open(io.BytesIO(part.inline_data.data)).convert("RGBA")
             break
 
     if result_img is None:
-        print(f"❌ Gemini 응답에 이미지 없음: {part_name}")
+        raise RuntimeError("Gemini 응답에서 편집된 eye 시트를 찾지 못했습니다")
+
+    return result_img
+
+
+# ── bbox json 로드 및 합성 ───────────────────────────────
+
+def find_bbox_json():
+    """
+    parts 폴더 안의 parts_bbox_corrected.json을 우선 사용
+    이 파일은 new_file과 bbox를 가지고 있음
+    """
+
+    candidates = [
+        os.path.join(ORIGINAL_PARTS_DIR, "parts_bbox_corrected.json"),
+        os.path.join(WORK_PARTS_DIR, "parts_bbox_corrected.json"),
+        os.path.join(PARTS_LOCATION_DIR, "parts_bbox_corrected.json"),
+        os.path.join(PARTS_LOCATION_DIR, "parts_bbox.json"),
+        os.path.join(ORIGINAL_PARTS_DIR, "parts_bbox.json"),
+        os.path.join(WORK_PARTS_DIR, "parts_bbox.json"),
+    ]
+
+    for path in candidates:
+        if os.path.exists(path):
+            return path
+
+    raise FileNotFoundError(
+        "parts_bbox.json 또는 parts_bbox_corrected.json 파일을 찾을 수 없습니다"
+    )
+
+
+def normalize_bbox_records(raw_data):
+    """
+    bbox를 무조건 [x1, y1, x2, y2] 형식으로 해석한다
+    """
+
+    records = []
+
+    if isinstance(raw_data, dict):
+        if "parts" in raw_data:
+            raw_data = raw_data["parts"]
+        elif "items" in raw_data:
+            raw_data = raw_data["items"]
+        elif "data" in raw_data:
+            raw_data = raw_data["data"]
+        else:
+            temp = []
+
+            for key, value in raw_data.items():
+                if isinstance(value, dict):
+                    item = value.copy()
+                    item.setdefault("filename", key)
+                    temp.append(item)
+
+            raw_data = temp
+
+    if not isinstance(raw_data, list):
+        return records
+
+    for item in raw_data:
+        if not isinstance(item, dict):
+            continue
+
+        filename = (
+            item.get("new_file")
+            or item.get("filename")
+            or item.get("file")
+            or item.get("name")
+            or item.get("part")
+        )
+
+        if not filename:
+            continue
+
+        if not str(filename).lower().endswith(".png"):
+            filename = f"{filename}.png"
+
+        bbox = item.get("bbox")
+
+        if not bbox or not isinstance(bbox, (list, tuple)) or len(bbox) < 4:
+            continue
+
+        x1, y1, x2, y2 = bbox[:4]
+
+        records.append({
+            "filename": str(filename),
+            "x1": int(x1),
+            "y1": int(y1),
+            "x2": int(x2),
+            "y2": int(y2),
+        })
+
+    return records
+
+
+def merge_all_parts_from_bbox():
+    """
+    parts_modified의 others.png를 배경으로 깔고
+    bbox에 있는 파츠들을 원래 위치에 붙인다
+
+    EXCLUDE_KEYWORDS 또는 EXCLUDE_FILES에 해당하는 파츠는 붙이지 않고
+    해당 영역은 투명하게 비운다
+    """
+
+    bbox_path = find_bbox_json()
+    raw = load_json(bbox_path)
+    records = normalize_bbox_records(raw)
+
+    if not records:
+        raise RuntimeError(f"bbox json 파싱 실패: {bbox_path}")
+
+    print(f"[INFO] bbox 파일 사용: {bbox_path}")
+    print(f"[INFO] bbox 레코드 수: {len(records)}")
+    print(f"[INFO] 제외 키워드: {EXCLUDE_KEYWORDS}")
+    print(f"[INFO] 제외 파일명: {EXCLUDE_FILES}")
+
+    others_path = os.path.join(WORK_PARTS_DIR, "others.png")
+
+    if os.path.exists(others_path):
+        canvas = Image.open(others_path).convert("RGBA")
+        print(f"[INFO] parts_modified의 others.png를 배경으로 사용: {others_path}")
+    else:
+        canvas = Image.new("RGBA", (4096, 4096), (0, 0, 0, 0))
+        print("[WARN] others.png가 없어 4096x4096 투명 캔버스에서 시작합니다")
+
+    for rec in records:
+        filename = rec["filename"]
+
+        x1 = rec["x1"]
+        y1 = rec["y1"]
+        x2 = rec["x2"]
+        y2 = rec["y2"]
+
+        target_w = x2 - x1
+        target_h = y2 - y1
+
+        if target_w <= 0 or target_h <= 0:
+            print(f"[WARN] 잘못된 bbox 스킵: {filename} / {rec}")
+            continue
+
+        if should_exclude_part(filename):
+            canvas = clear_bbox_area(canvas, x1, y1, x2, y2)
+            print(f"[EXCLUDE] {filename} 영역 비움 -> ({x1}, {y1}, {x2}, {y2})")
+            continue
+
+        part_path = os.path.join(WORK_PARTS_DIR, filename)
+
+        if not os.path.exists(part_path):
+            print(f"[WARN] 파츠 없음 스킵: {part_path}")
+            continue
+
+        img = Image.open(part_path).convert("RGBA")
+
+        if img.size != (target_w, target_h):
+            print(
+                f"[RESIZE] {filename}: "
+                f"{img.size} -> {(target_w, target_h)}"
+            )
+            img = img.resize((target_w, target_h), Image.LANCZOS)
+
+        canvas.paste(img, (x1, y1), img)
+        print(f"[MERGE] {filename} -> ({x1}, {y1})")
+
+    canvas.save(FINAL_MERGED_PATH, "PNG")
+    print(f"[DONE] 최종 합성 저장: {FINAL_MERGED_PATH}")
+
+
+# ── 캐시 키 ──────────────────────────────────────────────
+
+def make_cache_key_for_eye_edit(eye_prompt, eye_part_names):
+    payload = {
+        "model": MODEL_NAME,
+        "eye_prompt": eye_prompt,
+        "eye_parts": eye_part_names,
+    }
+
+    hashes = {}
+
+    for name in eye_part_names:
+        if file_exists_in_work_parts(name):
+            hashes[name] = image_sha256(load_part(name))
+
+    payload["eye_part_hashes"] = hashes
+
+    text = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+    return sha256_bytes(text.encode("utf-8"))
+
+
+def save_eye_cache_parts(cache_key, part_images):
+    """
+    Gemini로 수정된 eye 파츠를 result/eye_edit_cache/cache_key 폴더에 저장
+    이후 같은 조건에서는 API 재호출 없이 이 파일들을 복사해 사용
+    """
+
+    cache_dir = os.path.join(EYE_CACHE_DIR, cache_key)
+    os.makedirs(cache_dir, exist_ok=True)
+
+    for filename, img in part_images.items():
+        img.save(os.path.join(cache_dir, filename), "PNG")
+
+
+def load_eye_cache_parts(cache_key, filenames):
+    """
+    캐시된 eye 파츠가 있으면 불러온다
+    """
+
+    cache_dir = os.path.join(EYE_CACHE_DIR, cache_key)
+
+    if not os.path.exists(cache_dir):
         return None
 
-    # 원래 crop 크기로 복원
-    result_img = result_img.resize(crop_size, Image.LANCZOS)
-    result_arr = np.array(result_img.convert("RGBA"))
+    result = {}
 
-    # 원본에 투명 배경이 있으면 원본 alpha를 그대로 적용
-    if has_alpha_bg:
-        result_arr[:, :, 3] = original_alpha
-    else:
-        # 투명 알파가 없는 경우 기존 코드처럼 어두운 배경을 제거
-        original_bg_mask = (crop_arr[:, :, :3].sum(axis=2) < 90)
-        result_arr[original_bg_mask, 3] = 0
+    for filename in filenames:
+        path = os.path.join(cache_dir, filename)
 
-        result_rgb_sum = result_arr[:, :, :3].sum(axis=2)
-        dark_mask = result_rgb_sum < (60 * 3)
-        result_arr[dark_mask, 3] = 0
+        if not os.path.exists(path):
+            return None
 
-        bright_mask = (
-            (result_arr[:, :, 0] > 240) &
-            (result_arr[:, :, 1] > 240) &
-            (result_arr[:, :, 2] > 240)
-        )
-        result_arr[bright_mask, 3] = 0
+        result[filename] = Image.open(path).convert("RGBA")
 
-    edited_part = Image.fromarray(result_arr, mode="RGBA")
-    return edited_part
+    return result
 
+
+# ── 메인 처리 ────────────────────────────────────────────
 
 def main():
-    api_key = "AIzaSyA97xc3LpVqsLbS8RQZRUkVtxjMKRSLzLg"
+    if not os.path.exists(PROMPTS_PATH):
+        raise FileNotFoundError(
+            f"prompts_cache_meta.json 파일이 없습니다: {PROMPTS_PATH}"
+        )
 
-    if not api_key:
-        print("❌ GEMINI_API_KEY 환경변수가 없어요")
-        print("예: setx GEMINI_API_KEY \"새_API_KEY\"")
-        sys.exit(1)
+    prepare_work_parts_folder()
 
-    if not os.path.exists(TEXTURE_PATH):
-        print(f"❌ 텍스처 파일 없음: {TEXTURE_PATH}")
-        sys.exit(1)
+    raw_prompts = load_json(PROMPTS_PATH)
+    prompts = extract_prompts(raw_prompts)
 
-    os.makedirs(EDITED_PARTS_DIR, exist_ok=True)
+    eye_prompt = prompts.get("eye")
+    eye_color = parse_rgb(prompts.get("eye-color"))
+    skin_color = parse_rgb(prompts.get("skin-color"))
+    hair_color = parse_rgb(prompts.get("hair-color"))
 
-    prompts = load_prompts()
+    print("[INFO] 읽은 프롬프트/색상")
+    print("eye:", eye_prompt)
+    print("eye-color:", eye_color)
+    print("skin-color:", skin_color)
+    print("hair-color:", hair_color)
 
-    print(f"✅ 텍스처 로드: {TEXTURE_PATH}")
-    texture = Image.open(TEXTURE_PATH).convert("RGBA")
-    final_texture = texture.copy()
+    if eye_prompt is None:
+        print("[WARN] eye 프롬프트가 없습니다. 눈 모양 수정은 스킵됩니다.")
 
-    client = genai.Client(api_key=api_key)
+    if eye_color is None:
+        print("[WARN] iris_rgb / eye-color가 없거나 형식이 잘못되었습니다")
 
-    edited_count = 0
+    if skin_color is None:
+        print("[WARN] skin_rgb / skin-color가 없거나 형식이 잘못되었습니다")
 
-    for part_name, box in PARTS.items():
-        # ONLY_PARTS가 있으면 그 파츠만 실행
-        if ONLY_PARTS and part_name not in ONLY_PARTS:
-            continue
+    if hair_color is None:
+        print("[WARN] hair_rgb / hair-color가 없거나 형식이 잘못되었습니다")
 
-        # prompts.json에 없으면 건너뜀
-        if part_name not in prompts:
-            print(f"[SKIP] prompts.json에 없음: {part_name}")
-            continue
+    client = genai.Client(api_key=API_KEY)
+    manifest = load_manifest()
 
-        part_prompt = prompts[part_name]
+    # 1 눈 모양 Gemini 수정
+    existing_eye_parts = list_existing_parts(EYE_PARTS)
 
-        # null 또는 빈 문자열이면 수정 안 함
-        if part_prompt is None or str(part_prompt).strip() == "":
-            print(f"[SKIP] 수정 없음: {part_name}")
-            continue
+    if eye_prompt and existing_eye_parts:
+        cache_key = make_cache_key_for_eye_edit(eye_prompt, existing_eye_parts)
 
-        x1, y1, x2, y2 = box
-        part_img = texture.crop((x1, y1, x2, y2))
+        cached_parts = None
 
-        try:
-            edited_part = edit_part_with_gemini(
-                client=client,
-                part_name=part_name,
-                part_img=part_img,
-                part_prompt=part_prompt
+        if USE_CACHE:
+            cached_parts = load_eye_cache_parts(cache_key, existing_eye_parts)
+
+        if cached_parts is not None:
+            print("[CACHE] eye 편집 결과 파츠를 캐시에서 불러와 적용합니다")
+
+            for filename, img in cached_parts.items():
+                save_part(img, filename)
+
+            manifest["eye_edit"] = {
+                "cache_key": cache_key,
+                "eye_parts": existing_eye_parts,
+                "cache_dir": os.path.join(EYE_CACHE_DIR, cache_key),
+            }
+
+            save_manifest(manifest)
+
+        else:
+            print("[STEP] eye Gemini 수정 시작")
+
+            eye_sheet, placements = make_horizontal_sheet(
+                existing_eye_parts,
+                padding=SHEET_PADDING
             )
 
-            if edited_part is None:
-                continue
+            eye_sheet.save(DEBUG_EYE_SHEET_INPUT, "PNG")
 
-            # 수정 파츠 저장
-            edited_part_path = os.path.join(EDITED_PARTS_DIR, f"{part_name}.png")
-            edited_part.save(edited_part_path, "PNG")
-            print(f"💾 수정 파츠 저장: {edited_part_path}")
+            edited_sheet = edit_eye_sheet_with_gemini(
+                client,
+                eye_sheet,
+                eye_prompt
+            )
 
-            # 원본 텍스처에 합성
-            final_texture.paste(edited_part, (x1, y1), edited_part)
-            print(f"🎨 텍스처 합성 완료: {part_name}")
+            edited_sheet.save(DEBUG_EYE_SHEET_OUTPUT, "PNG")
 
-            edited_count += 1
+            split_parts = split_sheet(edited_sheet, placements)
 
-            # quota 방지용 대기
-            time.sleep(REQUEST_SLEEP_SECONDS)
+            for filename, img in split_parts.items():
+                save_part(img, filename)
 
-        except Exception as e:
-            print(f"❌ 오류 발생: {part_name}")
-            print(e)
-            continue
+            save_eye_cache_parts(cache_key, split_parts)
 
-    # 최종 텍스처 저장
-    final_texture.save(FINAL_TEXTURE_PATH, "PNG")
+            manifest["eye_edit"] = {
+                "cache_key": cache_key,
+                "eye_parts": existing_eye_parts,
+                "cache_dir": os.path.join(EYE_CACHE_DIR, cache_key),
+            }
 
-    print("\n[DONE]")
-    print(f"수정된 파츠 수: {edited_count}")
-    print(f"최종 결과 저장: {FINAL_TEXTURE_PATH}")
+            save_manifest(manifest)
 
-    check = Image.open(FINAL_TEXTURE_PATH)
-    print(f"검증 모드: {check.mode}")
-    print(f"검증 크기: {check.size}")
+    else:
+        print("[SKIP] eye Gemini 수정 없음")
+
+    # 2 eye-color / iris_rgb 로컬 재색칠
+    if eye_color is not None and existing_eye_parts:
+        print("[STEP] iris_rgb 기준 눈 색 로컬 재색칠 시작")
+        print("[INFO] eye 대상:", existing_eye_parts)
+
+        for filename in existing_eye_parts:
+            img = load_part(filename)
+            recolored = recolor_iris_only(
+                img,
+                eye_color,
+                strength=COLOR_STRENGTH
+            )
+            save_part(recolored, filename)
+
+    else:
+        print("[SKIP] eye-color 재색칠 없음")
+
+    # 3 skin-color / skin_rgb 로컬 재색칠
+    skin_targets = list_existing_parts(
+        FACE_PARTS
+        + NECK_PARTS
+        + [
+            "part_128.png",
+            "part_129.png",
+        ]
+    )
+
+    if skin_color is not None and skin_targets:
+        print("[STEP] skin_rgb 기준 피부색 로컬 재색칠 시작")
+        print("[INFO] skin 대상:", skin_targets)
+
+        for filename in skin_targets:
+            img = load_part(filename)
+            recolored = recolor_preserve_shading(
+                img,
+                skin_color,
+                strength=COLOR_STRENGTH
+            )
+            save_part(recolored, filename)
+
+    else:
+        print("[SKIP] skin-color 재색칠 없음")
+
+    # 4 hair-color / hair_rgb 로컬 재색칠
+    hair_parts = get_hair_parts()
+    hair_shadow_parts = get_hair_shadow_parts()
+    hair_targets = list_existing_parts(hair_parts + hair_shadow_parts)
+
+    if hair_color is not None and hair_targets:
+        print("[STEP] hair_rgb 기준 머리색 로컬 재색칠 시작")
+        print("[INFO] hair 대상:", hair_targets)
+
+        for filename in hair_targets:
+            img = load_part(filename)
+            recolored = recolor_preserve_shading(
+                img,
+                hair_color,
+                strength=COLOR_STRENGTH
+            )
+            save_part(recolored, filename)
+
+    else:
+        print("[SKIP] hair-color 재색칠 없음")
+
+    # 5 bbox 기준 전체 합성
+    print("[STEP] 전체 파츠 bbox 합성 시작")
+    merge_all_parts_from_bbox()
+
+    print("\n[DONE] 모든 작업 완료")
+    print(f"[RESULT] 최종 결과: {FINAL_MERGED_PATH}")
+    print(f"[RESULT] 수정된 파츠 폴더: {WORK_PARTS_DIR}")
+    print(f"[INFO] 원본 parts 폴더는 보존됨: {ORIGINAL_PARTS_DIR}")
 
 
 if __name__ == "__main__":

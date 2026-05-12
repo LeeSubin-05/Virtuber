@@ -1,0 +1,15 @@
+# 가상 환경 폴더 제외
+.venv/
+venv/
+ENV/
+
+# VS Code 설정 폴더 및 히스토리 제외
+.vscode/
+.history/
+
+# 파이썬 캐시 파일 제외
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook 체크포인트 제외
+.ipynb_checkpoints/

@@ -1,0 +1,1150 @@
+[
+  {
+    "id": "part_005",
+    "old_file": "part_005.png",
+    "new_file": "cloth_neck_left.png",
+    "bbox": [
+      1882,
+      46,
+      2009,
+      225
+    ],
+    "width": 127,
+    "height": 179,
+    "area": 7807,
+    "bbox_area": 22733,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1882,
+      46,
+      2009,
+      225
+    ],
+    "scaled_expected_bbox": [
+      1882,
+      46,
+      2009,
+      225
+    ]
+  },
+  {
+    "id": "part_006",
+    "old_file": "part_006.png",
+    "new_file": "cloth_neck_right.png",
+    "bbox": [
+      2553,
+      47,
+      2661,
+      218
+    ],
+    "width": 108,
+    "height": 171,
+    "area": 7224,
+    "bbox_area": 18468,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2553,
+      47,
+      2661,
+      218
+    ],
+    "scaled_expected_bbox": [
+      2553,
+      47,
+      2661,
+      218
+    ]
+  },
+  {
+    "id": "part_008",
+    "old_file": "part_008.png",
+    "new_file": "hairband_left.png",
+    "bbox": [
+      2890,
+      80,
+      3369,
+      315
+    ],
+    "width": 479,
+    "height": 235,
+    "area": 62788,
+    "bbox_area": 112565,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2890,
+      80,
+      3369,
+      315
+    ],
+    "scaled_expected_bbox": [
+      2890,
+      80,
+      3369,
+      315
+    ]
+  },
+  {
+    "id": "part_009",
+    "old_file": "part_009.png",
+    "new_file": "hairband_right.png",
+    "bbox": [
+      3399,
+      91,
+      3888,
+      313
+    ],
+    "width": 489,
+    "height": 222,
+    "area": 62828,
+    "bbox_area": 108558,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3399,
+      91,
+      3888,
+      313
+    ],
+    "scaled_expected_bbox": [
+      3399,
+      91,
+      3888,
+      313
+    ]
+  },
+  {
+    "id": "part_010",
+    "old_file": "part_010.png",
+    "new_file": "arm_left.png",
+    "bbox": [
+      1780,
+      212,
+      2146,
+      592
+    ],
+    "width": 366,
+    "height": 380,
+    "area": 74273,
+    "bbox_area": 139080,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1780,
+      212,
+      2146,
+      592
+    ],
+    "scaled_expected_bbox": [
+      1780,
+      212,
+      2146,
+      592
+    ]
+  },
+  {
+    "id": "part_011",
+    "old_file": "part_011.png",
+    "new_file": "arm_right.png",
+    "bbox": [
+      2491,
+      220,
+      2865,
+      600
+    ],
+    "width": 374,
+    "height": 380,
+    "area": 74971,
+    "bbox_area": 142120,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2491,
+      220,
+      2865,
+      600
+    ],
+    "scaled_expected_bbox": [
+      2491,
+      220,
+      2865,
+      600
+    ]
+  },
+  {
+    "id": "part_012",
+    "old_file": "part_012.png",
+    "new_file": "cloth_neck_back.png",
+    "bbox": [
+      2211,
+      271,
+      2394,
+      412
+    ],
+    "width": 183,
+    "height": 141,
+    "area": 20837,
+    "bbox_area": 25803,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2211,
+      271,
+      2394,
+      412
+    ],
+    "scaled_expected_bbox": [
+      2211,
+      271,
+      2394,
+      412
+    ]
+  },
+  {
+    "id": "part_015",
+    "old_file": "part_015.png",
+    "new_file": "hairband.png",
+    "bbox": [
+      3200,
+      357,
+      3552,
+      473
+    ],
+    "width": 352,
+    "height": 116,
+    "area": 9960,
+    "bbox_area": 40832,
+    "match_iou": 0.9915,
+    "old_json_bbox": [
+      3200,
+      357,
+      3555,
+      473
+    ],
+    "scaled_expected_bbox": [
+      3200,
+      357,
+      3555,
+      473
+    ]
+  },
+  {
+    "id": "part_016",
+    "old_file": "part_016.png",
+    "new_file": "body_right.png",
+    "bbox": [
+      2337,
+      415,
+      2630,
+      772
+    ],
+    "width": 293,
+    "height": 357,
+    "area": 81133,
+    "bbox_area": 104601,
+    "match_iou": 0.9932,
+    "old_json_bbox": [
+      2337,
+      415,
+      2632,
+      772
+    ],
+    "scaled_expected_bbox": [
+      2337,
+      415,
+      2632,
+      772
+    ]
+  },
+  {
+    "id": "part_017",
+    "old_file": "part_017.png",
+    "new_file": "body_left.png",
+    "bbox": [
+      1984,
+      419,
+      2265,
+      775
+    ],
+    "width": 281,
+    "height": 356,
+    "area": 79117,
+    "bbox_area": 100036,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1984,
+      419,
+      2265,
+      775
+    ],
+    "scaled_expected_bbox": [
+      1984,
+      419,
+      2265,
+      775
+    ]
+  },
+  {
+    "id": "part_018",
+    "old_file": "part_018.png",
+    "new_file": "face.png",
+    "bbox": [
+      3153,
+      460,
+      3613,
+      1040
+    ],
+    "width": 460,
+    "height": 580,
+    "area": 207091,
+    "bbox_area": 266800,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3153,
+      460,
+      3613,
+      1040
+    ],
+    "scaled_expected_bbox": [
+      3153,
+      460,
+      3613,
+      1040
+    ]
+  },
+  {
+    "id": "part_019",
+    "old_file": "part_019.png",
+    "new_file": "pin1.png",
+    "bbox": [
+      3054,
+      472,
+      3134,
+      516
+    ],
+    "width": 80,
+    "height": 44,
+    "area": 1214,
+    "bbox_area": 3520,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3054,
+      472,
+      3134,
+      516
+    ],
+    "scaled_expected_bbox": [
+      3054,
+      472,
+      3134,
+      516
+    ]
+  },
+  {
+    "id": "part_020",
+    "old_file": "part_020.png",
+    "new_file": "pin2.png",
+    "bbox": [
+      3037,
+      511,
+      3122,
+      541
+    ],
+    "width": 85,
+    "height": 30,
+    "area": 1246,
+    "bbox_area": 2550,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3037,
+      511,
+      3122,
+      541
+    ],
+    "scaled_expected_bbox": [
+      3037,
+      511,
+      3122,
+      541
+    ]
+  },
+  {
+    "id": "part_021",
+    "old_file": "part_021.png",
+    "new_file": "pin3.png",
+    "bbox": [
+      3016,
+      547,
+      3099,
+      647
+    ],
+    "width": 83,
+    "height": 100,
+    "area": 4091,
+    "bbox_area": 8300,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3016,
+      547,
+      3099,
+      647
+    ],
+    "scaled_expected_bbox": [
+      3016,
+      547,
+      3099,
+      647
+    ]
+  },
+  {
+    "id": "part_023",
+    "old_file": "part_023.png",
+    "new_file": "body_1_right.png",
+    "bbox": [
+      2327,
+      796,
+      2635,
+      1403
+    ],
+    "width": 308,
+    "height": 607,
+    "area": 112609,
+    "bbox_area": 186956,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2327,
+      796,
+      2635,
+      1403
+    ],
+    "scaled_expected_bbox": [
+      2327,
+      796,
+      2635,
+      1403
+    ]
+  },
+  {
+    "id": "part_024",
+    "old_file": "part_024.png",
+    "new_file": "body_1_left.png",
+    "bbox": [
+      1950,
+      798,
+      2242,
+      1405
+    ],
+    "width": 292,
+    "height": 607,
+    "area": 110896,
+    "bbox_area": 177244,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1950,
+      798,
+      2242,
+      1405
+    ],
+    "scaled_expected_bbox": [
+      1950,
+      798,
+      2242,
+      1405
+    ]
+  },
+  {
+    "id": "part_030",
+    "old_file": "part_030.png",
+    "new_file": "neck.png",
+    "bbox": [
+      3216,
+      1088,
+      3554,
+      1420
+    ],
+    "width": 338,
+    "height": 332,
+    "area": 59291,
+    "bbox_area": 112216,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3216,
+      1088,
+      3554,
+      1420
+    ],
+    "scaled_expected_bbox": [
+      3216,
+      1088,
+      3554,
+      1420
+    ]
+  },
+  {
+    "id": "part_054",
+    "old_file": "part_054.png",
+    "new_file": "hair_1.png",
+    "bbox": [
+      3627,
+      2201,
+      3961,
+      2792
+    ],
+    "width": 334,
+    "height": 591,
+    "area": 59357,
+    "bbox_area": 197394,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3627,
+      2201,
+      3961,
+      2792
+    ],
+    "scaled_expected_bbox": [
+      3627,
+      2201,
+      3961,
+      2792
+    ]
+  },
+  {
+    "id": "part_055",
+    "old_file": "part_055.png",
+    "new_file": "hair_back_2.png",
+    "bbox": [
+      3053,
+      2269,
+      3358,
+      2487
+    ],
+    "width": 305,
+    "height": 218,
+    "area": 51816,
+    "bbox_area": 66490,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3053,
+      2269,
+      3358,
+      2487
+    ],
+    "scaled_expected_bbox": [
+      3053,
+      2269,
+      3358,
+      2487
+    ]
+  },
+  {
+    "id": "part_056",
+    "old_file": "part_056.png",
+    "new_file": "hair_2.png",
+    "bbox": [
+      2450,
+      2333,
+      2778,
+      2926
+    ],
+    "width": 328,
+    "height": 593,
+    "area": 59869,
+    "bbox_area": 194504,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2450,
+      2333,
+      2778,
+      2926
+    ],
+    "scaled_expected_bbox": [
+      2450,
+      2333,
+      2778,
+      2926
+    ]
+  },
+  {
+    "id": "part_057",
+    "old_file": "part_057.png",
+    "new_file": "hair_shadow_1.png",
+    "bbox": [
+      724,
+      2342,
+      975,
+      2769
+    ],
+    "width": 251,
+    "height": 427,
+    "area": 66207,
+    "bbox_area": 107177,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      724,
+      2342,
+      975,
+      2769
+    ],
+    "scaled_expected_bbox": [
+      724,
+      2342,
+      975,
+      2769
+    ]
+  },
+  {
+    "id": "part_058",
+    "old_file": "part_058.png",
+    "new_file": "hair_shadow_2.png",
+    "bbox": [
+      1748,
+      2347,
+      2023,
+      2984
+    ],
+    "width": 275,
+    "height": 637,
+    "area": 71521,
+    "bbox_area": 175175,
+    "match_iou": 0.9984,
+    "old_json_bbox": [
+      1748,
+      2347,
+      2023,
+      2985
+    ],
+    "scaled_expected_bbox": [
+      1748,
+      2347,
+      2023,
+      2985
+    ]
+  },
+  {
+    "id": "part_059",
+    "old_file": "part_059.png",
+    "new_file": "hair_shadow_3.png",
+    "bbox": [
+      1163,
+      2357,
+      1454,
+      3007
+    ],
+    "width": 291,
+    "height": 650,
+    "area": 66631,
+    "bbox_area": 189150,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1163,
+      2357,
+      1454,
+      3007
+    ],
+    "scaled_expected_bbox": [
+      1163,
+      2357,
+      1454,
+      3007
+    ]
+  },
+  {
+    "id": "part_060",
+    "old_file": "part_060.png",
+    "new_file": "hair_shadow_4.png",
+    "bbox": [
+      2038,
+      2357,
+      2268,
+      2757
+    ],
+    "width": 230,
+    "height": 400,
+    "area": 59155,
+    "bbox_area": 92000,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2038,
+      2357,
+      2268,
+      2757
+    ],
+    "scaled_expected_bbox": [
+      2038,
+      2357,
+      2268,
+      2757
+    ]
+  },
+  {
+    "id": "part_061",
+    "old_file": "part_061.png",
+    "new_file": "hair_shadow_5.png",
+    "bbox": [
+      961,
+      2361,
+      1232,
+      3013
+    ],
+    "width": 271,
+    "height": 652,
+    "area": 68388,
+    "bbox_area": 176692,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      961,
+      2361,
+      1232,
+      3013
+    ],
+    "scaled_expected_bbox": [
+      961,
+      2361,
+      1232,
+      3013
+    ]
+  },
+  {
+    "id": "part_062",
+    "old_file": "part_062.png",
+    "new_file": "hair_shadow_6.png",
+    "bbox": [
+      1501,
+      2361,
+      1801,
+      3002
+    ],
+    "width": 300,
+    "height": 641,
+    "area": 72787,
+    "bbox_area": 192300,
+    "match_iou": 0.9984,
+    "old_json_bbox": [
+      1501,
+      2361,
+      1801,
+      3003
+    ],
+    "scaled_expected_bbox": [
+      1501,
+      2361,
+      1801,
+      3003
+    ]
+  },
+  {
+    "id": "part_063",
+    "old_file": "part_063.png",
+    "new_file": "hair_3.png",
+    "bbox": [
+      2661,
+      2444,
+      2952,
+      3094
+    ],
+    "width": 291,
+    "height": 650,
+    "area": 65707,
+    "bbox_area": 189150,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2661,
+      2444,
+      2952,
+      3094
+    ],
+    "scaled_expected_bbox": [
+      2661,
+      2444,
+      2952,
+      3094
+    ]
+  },
+  {
+    "id": "part_064",
+    "old_file": "part_064.png",
+    "new_file": "hair_4.png",
+    "bbox": [
+      3453,
+      2446,
+      3753,
+      3087
+    ],
+    "width": 300,
+    "height": 641,
+    "area": 68693,
+    "bbox_area": 192300,
+    "match_iou": 0.9984,
+    "old_json_bbox": [
+      3453,
+      2446,
+      3753,
+      3088
+    ],
+    "scaled_expected_bbox": [
+      3453,
+      2446,
+      3753,
+      3088
+    ]
+  },
+  {
+    "id": "part_065",
+    "old_file": "part_065.png",
+    "new_file": "hair_shadow_7.png",
+    "bbox": [
+      1365,
+      2478,
+      1547,
+      2897
+    ],
+    "width": 182,
+    "height": 419,
+    "area": 48466,
+    "bbox_area": 76258,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      1365,
+      2478,
+      1547,
+      2897
+    ],
+    "scaled_expected_bbox": [
+      1365,
+      2478,
+      1547,
+      2897
+    ]
+  },
+  {
+    "id": "part_068",
+    "old_file": "part_068.png",
+    "new_file": "hair_5.png",
+    "bbox": [
+      3318,
+      2541,
+      3547,
+      2940
+    ],
+    "width": 229,
+    "height": 399,
+    "area": 55883,
+    "bbox_area": 91371,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3318,
+      2541,
+      3547,
+      2940
+    ],
+    "scaled_expected_bbox": [
+      3318,
+      2541,
+      3547,
+      2940
+    ]
+  },
+  {
+    "id": "part_069",
+    "old_file": "part_069.png",
+    "new_file": "hair_6.png",
+    "bbox": [
+      2872,
+      2543,
+      3124,
+      2971
+    ],
+    "width": 252,
+    "height": 428,
+    "area": 63718,
+    "bbox_area": 107856,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2872,
+      2543,
+      3124,
+      2971
+    ],
+    "scaled_expected_bbox": [
+      2872,
+      2543,
+      3124,
+      2971
+    ]
+  },
+  {
+    "id": "part_070",
+    "old_file": "part_070.png",
+    "new_file": "hair_7.png",
+    "bbox": [
+      3135,
+      2545,
+      3308,
+      2964
+    ],
+    "width": 173,
+    "height": 419,
+    "area": 44435,
+    "bbox_area": 72487,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3135,
+      2545,
+      3308,
+      2964
+    ],
+    "scaled_expected_bbox": [
+      3135,
+      2545,
+      3308,
+      2964
+    ]
+  },
+  {
+    "id": "part_071",
+    "old_file": "part_071.png",
+    "new_file": "hair_back.png",
+    "bbox": [
+      3025,
+      3030,
+      3452,
+      3420
+    ],
+    "width": 427,
+    "height": 390,
+    "area": 128544,
+    "bbox_area": 166530,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3025,
+      3030,
+      3452,
+      3420
+    ],
+    "scaled_expected_bbox": [
+      3025,
+      3030,
+      3452,
+      3420
+    ]
+  },
+  {
+    "id": "part_115",
+    "old_file": "part_115.png",
+    "new_file": "eye_1.png",
+    "bbox": [
+      2666,
+      3902,
+      2741,
+      4002
+    ],
+    "width": 75,
+    "height": 100,
+    "area": 5779,
+    "bbox_area": 7500,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2666,
+      3902,
+      2741,
+      4002
+    ],
+    "scaled_expected_bbox": [
+      2666,
+      3902,
+      2741,
+      4002
+    ]
+  },
+  {
+    "id": "part_117",
+    "old_file": "part_117.png",
+    "new_file": "eye_3.png",
+    "bbox": [
+      2856,
+      3904,
+      2928,
+      4004
+    ],
+    "width": 72,
+    "height": 100,
+    "area": 5710,
+    "bbox_area": 7200,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2856,
+      3904,
+      2928,
+      4004
+    ],
+    "scaled_expected_bbox": [
+      2856,
+      3904,
+      2928,
+      4004
+    ]
+  },
+  {
+    "id": "part_116",
+    "old_file": "part_116.png",
+    "new_file": "eye_2.png",
+    "bbox": [
+      2583,
+      3905,
+      2656,
+      4005
+    ],
+    "width": 73,
+    "height": 100,
+    "area": 5720,
+    "bbox_area": 7300,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2583,
+      3905,
+      2656,
+      4005
+    ],
+    "scaled_expected_bbox": [
+      2583,
+      3905,
+      2656,
+      4005
+    ]
+  },
+  {
+    "id": "part_119",
+    "old_file": "part_119.png",
+    "new_file": "eye_4.png",
+    "bbox": [
+      2759,
+      3906,
+      2831,
+      4007
+    ],
+    "width": 72,
+    "height": 101,
+    "area": 5713,
+    "bbox_area": 7272,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      2759,
+      3906,
+      2831,
+      4007
+    ],
+    "scaled_expected_bbox": [
+      2759,
+      3906,
+      2831,
+      4007
+    ]
+  },
+  {
+    "id": "part_128",
+    "old_file": "part_128.png",
+    "new_file": "part_128.png",
+    "bbox": [
+      3525,
+      4006,
+      3545,
+      4048
+    ],
+    "width": 20,
+    "height": 42,
+    "area": 615,
+    "bbox_area": 840,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3525,
+      4006,
+      3545,
+      4048
+    ],
+    "scaled_expected_bbox": [
+      3525,
+      4006,
+      3545,
+      4048
+    ]
+  },
+  {
+    "id": "part_129",
+    "old_file": "part_129.png",
+    "new_file": "part_129.png",
+    "bbox": [
+      3296,
+      4011,
+      3316,
+      4053
+    ],
+    "width": 20,
+    "height": 42,
+    "area": 614,
+    "bbox_area": 840,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3296,
+      4011,
+      3316,
+      4053
+    ],
+    "scaled_expected_bbox": [
+      3296,
+      4011,
+      3316,
+      4053
+    ]
+  },
+  {
+    "id": "part_130",
+    "old_file": "part_130.png",
+    "new_file": "part_130.png",
+    "bbox": [
+      3488,
+      4013,
+      3514,
+      4044
+    ],
+    "width": 26,
+    "height": 31,
+    "area": 597,
+    "bbox_area": 806,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3488,
+      4013,
+      3514,
+      4044
+    ],
+    "scaled_expected_bbox": [
+      3488,
+      4013,
+      3514,
+      4044
+    ]
+  },
+  {
+    "id": "part_131",
+    "old_file": "part_131.png",
+    "new_file": "part_131.png",
+    "bbox": [
+      3330,
+      4018,
+      3356,
+      4049
+    ],
+    "width": 26,
+    "height": 31,
+    "area": 596,
+    "bbox_area": 806,
+    "match_iou": 1.0,
+    "old_json_bbox": [
+      3330,
+      4018,
+      3356,
+      4049
+    ],
+    "scaled_expected_bbox": [
+      3330,
+      4018,
+      3356,
+      4049
+    ]
+  }
+]

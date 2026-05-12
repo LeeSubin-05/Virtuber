@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>색상 선택도구</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 480px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 28px;
+        }
+
+        .section { margin-bottom: 32px; }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .picker-row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .preview-box {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            background: #000;
+        }
+
+        .hex-text {
+            font-size: 11px;
+            font-family: monospace;
+            color: #999;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .picker-controls {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .canvas-wrap {
+            position: relative;
+            width: 100%;
+            height: 110px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+
+        .cursor-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.35);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        .hue-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            background: linear-gradient(to right,
+                #f00 0%, #ff0 17%, #0f0 33%,
+                #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+        }
+
+        .hue-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid rgba(0,0,0,0.3);
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+
+        .hue-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid rgba(0,0,0,0.3);
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 0 0 28px;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 4px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+            color: #111;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .save-btn:hover { background: #f0f0f0; }
+        .save-btn:active { background: #e8e8e8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>색상 선택도구</h1>
+
+        <div class="section">
+            <p class="section-label">눈 색상</p>
+            <div class="picker-row">
+                <div>
+                    <div class="preview-box" id="prev-eye"></div>
+                    <p class="hex-text" id="hex-eye">#000000</p>
+                </div>
+                <div class="picker-controls">
+                    <div class="canvas-wrap" id="cw-eye">
+                        <canvas id="cv-eye"></canvas>
+                        <div class="cursor-dot" id="cur-eye"></div>
+                    </div>
+                    <input type="range" class="hue-slider" id="hue-eye" min="0" max="360" value="200" step="1">
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <p class="section-label">머리 색상</p>
+            <div class="picker-row">
+                <div>
+                    <div class="preview-box" id="prev-hair"></div>
+                    <p class="hex-text" id="hex-hair">#000000</p>
+                </div>
+                <div class="picker-controls">
+                    <div class="canvas-wrap" id="cw-hair">
+                        <canvas id="cv-hair"></canvas>
+                        <div class="cursor-dot" id="cur-hair"></div>
+                    </div>
+                    <input type="range" class="hue-slider" id="hue-hair" min="0" max="360" value="30" step="1">
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <p class="section-label">피부 색상</p>
+            <div class="picker-row">
+                <div>
+                    <div class="preview-box" id="prev-skin"></div>
+                    <p class="hex-text" id="hex-skin">#000000</p>
+                </div>
+                <div class="picker-controls">
+                    <div class="canvas-wrap" id="cw-skin">
+                        <canvas id="cv-skin"></canvas>
+                        <div class="cursor-dot" id="cur-skin"></div>
+                    </div>
+                    <input type="range" class="hue-slider" id="hue-skin" min="0" max="360" value="20" step="1">
+                </div>
+            </div>
+        </div>
+
+        <button class="save-btn" id="saveBtn">💾 JSON으로 저장</button>
+    </div>
+
+    <script>
+        var colorState = {
+            eye:  { r: 0, g: 0, b: 0, hex: '#000000' },
+            hair: { r: 0, g: 0, b: 0, hex: '#000000' },
+            skin: { r: 0, g: 0, b: 0, hex: '#000000' }
+        };
+
+        function hsvToRgb(h, s, v) {
+            var i = Math.floor(h / 60) % 6;
+            var f = h / 60 - Math.floor(h / 60);
+            var p = v * (1 - s);
+            var q = v * (1 - f * s);
+            var t = v * (1 - (1 - f) * s);
+            var r, g, b;
+            if (i === 0) { r = v; g = t; b = p; }
+            else if (i === 1) { r = q; g = v; b = p; }
+            else if (i === 2) { r = p; g = v; b = t; }
+            else if (i === 3) { r = p; g = q; b = v; }
+            else if (i === 4) { r = t; g = p; b = v; }
+            else { r = v; g = p; b = q; }
+            return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+        }
+
+        function toHex2(n) { return n.toString(16).padStart(2, '0'); }
+
+        function drawGradient(canvas, hue) {
+            var ctx = canvas.getContext('2d');
+            var w = canvas.width, h = canvas.height;
+            var base = hsvToRgb(hue, 1, 1);
+            ctx.clearRect(0, 0, w, h);
+            var gW = ctx.createLinearGradient(0, 0, w, 0);
+            gW.addColorStop(0, '#fff');
+            gW.addColorStop(1, 'rgb(' + base[0] + ',' + base[1] + ',' + base[2] + ')');
+            ctx.fillStyle = gW;
+            ctx.fillRect(0, 0, w, h);
+            var gB = ctx.createLinearGradient(0, 0, 0, h);
+            gB.addColorStop(0, 'rgba(0,0,0,0)');
+            gB.addColorStop(1, '#000');
+            ctx.fillStyle = gB;
+            ctx.fillRect(0, 0, w, h);
+        }
+
+        function setupPicker(id, initHue, initSx, initSy) {
+            var canvas = document.getElementById('cv-' + id);
+            var wrap = document.getElementById('cw-' + id);
+            var hueSlider = document.getElementById('hue-' + id);
+            var cursor = document.getElementById('cur-' + id);
+            var preview = document.getElementById('prev-' + id);
+            var hexSpan = document.getElementById('hex-' + id);
+
+            var state = { hue: initHue, sx: initSx, sy: initSy };
+
+            function resize() {
+                canvas.width = wrap.clientWidth || 320;
+                canvas.height = wrap.clientHeight || 110;
+                drawGradient(canvas, state.hue);
+            }
+
+            function updateColor() {
+                var rgb = hsvToRgb(state.hue, state.sx, 1 - state.sy);
+                var hex = '#' + toHex2(rgb[0]) + toHex2(rgb[1]) + toHex2(rgb[2]);
+                preview.style.background = hex;
+                hexSpan.textContent = hex.toUpperCase();
+                cursor.style.left = (state.sx * 100) + '%';
+                cursor.style.top = (state.sy * 100) + '%';
+
+                colorState[id] = { r: rgb[0], g: rgb[1], b: rgb[2], hex: hex.toUpperCase() };
+            }
+
+            function pickAt(e) {
+                var rect = canvas.getBoundingClientRect();
+                var cx = e.touches ? e.touches[0].clientX : e.clientX;
+                var cy = e.touches ? e.touches[0].clientY : e.clientY;
+                state.sx = Math.max(0, Math.min(1, (cx - rect.left) / rect.width));
+                state.sy = Math.max(0, Math.min(1, (cy - rect.top) / rect.height));
+                updateColor();
+            }
+
+            var dragging = false;
+            wrap.addEventListener('mousedown', function (e) { dragging = true; pickAt(e); });
+            document.addEventListener('mousemove', function (e) { if (dragging) pickAt(e); });
+            document.addEventListener('mouseup', function () { dragging = false; });
+            wrap.addEventListener('touchstart', function (e) { e.preventDefault(); pickAt(e); }, { passive: false });
+            wrap.addEventListener('touchmove', function (e) { e.preventDefault(); pickAt(e); }, { passive: false });
+
+            hueSlider.addEventListener('input', function () {
+                state.hue = parseInt(this.value);
+                drawGradient(canvas, state.hue);
+                updateColor();
+            });
+
+            resize();
+            updateColor();
+            window.addEventListener('resize', resize);
+        }
+
+        setupPicker('eye', 200, 0.9, 0.1);
+        setupPicker('hair', 30, 0.75, 0.45);
+        setupPicker('skin', 20, 0.4, 0.2);
+
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            var data = {
+                eye:  { r: colorState.eye.r,  g: colorState.eye.g,  b: colorState.eye.b,  hex: colorState.eye.hex  },
+                hair: { r: colorState.hair.r, g: colorState.hair.g, b: colorState.hair.b, hex: colorState.hair.hex },
+                skin: { r: colorState.skin.r, g: colorState.skin.g, b: colorState.skin.b, hex: colorState.skin.hex }
+            };
+            var json = JSON.stringify(data, null, 2);
+            var blob = new Blob([json], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'colors.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

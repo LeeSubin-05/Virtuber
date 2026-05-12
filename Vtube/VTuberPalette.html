@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Range Sliders</title>
+    <style>
+        body { margin: 0 auto; width: 50%; }
+        .slidecontainer { width: 100%; margin-top: 100px; }
+        .slider {
+            appearance: none;
+            width: 50%; height: 10px;
+            border-radius: 5px; background: #ccc; outline: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 15px; height: 15px;
+            border-radius: 50%; background: #00f; cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 15px; height: 15px;
+            border-radius: 50%; background: #00f; cursor: pointer;
+        }
+        .colorBox {
+            width: 100px; height: 100px;
+            background: rgb(0, 0, 0);
+            border: 1px solid #ccc; margin-top: 20px;
+        }
+        .section { margin-bottom: 60px; }
+    </style>
+</head>
+<body>
+    <div class="slidecontainer">
+
+        <div class="section">
+            <p>눈 색상</p>
+            <div class="colorBox" id="box-eye"></div>
+            <p>R: <input type="range" min="0" max="255" value="0" class="slider" data-section="eye" data-ch="R"> <span>0</span></p>
+            <p>G: <input type="range" min="0" max="255" value="0" class="slider" data-section="eye" data-ch="G"> <span>0</span></p>
+            <p>B: <input type="range" min="0" max="255" value="0" class="slider" data-section="eye" data-ch="B"> <span>0</span></p>
+        </div>
+
+        <div class="section">
+            <p>머리 색상</p>
+            <div class="colorBox" id="box-hair"></div>
+            <p>R: <input type="range" min="0" max="255" value="0" class="slider" data-section="hair" data-ch="R"> <span>0</span></p>
+            <p>G: <input type="range" min="0" max="255" value="0" class="slider" data-section="hair" data-ch="G"> <span>0</span></p>
+            <p>B: <input type="range" min="0" max="255" value="0" class="slider" data-section="hair" data-ch="B"> <span>0</span></p>
+        </div>
+
+        <div class="section">
+            <p>피부 색상</p>
+            <div class="colorBox" id="box-skin"></div>
+            <p>R: <input type="range" min="0" max="255" value="0" class="slider" data-section="skin" data-ch="R"> <span>0</span></p>
+            <p>G: <input type="range" min="0" max="255" value="0" class="slider" data-section="skin" data-ch="G"> <span>0</span></p>
+            <p>B: <input type="range" min="0" max="255" value="0" class="slider" data-section="skin" data-ch="B"> <span>0</span></p>
+        </div>
+
+    </div>
+
+    <script>
+        var state = {
+            eye:  { R: 0, G: 0, B: 0 },
+            hair: { R: 0, G: 0, B: 0 },
+            skin: { R: 0, G: 0, B: 0 }
+        };
+
+        function toHex(v) {
+            return v.toString(16).padStart(2, '0');
+        }
+
+        document.querySelectorAll('.slider').forEach(function(slider) {
+            slider.oninput = function() {
+                var section = this.dataset.section;
+                var ch = this.dataset.ch;
+                state[section][ch] = parseInt(this.value);
+                this.nextElementSibling.textContent = this.value;
+
+                var s = state[section];
+                document.getElementById('box-' + section).style.background =
+                    'rgb(' + s.R + ', ' + s.G + ', ' + s.B + ')';
+            };
+        });
+    </script>
+</body>
+</html>

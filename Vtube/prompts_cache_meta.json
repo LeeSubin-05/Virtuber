@@ -1,0 +1,39 @@
+{
+    "cache_key": "e559b03a9394804bc3883ac87ef290ce9ccc7de1349773eaf19fec907c6a0684",
+    "model": "gemini-2.5-flash",
+    "hair_rgb": [
+        0,
+        0,
+        255
+    ],
+    "iris_rgb": [
+        0,
+        0,
+        255
+    ],
+    "skin_rgb": [
+        255,
+        255,
+        0
+    ],
+    "part_names": [
+        "hair_long_back_left",
+        "hair_bangs_center_set",
+        "hair_pink_twin_set",
+        "hair_or_accessory_purple_lower_left_candidate",
+        "bunny_ears_pair",
+        "face_head_base_set",
+        "face_expression_eye_set",
+        "upper_body_outfit_set",
+        "skirt",
+        "legs_stockings_pair",
+        "shoes_pair",
+        "shorts_underwear",
+        "lower_leg_boots_socks_set",
+        "arm_hand_set",
+        "small_detached_body_parts",
+        "ribbon_bow_accessory_set",
+        "effect_symbols_top_right",
+        "small_top_center_parts"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "eye_edit": {
+        "cache_key": "6abee10f795a5543240441ed6db1aa78f97a2571b6ca97e899af2388043edd77",
+        "eye_parts": [
+            "eye_1.png",
+            "eye_2.png",
+            "eye_3.png",
+            "eye_4.png"
+        ],
+        "cache_dir": "C:\\Users\\82106\\OneDrive\\바탕 화면\\Vtube\\result\\eye_edit_cache\\6abee10f795a5543240441ed6db1aa78f97a2571b6ca97e899af2388043edd77"
+    },
+    "hair_redraw": {
+        "cache_key": "1e9568124365dc55d516d4220d2dfeb9c1ab6154cae7f3f4476086f1742d80d3",
+        "hair_parts": [
+            "hair_1.png",
+            "hair_2.png",
+            "hair_3.png",
+            "hair_4.png",
+            "hair_5.png",
+            "hair_6.png",
+            "hair_7.png",
+            "hair_back.png",
+            "hair_back_2.png",
+            "hair_shadow_1.png",
+            "hair_shadow_2.png",
+            "hair_shadow_3.png",
+            "hair_shadow_4.png",
+            "hair_shadow_5.png",
+            "hair_shadow_6.png",
+            "hair_shadow_7.png"
+        ],
+        "cache_dir": "C:\\Users\\82106\\OneDrive\\바탕 화면\\Vtube\\result\\hair_redraw_cache\\1e9568124365dc55d516d4220d2dfeb9c1ab6154cae7f3f4476086f1742d80d3",
+        "method": "erase_slot_redraw_v1"
+    }
+}
