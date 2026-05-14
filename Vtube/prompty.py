@@ -38,16 +38,17 @@ model = genai.GenerativeModel(MODEL_NAME)
 # ── 사용자 입력값 ─────────────────────────────────────────
 
 # 사용자 얼굴 사진 경로
-FACE_IMAGE_PATH = "user.jpg"
+FACE_IMAGE_PATH = "photos/v_photo_image.png"
 
 # 사용자가 원하는 전체 방향
 USER_REQUEST_TEXT = "사진의 내 모습을 최대한 살려서 만들어줘."
 
 # 사용자가 직접 입력할 RGB값
-# 예시값이므로 원하는 값으로 바꾸면 됨
-USER_HAIR_RGB = (0, 0, 255)      # 머리카락 색
-USER_IRIS_RGB = (0, 0, 255)      # 눈동자 색
-USER_SKIN_RGB = (255, 255, 0)   # 피부색
+with open(r'\colors.json', 'r', encoding='utf-8') as f: # !!다운로드 폴더 경로를 colors.json 앞에 작성하기!!
+    colors = json.load(f)
+USER_HAIR_RGB = (colors['hair']['r'], colors['hair']['g'], colors['hair']['b'])      # 머리카락 색
+USER_IRIS_RGB = (colors['eye']['r'], colors['eye']['g'], colors['eye']['b'])      # 눈동자 색
+USER_SKIN_RGB = (colors['skin']['r'], colors['skin']['g'], colors['skin']['b'])   # 피부색
 
 
 # ── 저장 경로 ────────────────────────────────────────────
