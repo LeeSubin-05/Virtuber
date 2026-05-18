@@ -1,0 +1,6890 @@
+[
+  {
+    "id": "part_000",
+    "old_file": "part_000.png",
+    "new_file": "skin_000.png",
+    "bbox": [
+      7077,
+      36,
+      7491,
+      634
+    ],
+    "width": 414,
+    "height": 598,
+    "area": 185721,
+    "bbox_area": 247572,
+    "match_iou": null,
+    "old_json_bbox": [
+      7077,
+      36,
+      7491,
+      634
+    ],
+    "scaled_expected_bbox": [
+      7077,
+      36,
+      7491,
+      634
+    ]
+  },
+  {
+    "id": "part_001",
+    "old_file": "part_001.png",
+    "new_file": "hair_001.png",
+    "bbox": [
+      7552,
+      39,
+      7704,
+      706
+    ],
+    "width": 152,
+    "height": 667,
+    "area": 32451,
+    "bbox_area": 101384,
+    "match_iou": null,
+    "old_json_bbox": [
+      7552,
+      39,
+      7704,
+      706
+    ],
+    "scaled_expected_bbox": [
+      7552,
+      39,
+      7704,
+      706
+    ]
+  },
+  {
+    "id": "part_002",
+    "old_file": "part_002.png",
+    "new_file": "cloth_002.png",
+    "bbox": [
+      6661,
+      46,
+      7018,
+      1488
+    ],
+    "width": 357,
+    "height": 1442,
+    "area": 258514,
+    "bbox_area": 514794,
+    "match_iou": null,
+    "old_json_bbox": [
+      6661,
+      46,
+      7018,
+      1488
+    ],
+    "scaled_expected_bbox": [
+      6661,
+      46,
+      7018,
+      1488
+    ]
+  },
+  {
+    "id": "part_003",
+    "old_file": "part_003.png",
+    "new_file": "hair_003.png",
+    "bbox": [
+      2777,
+      52,
+      3531,
+      2816
+    ],
+    "width": 754,
+    "height": 2764,
+    "area": 847541,
+    "bbox_area": 2084056,
+    "match_iou": null,
+    "old_json_bbox": [
+      2777,
+      52,
+      3531,
+      2816
+    ],
+    "scaled_expected_bbox": [
+      2777,
+      52,
+      3531,
+      2816
+    ]
+  },
+  {
+    "id": "part_004",
+    "old_file": "part_004.png",
+    "new_file": "hair_004.png",
+    "bbox": [
+      3598,
+      52,
+      4351,
+      2816
+    ],
+    "width": 753,
+    "height": 2764,
+    "area": 842632,
+    "bbox_area": 2081292,
+    "match_iou": null,
+    "old_json_bbox": [
+      3598,
+      52,
+      4351,
+      2816
+    ],
+    "scaled_expected_bbox": [
+      3598,
+      52,
+      4351,
+      2816
+    ]
+  },
+  {
+    "id": "part_006",
+    "old_file": "part_006.png",
+    "new_file": "skin_006.png",
+    "bbox": [
+      5168,
+      52,
+      5688,
+      2759
+    ],
+    "width": 520,
+    "height": 2707,
+    "area": 720900,
+    "bbox_area": 1407640,
+    "match_iou": null,
+    "old_json_bbox": [
+      5168,
+      52,
+      5688,
+      2759
+    ],
+    "scaled_expected_bbox": [
+      5168,
+      52,
+      5688,
+      2759
+    ]
+  },
+  {
+    "id": "part_005",
+    "old_file": "part_005.png",
+    "new_file": "hair_005.png",
+    "bbox": [
+      4422,
+      53,
+      5107,
+      2985
+    ],
+    "width": 685,
+    "height": 2932,
+    "area": 1062749,
+    "bbox_area": 2008420,
+    "match_iou": null,
+    "old_json_bbox": [
+      4422,
+      53,
+      5107,
+      2985
+    ],
+    "scaled_expected_bbox": [
+      4422,
+      53,
+      5107,
+      2985
+    ]
+  },
+  {
+    "id": "part_007",
+    "old_file": "part_007.png",
+    "new_file": "hair_007.png",
+    "bbox": [
+      93,
+      108,
+      2701,
+      2277
+    ],
+    "width": 2608,
+    "height": 2169,
+    "area": 3818606,
+    "bbox_area": 5656752,
+    "match_iou": null,
+    "old_json_bbox": [
+      93,
+      108,
+      2701,
+      2277
+    ],
+    "scaled_expected_bbox": [
+      93,
+      108,
+      2701,
+      2277
+    ]
+  },
+  {
+    "id": "part_008",
+    "old_file": "part_008.png",
+    "new_file": "cloth_008.png",
+    "bbox": [
+      5880,
+      171,
+      6505,
+      1469
+    ],
+    "width": 625,
+    "height": 1298,
+    "area": 408044,
+    "bbox_area": 811250,
+    "match_iou": null,
+    "old_json_bbox": [
+      5880,
+      171,
+      6505,
+      1469
+    ],
+    "scaled_expected_bbox": [
+      5880,
+      171,
+      6505,
+      1469
+    ]
+  },
+  {
+    "id": "part_009",
+    "old_file": "part_009.png",
+    "new_file": "blusher_009.png",
+    "bbox": [
+      7816,
+      231,
+      8013,
+      761
+    ],
+    "width": 197,
+    "height": 530,
+    "area": 92491,
+    "bbox_area": 104410,
+    "match_iou": null,
+    "old_json_bbox": [
+      7816,
+      231,
+      8013,
+      761
+    ],
+    "scaled_expected_bbox": [
+      7816,
+      231,
+      8013,
+      761
+    ]
+  },
+  {
+    "id": "part_010",
+    "old_file": "part_010.png",
+    "new_file": "pin_010.png",
+    "bbox": [
+      7446,
+      687,
+      7483,
+      719
+    ],
+    "width": 37,
+    "height": 32,
+    "area": 1019,
+    "bbox_area": 1184,
+    "match_iou": null,
+    "old_json_bbox": [
+      7446,
+      687,
+      7483,
+      719
+    ],
+    "scaled_expected_bbox": [
+      7446,
+      687,
+      7483,
+      719
+    ]
+  },
+  {
+    "id": "part_011",
+    "old_file": "part_011.png",
+    "new_file": "hair_011.png",
+    "bbox": [
+      7090,
+      697,
+      7388,
+      1381
+    ],
+    "width": 298,
+    "height": 684,
+    "area": 62464,
+    "bbox_area": 203832,
+    "match_iou": null,
+    "old_json_bbox": [
+      7090,
+      697,
+      7388,
+      1381
+    ],
+    "scaled_expected_bbox": [
+      7090,
+      697,
+      7388,
+      1381
+    ]
+  },
+  {
+    "id": "part_012",
+    "old_file": "part_012.png",
+    "new_file": "mouth_012.png",
+    "bbox": [
+      7708,
+      755,
+      7715,
+      772
+    ],
+    "width": 7,
+    "height": 17,
+    "area": 94,
+    "bbox_area": 119,
+    "match_iou": null,
+    "old_json_bbox": [
+      7708,
+      755,
+      7715,
+      772
+    ],
+    "scaled_expected_bbox": [
+      7708,
+      755,
+      7715,
+      772
+    ]
+  },
+  {
+    "id": "part_013",
+    "old_file": "part_013.png",
+    "new_file": "cloth_013.png",
+    "bbox": [
+      7447,
+      758,
+      7672,
+      1213
+    ],
+    "width": 225,
+    "height": 455,
+    "area": 80205,
+    "bbox_area": 102375,
+    "match_iou": null,
+    "old_json_bbox": [
+      7447,
+      758,
+      7672,
+      1213
+    ],
+    "scaled_expected_bbox": [
+      7447,
+      758,
+      7672,
+      1213
+    ]
+  },
+  {
+    "id": "part_014",
+    "old_file": "part_014.png",
+    "new_file": "pin_014.png",
+    "bbox": [
+      7950,
+      808,
+      8092,
+      918
+    ],
+    "width": 142,
+    "height": 110,
+    "area": 1385,
+    "bbox_area": 15620,
+    "match_iou": null,
+    "old_json_bbox": [
+      7950,
+      808,
+      8092,
+      918
+    ],
+    "scaled_expected_bbox": [
+      7950,
+      808,
+      8092,
+      918
+    ]
+  },
+  {
+    "id": "part_015",
+    "old_file": "part_015.png",
+    "new_file": "mouth_015.png",
+    "bbox": [
+      8093,
+      1095,
+      8107,
+      1120
+    ],
+    "width": 14,
+    "height": 25,
+    "area": 266,
+    "bbox_area": 350,
+    "match_iou": null,
+    "old_json_bbox": [
+      8093,
+      1095,
+      8107,
+      1120
+    ],
+    "scaled_expected_bbox": [
+      8093,
+      1095,
+      8107,
+      1120
+    ]
+  },
+  {
+    "id": "part_016",
+    "old_file": "part_016.png",
+    "new_file": "mouth_016.png",
+    "bbox": [
+      8067,
+      1154,
+      8081,
+      1179
+    ],
+    "width": 14,
+    "height": 25,
+    "area": 266,
+    "bbox_area": 350,
+    "match_iou": null,
+    "old_json_bbox": [
+      8067,
+      1154,
+      8081,
+      1179
+    ],
+    "scaled_expected_bbox": [
+      8067,
+      1154,
+      8081,
+      1179
+    ]
+  },
+  {
+    "id": "part_017",
+    "old_file": "part_017.png",
+    "new_file": "cloth_017.png",
+    "bbox": [
+      7441,
+      1252,
+      7471,
+      1308
+    ],
+    "width": 30,
+    "height": 56,
+    "area": 1578,
+    "bbox_area": 1680,
+    "match_iou": null,
+    "old_json_bbox": [
+      7441,
+      1252,
+      7471,
+      1308
+    ],
+    "scaled_expected_bbox": [
+      7441,
+      1252,
+      7471,
+      1308
+    ]
+  },
+  {
+    "id": "part_018",
+    "old_file": "part_018.png",
+    "new_file": "mouth_018.png",
+    "bbox": [
+      7695,
+      1252,
+      7720,
+      1276
+    ],
+    "width": 25,
+    "height": 24,
+    "area": 433,
+    "bbox_area": 600,
+    "match_iou": null,
+    "old_json_bbox": [
+      7695,
+      1252,
+      7720,
+      1276
+    ],
+    "scaled_expected_bbox": [
+      7695,
+      1252,
+      7720,
+      1276
+    ]
+  },
+  {
+    "id": "part_019",
+    "old_file": "part_019.png",
+    "new_file": "hair_019.png",
+    "bbox": [
+      7518,
+      1263,
+      7647,
+      1993
+    ],
+    "width": 129,
+    "height": 730,
+    "area": 42308,
+    "bbox_area": 94170,
+    "match_iou": null,
+    "old_json_bbox": [
+      7518,
+      1263,
+      7647,
+      1993
+    ],
+    "scaled_expected_bbox": [
+      7518,
+      1263,
+      7647,
+      1993
+    ]
+  },
+  {
+    "id": "part_020",
+    "old_file": "part_020.png",
+    "new_file": "cloth_020.png",
+    "bbox": [
+      7441,
+      1348,
+      7471,
+      1404
+    ],
+    "width": 30,
+    "height": 56,
+    "area": 1579,
+    "bbox_area": 1680,
+    "match_iou": null,
+    "old_json_bbox": [
+      7441,
+      1348,
+      7471,
+      1404
+    ],
+    "scaled_expected_bbox": [
+      7441,
+      1348,
+      7471,
+      1404
+    ]
+  },
+  {
+    "id": "part_021",
+    "old_file": "part_021.png",
+    "new_file": "cloth_021.png",
+    "bbox": [
+      7701,
+      1392,
+      8166,
+      1671
+    ],
+    "width": 465,
+    "height": 279,
+    "area": 89749,
+    "bbox_area": 129735,
+    "match_iou": null,
+    "old_json_bbox": [
+      7701,
+      1392,
+      8166,
+      1671
+    ],
+    "scaled_expected_bbox": [
+      7701,
+      1392,
+      8166,
+      1671
+    ]
+  },
+  {
+    "id": "part_022",
+    "old_file": "part_022.png",
+    "new_file": "mouth_022.png",
+    "bbox": [
+      7080,
+      1441,
+      7344,
+      1509
+    ],
+    "width": 264,
+    "height": 68,
+    "area": 9176,
+    "bbox_area": 17952,
+    "match_iou": null,
+    "old_json_bbox": [
+      7080,
+      1441,
+      7344,
+      1509
+    ],
+    "scaled_expected_bbox": [
+      7080,
+      1441,
+      7344,
+      1509
+    ]
+  },
+  {
+    "id": "part_023",
+    "old_file": "part_023.png",
+    "new_file": "cloth_023.png",
+    "bbox": [
+      7388,
+      1441,
+      7464,
+      1500
+    ],
+    "width": 76,
+    "height": 59,
+    "area": 3094,
+    "bbox_area": 4484,
+    "match_iou": null,
+    "old_json_bbox": [
+      7388,
+      1441,
+      7464,
+      1500
+    ],
+    "scaled_expected_bbox": [
+      7388,
+      1441,
+      7464,
+      1500
+    ]
+  },
+  {
+    "id": "part_024",
+    "old_file": "part_024.png",
+    "new_file": "hair_024.png",
+    "bbox": [
+      7041,
+      1552,
+      7469,
+      2044
+    ],
+    "width": 428,
+    "height": 492,
+    "area": 17156,
+    "bbox_area": 210576,
+    "match_iou": null,
+    "old_json_bbox": [
+      7041,
+      1552,
+      7469,
+      2044
+    ],
+    "scaled_expected_bbox": [
+      7041,
+      1552,
+      7469,
+      2044
+    ]
+  },
+  {
+    "id": "part_025",
+    "old_file": "part_025.png",
+    "new_file": "hair_025.png",
+    "bbox": [
+      6662,
+      1566,
+      6981,
+      2893
+    ],
+    "width": 319,
+    "height": 1327,
+    "area": 183405,
+    "bbox_area": 423313,
+    "match_iou": null,
+    "old_json_bbox": [
+      6662,
+      1566,
+      6981,
+      2893
+    ],
+    "scaled_expected_bbox": [
+      6662,
+      1566,
+      6981,
+      2893
+    ]
+  },
+  {
+    "id": "part_026",
+    "old_file": "part_026.png",
+    "new_file": "pin_026.png",
+    "bbox": [
+      6591,
+      1652,
+      6615,
+      1708
+    ],
+    "width": 24,
+    "height": 56,
+    "area": 1183,
+    "bbox_area": 1344,
+    "match_iou": null,
+    "old_json_bbox": [
+      6591,
+      1652,
+      6615,
+      1708
+    ],
+    "scaled_expected_bbox": [
+      6591,
+      1652,
+      6615,
+      1708
+    ]
+  },
+  {
+    "id": "part_027",
+    "old_file": "part_027.png",
+    "new_file": "hair_027.png",
+    "bbox": [
+      5770,
+      1678,
+      6543,
+      2679
+    ],
+    "width": 773,
+    "height": 1001,
+    "area": 338023,
+    "bbox_area": 773773,
+    "match_iou": null,
+    "old_json_bbox": [
+      5770,
+      1678,
+      6543,
+      2679
+    ],
+    "scaled_expected_bbox": [
+      5770,
+      1678,
+      6543,
+      2679
+    ]
+  },
+  {
+    "id": "part_028",
+    "old_file": "part_028.png",
+    "new_file": "pin_028.png",
+    "bbox": [
+      7518,
+      2042,
+      7610,
+      2054
+    ],
+    "width": 92,
+    "height": 12,
+    "area": 736,
+    "bbox_area": 1104,
+    "match_iou": null,
+    "old_json_bbox": [
+      7518,
+      2042,
+      7610,
+      2054
+    ],
+    "scaled_expected_bbox": [
+      7518,
+      2042,
+      7610,
+      2054
+    ]
+  },
+  {
+    "id": "part_029",
+    "old_file": "part_029.png",
+    "new_file": "pin_029.png",
+    "bbox": [
+      7658,
+      2042,
+      7712,
+      2096
+    ],
+    "width": 54,
+    "height": 54,
+    "area": 1060,
+    "bbox_area": 2916,
+    "match_iou": null,
+    "old_json_bbox": [
+      7658,
+      2042,
+      7712,
+      2096
+    ],
+    "scaled_expected_bbox": [
+      7658,
+      2042,
+      7712,
+      2096
+    ]
+  },
+  {
+    "id": "part_030",
+    "old_file": "part_030.png",
+    "new_file": "cloth_030.png",
+    "bbox": [
+      7408,
+      2086,
+      7628,
+      2469
+    ],
+    "width": 220,
+    "height": 383,
+    "area": 50888,
+    "bbox_area": 84260,
+    "match_iou": null,
+    "old_json_bbox": [
+      7408,
+      2086,
+      7628,
+      2469
+    ],
+    "scaled_expected_bbox": [
+      7408,
+      2086,
+      7628,
+      2469
+    ]
+  },
+  {
+    "id": "part_031",
+    "old_file": "part_031.png",
+    "new_file": "hair_031.png",
+    "bbox": [
+      7050,
+      2097,
+      7348,
+      2781
+    ],
+    "width": 298,
+    "height": 684,
+    "area": 62453,
+    "bbox_area": 203832,
+    "match_iou": null,
+    "old_json_bbox": [
+      7050,
+      2097,
+      7348,
+      2781
+    ],
+    "scaled_expected_bbox": [
+      7050,
+      2097,
+      7348,
+      2781
+    ]
+  },
+  {
+    "id": "part_032",
+    "old_file": "part_032.png",
+    "new_file": "pin_032.png",
+    "bbox": [
+      7670,
+      2135,
+      7707,
+      2167
+    ],
+    "width": 37,
+    "height": 32,
+    "area": 1019,
+    "bbox_area": 1184,
+    "match_iou": null,
+    "old_json_bbox": [
+      7670,
+      2135,
+      7707,
+      2167
+    ],
+    "scaled_expected_bbox": [
+      7670,
+      2135,
+      7707,
+      2167
+    ]
+  },
+  {
+    "id": "part_033",
+    "old_file": "part_033.png",
+    "new_file": "pin_033.png",
+    "bbox": [
+      7668,
+      2214,
+      7705,
+      2246
+    ],
+    "width": 37,
+    "height": 32,
+    "area": 1022,
+    "bbox_area": 1184,
+    "match_iou": null,
+    "old_json_bbox": [
+      7668,
+      2214,
+      7705,
+      2246
+    ],
+    "scaled_expected_bbox": [
+      7668,
+      2214,
+      7705,
+      2246
+    ]
+  },
+  {
+    "id": "part_034",
+    "old_file": "part_034.png",
+    "new_file": "pin_034.png",
+    "bbox": [
+      7668,
+      2294,
+      7705,
+      2326
+    ],
+    "width": 37,
+    "height": 32,
+    "area": 1022,
+    "bbox_area": 1184,
+    "match_iou": null,
+    "old_json_bbox": [
+      7668,
+      2294,
+      7705,
+      2326
+    ],
+    "scaled_expected_bbox": [
+      7668,
+      2294,
+      7705,
+      2326
+    ]
+  },
+  {
+    "id": "part_035",
+    "old_file": "part_035.png",
+    "new_file": "hair_035.png",
+    "bbox": [
+      2426,
+      2354,
+      2687,
+      2828
+    ],
+    "width": 261,
+    "height": 474,
+    "area": 4518,
+    "bbox_area": 123714,
+    "match_iou": null,
+    "old_json_bbox": [
+      2426,
+      2354,
+      2687,
+      2828
+    ],
+    "scaled_expected_bbox": [
+      2426,
+      2354,
+      2687,
+      2828
+    ]
+  },
+  {
+    "id": "part_036",
+    "old_file": "part_036.png",
+    "new_file": "shadow_036.png",
+    "bbox": [
+      1485,
+      2373,
+      2375,
+      3400
+    ],
+    "width": 890,
+    "height": 1027,
+    "area": 714763,
+    "bbox_area": 914030,
+    "match_iou": null,
+    "old_json_bbox": [
+      1485,
+      2373,
+      2375,
+      3400
+    ],
+    "scaled_expected_bbox": [
+      1485,
+      2373,
+      2375,
+      3400
+    ]
+  },
+  {
+    "id": "part_037",
+    "old_file": "part_037.png",
+    "new_file": "pin_037.png",
+    "bbox": [
+      7669,
+      2374,
+      7706,
+      2407
+    ],
+    "width": 37,
+    "height": 33,
+    "area": 995,
+    "bbox_area": 1221,
+    "match_iou": null,
+    "old_json_bbox": [
+      7669,
+      2374,
+      7706,
+      2407
+    ],
+    "scaled_expected_bbox": [
+      7669,
+      2374,
+      7706,
+      2407
+    ]
+  },
+  {
+    "id": "part_038",
+    "old_file": "part_038.png",
+    "new_file": "hair_038.png",
+    "bbox": [
+      48,
+      2376,
+      1418,
+      3911
+    ],
+    "width": 1370,
+    "height": 1535,
+    "area": 976599,
+    "bbox_area": 2102950,
+    "match_iou": null,
+    "old_json_bbox": [
+      48,
+      2376,
+      1418,
+      3911
+    ],
+    "scaled_expected_bbox": [
+      48,
+      2376,
+      1418,
+      3911
+    ]
+  },
+  {
+    "id": "part_039",
+    "old_file": "part_039.png",
+    "new_file": "pin_039.png",
+    "bbox": [
+      7666,
+      2446,
+      7703,
+      2479
+    ],
+    "width": 37,
+    "height": 33,
+    "area": 1023,
+    "bbox_area": 1221,
+    "match_iou": null,
+    "old_json_bbox": [
+      7666,
+      2446,
+      7703,
+      2479
+    ],
+    "scaled_expected_bbox": [
+      7666,
+      2446,
+      7703,
+      2479
+    ]
+  },
+  {
+    "id": "part_040",
+    "old_file": "part_040.png",
+    "new_file": "cloth_040.png",
+    "bbox": [
+      7401,
+      2512,
+      7469,
+      2617
+    ],
+    "width": 68,
+    "height": 105,
+    "area": 2099,
+    "bbox_area": 7140,
+    "match_iou": null,
+    "old_json_bbox": [
+      7401,
+      2512,
+      7469,
+      2617
+    ],
+    "scaled_expected_bbox": [
+      7401,
+      2512,
+      7469,
+      2617
+    ]
+  },
+  {
+    "id": "part_041",
+    "old_file": "part_041.png",
+    "new_file": "cloth_041.png",
+    "bbox": [
+      7537,
+      2529,
+      7657,
+      3233
+    ],
+    "width": 120,
+    "height": 704,
+    "area": 49639,
+    "bbox_area": 84480,
+    "match_iou": null,
+    "old_json_bbox": [
+      7537,
+      2529,
+      7657,
+      3233
+    ],
+    "scaled_expected_bbox": [
+      7537,
+      2529,
+      7657,
+      3233
+    ]
+  },
+  {
+    "id": "part_042",
+    "old_file": "part_042.png",
+    "new_file": "blusher_042.png",
+    "bbox": [
+      7761,
+      2643,
+      8149,
+      3159
+    ],
+    "width": 388,
+    "height": 516,
+    "area": 159540,
+    "bbox_area": 200208,
+    "match_iou": null,
+    "old_json_bbox": [
+      7761,
+      2643,
+      8149,
+      3159
+    ],
+    "scaled_expected_bbox": [
+      7761,
+      2643,
+      8149,
+      3159
+    ]
+  },
+  {
+    "id": "part_043",
+    "old_file": "part_043.png",
+    "new_file": "skin_043.png",
+    "bbox": [
+      7409,
+      2666,
+      7487,
+      2754
+    ],
+    "width": 78,
+    "height": 88,
+    "area": 3912,
+    "bbox_area": 6864,
+    "match_iou": null,
+    "old_json_bbox": [
+      7409,
+      2666,
+      7487,
+      2754
+    ],
+    "scaled_expected_bbox": [
+      7409,
+      2666,
+      7487,
+      2754
+    ]
+  },
+  {
+    "id": "part_044",
+    "old_file": "part_044.png",
+    "new_file": "cloth_044.png",
+    "bbox": [
+      5753,
+      2753,
+      6555,
+      3534
+    ],
+    "width": 802,
+    "height": 781,
+    "area": 168627,
+    "bbox_area": 626362,
+    "match_iou": null,
+    "old_json_bbox": [
+      5753,
+      2753,
+      6555,
+      3534
+    ],
+    "scaled_expected_bbox": [
+      5753,
+      2753,
+      6555,
+      3534
+    ]
+  },
+  {
+    "id": "part_045",
+    "old_file": "part_045.png",
+    "new_file": "cloth_045.png",
+    "bbox": [
+      5164,
+      2828,
+      5657,
+      4918
+    ],
+    "width": 493,
+    "height": 2090,
+    "area": 57215,
+    "bbox_area": 1030370,
+    "match_iou": null,
+    "old_json_bbox": [
+      5164,
+      2828,
+      5657,
+      4918
+    ],
+    "scaled_expected_bbox": [
+      5164,
+      2828,
+      5657,
+      4918
+    ]
+  },
+  {
+    "id": "part_046",
+    "old_file": "part_046.png",
+    "new_file": "hair_046.png",
+    "bbox": [
+      7043,
+      2847,
+      7290,
+      3662
+    ],
+    "width": 247,
+    "height": 815,
+    "area": 32308,
+    "bbox_area": 201305,
+    "match_iou": null,
+    "old_json_bbox": [
+      7043,
+      2847,
+      7290,
+      3662
+    ],
+    "scaled_expected_bbox": [
+      7043,
+      2847,
+      7290,
+      3662
+    ]
+  },
+  {
+    "id": "part_047",
+    "old_file": "part_047.png",
+    "new_file": "cloth_047.png",
+    "bbox": [
+      7365,
+      2853,
+      7475,
+      4041
+    ],
+    "width": 110,
+    "height": 1188,
+    "area": 96413,
+    "bbox_area": 130680,
+    "match_iou": null,
+    "old_json_bbox": [
+      7365,
+      2853,
+      7475,
+      4041
+    ],
+    "scaled_expected_bbox": [
+      7365,
+      2853,
+      7475,
+      4041
+    ]
+  },
+  {
+    "id": "part_048",
+    "old_file": "part_048.png",
+    "new_file": "cloth_048.png",
+    "bbox": [
+      3888,
+      2872,
+      4192,
+      2992
+    ],
+    "width": 304,
+    "height": 120,
+    "area": 9642,
+    "bbox_area": 36480,
+    "match_iou": null,
+    "old_json_bbox": [
+      3888,
+      2872,
+      4192,
+      2992
+    ],
+    "scaled_expected_bbox": [
+      3888,
+      2872,
+      4192,
+      2992
+    ]
+  },
+  {
+    "id": "part_049",
+    "old_file": "part_049.png",
+    "new_file": "skin_049.png",
+    "bbox": [
+      4241,
+      2873,
+      4345,
+      2991
+    ],
+    "width": 104,
+    "height": 118,
+    "area": 8281,
+    "bbox_area": 12272,
+    "match_iou": null,
+    "old_json_bbox": [
+      4241,
+      2873,
+      4345,
+      2991
+    ],
+    "scaled_expected_bbox": [
+      4241,
+      2873,
+      4345,
+      2991
+    ]
+  },
+  {
+    "id": "part_050",
+    "old_file": "part_050.png",
+    "new_file": "cloth_050.png",
+    "bbox": [
+      3049,
+      2881,
+      3835,
+      2977
+    ],
+    "width": 786,
+    "height": 96,
+    "area": 61267,
+    "bbox_area": 75456,
+    "match_iou": null,
+    "old_json_bbox": [
+      3049,
+      2881,
+      3835,
+      2977
+    ],
+    "scaled_expected_bbox": [
+      3049,
+      2881,
+      3835,
+      2977
+    ]
+  },
+  {
+    "id": "part_051",
+    "old_file": "part_051.png",
+    "new_file": "cloth_051.png",
+    "bbox": [
+      2449,
+      2888,
+      2980,
+      3854
+    ],
+    "width": 531,
+    "height": 966,
+    "area": 321293,
+    "bbox_area": 512946,
+    "match_iou": null,
+    "old_json_bbox": [
+      2449,
+      2888,
+      2980,
+      3854
+    ],
+    "scaled_expected_bbox": [
+      2449,
+      2888,
+      2980,
+      3854
+    ]
+  },
+  {
+    "id": "part_052",
+    "old_file": "part_052.png",
+    "new_file": "hair_052.png",
+    "bbox": [
+      337,
+      2904,
+      1171,
+      3928
+    ],
+    "width": 834,
+    "height": 1024,
+    "area": 485014,
+    "bbox_area": 854016,
+    "match_iou": null,
+    "old_json_bbox": [
+      337,
+      2904,
+      1171,
+      3928
+    ],
+    "scaled_expected_bbox": [
+      337,
+      2904,
+      1171,
+      3928
+    ]
+  },
+  {
+    "id": "part_053",
+    "old_file": "part_053.png",
+    "new_file": "hair_053.png",
+    "bbox": [
+      6624,
+      2958,
+      6940,
+      4284
+    ],
+    "width": 316,
+    "height": 1326,
+    "area": 178042,
+    "bbox_area": 419016,
+    "match_iou": null,
+    "old_json_bbox": [
+      6624,
+      2958,
+      6940,
+      4284
+    ],
+    "scaled_expected_bbox": [
+      6624,
+      2958,
+      6940,
+      4284
+    ]
+  },
+  {
+    "id": "part_054",
+    "old_file": "part_054.png",
+    "new_file": "skin_054.png",
+    "bbox": [
+      5014,
+      3049,
+      5114,
+      3220
+    ],
+    "width": 100,
+    "height": 171,
+    "area": 11484,
+    "bbox_area": 17100,
+    "match_iou": null,
+    "old_json_bbox": [
+      5014,
+      3049,
+      5114,
+      3220
+    ],
+    "scaled_expected_bbox": [
+      5014,
+      3049,
+      5114,
+      3220
+    ]
+  },
+  {
+    "id": "part_055",
+    "old_file": "part_055.png",
+    "new_file": "hair_055.png",
+    "bbox": [
+      3056,
+      3054,
+      4403,
+      4440
+    ],
+    "width": 1347,
+    "height": 1386,
+    "area": 782706,
+    "bbox_area": 1866942,
+    "match_iou": null,
+    "old_json_bbox": [
+      3056,
+      3054,
+      4403,
+      4440
+    ],
+    "scaled_expected_bbox": [
+      3056,
+      3054,
+      4403,
+      4440
+    ]
+  },
+  {
+    "id": "part_056",
+    "old_file": "part_056.png",
+    "new_file": "hair_056.png",
+    "bbox": [
+      4468,
+      3060,
+      4961,
+      5150
+    ],
+    "width": 493,
+    "height": 2090,
+    "area": 56895,
+    "bbox_area": 1030370,
+    "match_iou": null,
+    "old_json_bbox": [
+      4468,
+      3060,
+      4961,
+      5150
+    ],
+    "scaled_expected_bbox": [
+      4468,
+      3060,
+      4961,
+      5150
+    ]
+  },
+  {
+    "id": "part_057",
+    "old_file": "part_057.png",
+    "new_file": "skin_057.png",
+    "bbox": [
+      5018,
+      3273,
+      5112,
+      3392
+    ],
+    "width": 94,
+    "height": 119,
+    "area": 5089,
+    "bbox_area": 11186,
+    "match_iou": null,
+    "old_json_bbox": [
+      5018,
+      3273,
+      5112,
+      3392
+    ],
+    "scaled_expected_bbox": [
+      5018,
+      3273,
+      5112,
+      3392
+    ]
+  },
+  {
+    "id": "part_058",
+    "old_file": "part_058.png",
+    "new_file": "cloth_058.png",
+    "bbox": [
+      7545,
+      3294,
+      7665,
+      3986
+    ],
+    "width": 120,
+    "height": 692,
+    "area": 49095,
+    "bbox_area": 83040,
+    "match_iou": null,
+    "old_json_bbox": [
+      7545,
+      3294,
+      7665,
+      3986
+    ],
+    "scaled_expected_bbox": [
+      7545,
+      3294,
+      7665,
+      3986
+    ]
+  },
+  {
+    "id": "part_059",
+    "old_file": "part_059.png",
+    "new_file": "cloth_059.png",
+    "bbox": [
+      5016,
+      3434,
+      5111,
+      3552
+    ],
+    "width": 95,
+    "height": 118,
+    "area": 2368,
+    "bbox_area": 11210,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      3434,
+      5111,
+      3552
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      3434,
+      5111,
+      3552
+    ]
+  },
+  {
+    "id": "part_060",
+    "old_file": "part_060.png",
+    "new_file": "pin_060.png",
+    "bbox": [
+      2349,
+      3454,
+      2386,
+      3487
+    ],
+    "width": 37,
+    "height": 33,
+    "area": 995,
+    "bbox_area": 1221,
+    "match_iou": null,
+    "old_json_bbox": [
+      2349,
+      3454,
+      2386,
+      3487
+    ],
+    "scaled_expected_bbox": [
+      2349,
+      3454,
+      2386,
+      3487
+    ]
+  },
+  {
+    "id": "part_061",
+    "old_file": "part_061.png",
+    "new_file": "skin_061.png",
+    "bbox": [
+      1485,
+      3481,
+      2291,
+      3932
+    ],
+    "width": 806,
+    "height": 451,
+    "area": 236033,
+    "bbox_area": 363506,
+    "match_iou": null,
+    "old_json_bbox": [
+      1485,
+      3481,
+      2291,
+      3932
+    ],
+    "scaled_expected_bbox": [
+      1485,
+      3481,
+      2291,
+      3932
+    ]
+  },
+  {
+    "id": "part_062",
+    "old_file": "part_062.png",
+    "new_file": "pin_062.png",
+    "bbox": [
+      2346,
+      3526,
+      2383,
+      3559
+    ],
+    "width": 37,
+    "height": 33,
+    "area": 1023,
+    "bbox_area": 1221,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3526,
+      2383,
+      3559
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3526,
+      2383,
+      3559
+    ]
+  },
+  {
+    "id": "part_063",
+    "old_file": "part_063.png",
+    "new_file": "cloth_063.png",
+    "bbox": [
+      5721,
+      3593,
+      6523,
+      4374
+    ],
+    "width": 802,
+    "height": 781,
+    "area": 167152,
+    "bbox_area": 626362,
+    "match_iou": null,
+    "old_json_bbox": [
+      5721,
+      3593,
+      6523,
+      4374
+    ],
+    "scaled_expected_bbox": [
+      5721,
+      3593,
+      6523,
+      4374
+    ]
+  },
+  {
+    "id": "part_064",
+    "old_file": "part_064.png",
+    "new_file": "pin_064.png",
+    "bbox": [
+      2346,
+      3600,
+      2389,
+      3627
+    ],
+    "width": 43,
+    "height": 27,
+    "area": 963,
+    "bbox_area": 1161,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3600,
+      2389,
+      3627
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3600,
+      2389,
+      3627
+    ]
+  },
+  {
+    "id": "part_065",
+    "old_file": "part_065.png",
+    "new_file": "pin_065.png",
+    "bbox": [
+      5016,
+      3600,
+      5111,
+      3718
+    ],
+    "width": 95,
+    "height": 118,
+    "area": 2373,
+    "bbox_area": 11210,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      3600,
+      5111,
+      3718
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      3600,
+      5111,
+      3718
+    ]
+  },
+  {
+    "id": "part_066",
+    "old_file": "part_066.png",
+    "new_file": "pin_066.png",
+    "bbox": [
+      2346,
+      3664,
+      2389,
+      3691
+    ],
+    "width": 43,
+    "height": 27,
+    "area": 963,
+    "bbox_area": 1161,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3664,
+      2389,
+      3691
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3664,
+      2389,
+      3691
+    ]
+  },
+  {
+    "id": "part_067",
+    "old_file": "part_067.png",
+    "new_file": "hair_067.png",
+    "bbox": [
+      7001,
+      3714,
+      7313,
+      4267
+    ],
+    "width": 312,
+    "height": 553,
+    "area": 16118,
+    "bbox_area": 172536,
+    "match_iou": null,
+    "old_json_bbox": [
+      7001,
+      3714,
+      7313,
+      4267
+    ],
+    "scaled_expected_bbox": [
+      7001,
+      3714,
+      7313,
+      4267
+    ]
+  },
+  {
+    "id": "part_068",
+    "old_file": "part_068.png",
+    "new_file": "pin_068.png",
+    "bbox": [
+      2346,
+      3728,
+      2388,
+      3754
+    ],
+    "width": 42,
+    "height": 26,
+    "area": 905,
+    "bbox_area": 1092,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3728,
+      2388,
+      3754
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3728,
+      2388,
+      3754
+    ]
+  },
+  {
+    "id": "part_069",
+    "old_file": "part_069.png",
+    "new_file": "skin_069.png",
+    "bbox": [
+      5015,
+      3768,
+      5106,
+      3876
+    ],
+    "width": 91,
+    "height": 108,
+    "area": 6753,
+    "bbox_area": 9828,
+    "match_iou": null,
+    "old_json_bbox": [
+      5015,
+      3768,
+      5106,
+      3876
+    ],
+    "scaled_expected_bbox": [
+      5015,
+      3768,
+      5106,
+      3876
+    ]
+  },
+  {
+    "id": "part_070",
+    "old_file": "part_070.png",
+    "new_file": "pin_070.png",
+    "bbox": [
+      2346,
+      3784,
+      2388,
+      3810
+    ],
+    "width": 42,
+    "height": 26,
+    "area": 905,
+    "bbox_area": 1092,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3784,
+      2388,
+      3810
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3784,
+      2388,
+      3810
+    ]
+  },
+  {
+    "id": "part_071",
+    "old_file": "part_071.png",
+    "new_file": "pin_071.png",
+    "bbox": [
+      2346,
+      3840,
+      2389,
+      3866
+    ],
+    "width": 43,
+    "height": 26,
+    "area": 951,
+    "bbox_area": 1118,
+    "match_iou": null,
+    "old_json_bbox": [
+      2346,
+      3840,
+      2389,
+      3866
+    ],
+    "scaled_expected_bbox": [
+      2346,
+      3840,
+      2389,
+      3866
+    ]
+  },
+  {
+    "id": "part_072",
+    "old_file": "part_072.png",
+    "new_file": "eye_072.png",
+    "bbox": [
+      2352,
+      3900,
+      2574,
+      3956
+    ],
+    "width": 222,
+    "height": 56,
+    "area": 3643,
+    "bbox_area": 12432,
+    "match_iou": null,
+    "old_json_bbox": [
+      2352,
+      3900,
+      2574,
+      3956
+    ],
+    "scaled_expected_bbox": [
+      2352,
+      3900,
+      2574,
+      3956
+    ]
+  },
+  {
+    "id": "part_073",
+    "old_file": "part_073.png",
+    "new_file": "eye_073.png",
+    "bbox": [
+      2610,
+      3907,
+      2832,
+      3964
+    ],
+    "width": 222,
+    "height": 57,
+    "area": 3622,
+    "bbox_area": 12654,
+    "match_iou": null,
+    "old_json_bbox": [
+      2610,
+      3907,
+      2832,
+      3964
+    ],
+    "scaled_expected_bbox": [
+      2610,
+      3907,
+      2832,
+      3964
+    ]
+  },
+  {
+    "id": "part_074",
+    "old_file": "part_074.png",
+    "new_file": "mouth_074.png",
+    "bbox": [
+      2878,
+      3907,
+      3002,
+      3936
+    ],
+    "width": 124,
+    "height": 29,
+    "area": 1259,
+    "bbox_area": 3596,
+    "match_iou": null,
+    "old_json_bbox": [
+      2878,
+      3907,
+      3002,
+      3936
+    ],
+    "scaled_expected_bbox": [
+      2878,
+      3907,
+      3002,
+      3936
+    ]
+  },
+  {
+    "id": "part_075",
+    "old_file": "part_075.png",
+    "new_file": "cloth_075.png",
+    "bbox": [
+      5016,
+      3926,
+      5084,
+      4030
+    ],
+    "width": 68,
+    "height": 104,
+    "area": 1938,
+    "bbox_area": 7072,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      3926,
+      5084,
+      4030
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      3926,
+      5084,
+      4030
+    ]
+  },
+  {
+    "id": "part_076",
+    "old_file": "part_076.png",
+    "new_file": "hair_076.png",
+    "bbox": [
+      40,
+      4024,
+      2973,
+      4708
+    ],
+    "width": 2933,
+    "height": 684,
+    "area": 1045524,
+    "bbox_area": 2006172,
+    "match_iou": null,
+    "old_json_bbox": [
+      40,
+      4024,
+      2973,
+      4708
+    ],
+    "scaled_expected_bbox": [
+      40,
+      4024,
+      2973,
+      4708
+    ]
+  },
+  {
+    "id": "part_077",
+    "old_file": "part_077.png",
+    "new_file": "cloth_077.png",
+    "bbox": [
+      7536,
+      4048,
+      7716,
+      4472
+    ],
+    "width": 180,
+    "height": 424,
+    "area": 64659,
+    "bbox_area": 76320,
+    "match_iou": null,
+    "old_json_bbox": [
+      7536,
+      4048,
+      7716,
+      4472
+    ],
+    "scaled_expected_bbox": [
+      7536,
+      4048,
+      7716,
+      4472
+    ]
+  },
+  {
+    "id": "part_078",
+    "old_file": "part_078.png",
+    "new_file": "cloth_078.png",
+    "bbox": [
+      5016,
+      4080,
+      5082,
+      4184
+    ],
+    "width": 66,
+    "height": 104,
+    "area": 6092,
+    "bbox_area": 6864,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      4080,
+      5082,
+      4184
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      4080,
+      5082,
+      4184
+    ]
+  },
+  {
+    "id": "part_079",
+    "old_file": "part_079.png",
+    "new_file": "shadow_079.png",
+    "bbox": [
+      7360,
+      4104,
+      7473,
+      4252
+    ],
+    "width": 113,
+    "height": 148,
+    "area": 14118,
+    "bbox_area": 16724,
+    "match_iou": null,
+    "old_json_bbox": [
+      7360,
+      4104,
+      7473,
+      4252
+    ],
+    "scaled_expected_bbox": [
+      7360,
+      4104,
+      7473,
+      4252
+    ]
+  },
+  {
+    "id": "part_080",
+    "old_file": "part_080.png",
+    "new_file": "skin_080.png",
+    "bbox": [
+      5017,
+      4232,
+      5102,
+      4293
+    ],
+    "width": 85,
+    "height": 61,
+    "area": 2960,
+    "bbox_area": 5185,
+    "match_iou": null,
+    "old_json_bbox": [
+      5017,
+      4232,
+      5102,
+      4293
+    ],
+    "scaled_expected_bbox": [
+      5017,
+      4232,
+      5102,
+      4293
+    ]
+  },
+  {
+    "id": "part_081",
+    "old_file": "part_081.png",
+    "new_file": "hair_081.png",
+    "bbox": [
+      7254,
+      4318,
+      7477,
+      5058
+    ],
+    "width": 223,
+    "height": 740,
+    "area": 80510,
+    "bbox_area": 165020,
+    "match_iou": null,
+    "old_json_bbox": [
+      7254,
+      4318,
+      7477,
+      5058
+    ],
+    "scaled_expected_bbox": [
+      7254,
+      4318,
+      7477,
+      5058
+    ]
+  },
+  {
+    "id": "part_082",
+    "old_file": "part_082.png",
+    "new_file": "cloth_082.png",
+    "bbox": [
+      7053,
+      4325,
+      7195,
+      5513
+    ],
+    "width": 142,
+    "height": 1188,
+    "area": 89972,
+    "bbox_area": 168696,
+    "match_iou": null,
+    "old_json_bbox": [
+      7053,
+      4325,
+      7195,
+      5513
+    ],
+    "scaled_expected_bbox": [
+      7053,
+      4325,
+      7195,
+      5513
+    ]
+  },
+  {
+    "id": "part_083",
+    "old_file": "part_083.png",
+    "new_file": "cloth_083.png",
+    "bbox": [
+      6566,
+      4326,
+      6712,
+      4396
+    ],
+    "width": 146,
+    "height": 70,
+    "area": 8208,
+    "bbox_area": 10220,
+    "match_iou": null,
+    "old_json_bbox": [
+      6566,
+      4326,
+      6712,
+      4396
+    ],
+    "scaled_expected_bbox": [
+      6566,
+      4326,
+      6712,
+      4396
+    ]
+  },
+  {
+    "id": "part_084",
+    "old_file": "part_084.png",
+    "new_file": "cloth_084.png",
+    "bbox": [
+      6743,
+      4335,
+      6887,
+      4403
+    ],
+    "width": 144,
+    "height": 68,
+    "area": 7811,
+    "bbox_area": 9792,
+    "match_iou": null,
+    "old_json_bbox": [
+      6743,
+      4335,
+      6887,
+      4403
+    ],
+    "scaled_expected_bbox": [
+      6743,
+      4335,
+      6887,
+      4403
+    ]
+  },
+  {
+    "id": "part_085",
+    "old_file": "part_085.png",
+    "new_file": "cloth_085.png",
+    "bbox": [
+      6926,
+      4339,
+      7002,
+      4391
+    ],
+    "width": 76,
+    "height": 52,
+    "area": 2438,
+    "bbox_area": 3952,
+    "match_iou": null,
+    "old_json_bbox": [
+      6926,
+      4339,
+      7002,
+      4391
+    ],
+    "scaled_expected_bbox": [
+      6926,
+      4339,
+      7002,
+      4391
+    ]
+  },
+  {
+    "id": "part_086",
+    "old_file": "part_086.png",
+    "new_file": "cloth_086.png",
+    "bbox": [
+      5014,
+      4345,
+      5090,
+      4404
+    ],
+    "width": 76,
+    "height": 59,
+    "area": 3097,
+    "bbox_area": 4484,
+    "match_iou": null,
+    "old_json_bbox": [
+      5014,
+      4345,
+      5090,
+      4404
+    ],
+    "scaled_expected_bbox": [
+      5014,
+      4345,
+      5090,
+      4404
+    ]
+  },
+  {
+    "id": "part_087",
+    "old_file": "part_087.png",
+    "new_file": "pin_087.png",
+    "bbox": [
+      5723,
+      4447,
+      6378,
+      5332
+    ],
+    "width": 655,
+    "height": 885,
+    "area": 14958,
+    "bbox_area": 579675,
+    "match_iou": null,
+    "old_json_bbox": [
+      5723,
+      4447,
+      6378,
+      5332
+    ],
+    "scaled_expected_bbox": [
+      5723,
+      4447,
+      6378,
+      5332
+    ]
+  },
+  {
+    "id": "part_089",
+    "old_file": "part_089.png",
+    "new_file": "cloth_089.png",
+    "bbox": [
+      6457,
+      4448,
+      6986,
+      5413
+    ],
+    "width": 529,
+    "height": 965,
+    "area": 319099,
+    "bbox_area": 510485,
+    "match_iou": null,
+    "old_json_bbox": [
+      6457,
+      4448,
+      6986,
+      5413
+    ],
+    "scaled_expected_bbox": [
+      6457,
+      4448,
+      6986,
+      5413
+    ]
+  },
+  {
+    "id": "part_088",
+    "old_file": "part_088.png",
+    "new_file": "cloth_088.png",
+    "bbox": [
+      5016,
+      4449,
+      5094,
+      4506
+    ],
+    "width": 78,
+    "height": 57,
+    "area": 3054,
+    "bbox_area": 4446,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      4449,
+      5094,
+      4506
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      4449,
+      5094,
+      4506
+    ]
+  },
+  {
+    "id": "part_090",
+    "old_file": "part_090.png",
+    "new_file": "pin_090.png",
+    "bbox": [
+      7689,
+      4513,
+      7713,
+      4537
+    ],
+    "width": 24,
+    "height": 24,
+    "area": 481,
+    "bbox_area": 576,
+    "match_iou": null,
+    "old_json_bbox": [
+      7689,
+      4513,
+      7713,
+      4537
+    ],
+    "scaled_expected_bbox": [
+      7689,
+      4513,
+      7713,
+      4537
+    ]
+  },
+  {
+    "id": "part_091",
+    "old_file": "part_091.png",
+    "new_file": "shadow_091.png",
+    "bbox": [
+      3066,
+      4522,
+      3816,
+      5625
+    ],
+    "width": 750,
+    "height": 1103,
+    "area": 673232,
+    "bbox_area": 827250,
+    "match_iou": null,
+    "old_json_bbox": [
+      3066,
+      4522,
+      3816,
+      5625
+    ],
+    "scaled_expected_bbox": [
+      3066,
+      4522,
+      3816,
+      5625
+    ]
+  },
+  {
+    "id": "part_092",
+    "old_file": "part_092.png",
+    "new_file": "hair_092.png",
+    "bbox": [
+      7541,
+      4522,
+      7643,
+      5132
+    ],
+    "width": 102,
+    "height": 610,
+    "area": 21121,
+    "bbox_area": 62220,
+    "match_iou": null,
+    "old_json_bbox": [
+      7541,
+      4522,
+      7643,
+      5132
+    ],
+    "scaled_expected_bbox": [
+      7541,
+      4522,
+      7643,
+      5132
+    ]
+  },
+  {
+    "id": "part_093",
+    "old_file": "part_093.png",
+    "new_file": "part_093.png",
+    "bbox": [
+      3893,
+      4529,
+      4390,
+      5134
+    ],
+    "width": 497,
+    "height": 605,
+    "area": 230526,
+    "bbox_area": 300685,
+    "match_iou": null,
+    "old_json_bbox": [
+      3893,
+      4529,
+      4390,
+      5134
+    ],
+    "scaled_expected_bbox": [
+      3893,
+      4529,
+      4390,
+      5134
+    ]
+  },
+  {
+    "id": "part_094",
+    "old_file": "part_094.png",
+    "new_file": "cloth_094.png",
+    "bbox": [
+      5016,
+      4553,
+      5094,
+      4610
+    ],
+    "width": 78,
+    "height": 57,
+    "area": 3058,
+    "bbox_area": 4446,
+    "match_iou": null,
+    "old_json_bbox": [
+      5016,
+      4553,
+      5094,
+      4610
+    ],
+    "scaled_expected_bbox": [
+      5016,
+      4553,
+      5094,
+      4610
+    ]
+  },
+  {
+    "id": "part_095",
+    "old_file": "part_095.png",
+    "new_file": "pin_095.png",
+    "bbox": [
+      7689,
+      4577,
+      7713,
+      4601
+    ],
+    "width": 24,
+    "height": 24,
+    "area": 481,
+    "bbox_area": 576,
+    "match_iou": null,
+    "old_json_bbox": [
+      7689,
+      4577,
+      7713,
+      4601
+    ],
+    "scaled_expected_bbox": [
+      7689,
+      4577,
+      7713,
+      4601
+    ]
+  },
+  {
+    "id": "part_096",
+    "old_file": "part_096.png",
+    "new_file": "pin_096.png",
+    "bbox": [
+      7689,
+      4641,
+      7713,
+      4665
+    ],
+    "width": 24,
+    "height": 24,
+    "area": 481,
+    "bbox_area": 576,
+    "match_iou": null,
+    "old_json_bbox": [
+      7689,
+      4641,
+      7713,
+      4665
+    ],
+    "scaled_expected_bbox": [
+      7689,
+      4641,
+      7713,
+      4665
+    ]
+  },
+  {
+    "id": "part_097",
+    "old_file": "part_097.png",
+    "new_file": "cloth_097.png",
+    "bbox": [
+      5014,
+      4651,
+      5090,
+      4703
+    ],
+    "width": 76,
+    "height": 52,
+    "area": 2438,
+    "bbox_area": 3952,
+    "match_iou": null,
+    "old_json_bbox": [
+      5014,
+      4651,
+      5090,
+      4703
+    ],
+    "scaled_expected_bbox": [
+      5014,
+      4651,
+      5090,
+      4703
+    ]
+  },
+  {
+    "id": "part_098",
+    "old_file": "part_098.png",
+    "new_file": "cloth_098.png",
+    "bbox": [
+      5012,
+      4737,
+      5090,
+      4787
+    ],
+    "width": 78,
+    "height": 50,
+    "area": 2434,
+    "bbox_area": 3900,
+    "match_iou": null,
+    "old_json_bbox": [
+      5012,
+      4737,
+      5090,
+      4787
+    ],
+    "scaled_expected_bbox": [
+      5012,
+      4737,
+      5090,
+      4787
+    ]
+  },
+  {
+    "id": "part_099",
+    "old_file": "part_099.png",
+    "new_file": "hair_099.png",
+    "bbox": [
+      2823,
+      4775,
+      2996,
+      5537
+    ],
+    "width": 173,
+    "height": 762,
+    "area": 71541,
+    "bbox_area": 131826,
+    "match_iou": null,
+    "old_json_bbox": [
+      2823,
+      4775,
+      2996,
+      5537
+    ],
+    "scaled_expected_bbox": [
+      2823,
+      4775,
+      2996,
+      5537
+    ]
+  },
+  {
+    "id": "part_100",
+    "old_file": "part_100.png",
+    "new_file": "skin_100.png",
+    "bbox": [
+      39,
+      4776,
+      1833,
+      5574
+    ],
+    "width": 1794,
+    "height": 798,
+    "area": 1113193,
+    "bbox_area": 1431612,
+    "match_iou": null,
+    "old_json_bbox": [
+      39,
+      4776,
+      1833,
+      5574
+    ],
+    "scaled_expected_bbox": [
+      39,
+      4776,
+      1833,
+      5574
+    ]
+  },
+  {
+    "id": "part_101",
+    "old_file": "part_101.png",
+    "new_file": "cloth_101.png",
+    "bbox": [
+      1911,
+      4783,
+      2749,
+      5444
+    ],
+    "width": 838,
+    "height": 661,
+    "area": 407011,
+    "bbox_area": 553918,
+    "match_iou": null,
+    "old_json_bbox": [
+      1911,
+      4783,
+      2749,
+      5444
+    ],
+    "scaled_expected_bbox": [
+      1911,
+      4783,
+      2749,
+      5444
+    ]
+  },
+  {
+    "id": "part_102",
+    "old_file": "part_102.png",
+    "new_file": "cloth_102.png",
+    "bbox": [
+      5012,
+      4825,
+      5090,
+      4875
+    ],
+    "width": 78,
+    "height": 50,
+    "area": 2434,
+    "bbox_area": 3900,
+    "match_iou": null,
+    "old_json_bbox": [
+      5012,
+      4825,
+      5090,
+      4875
+    ],
+    "scaled_expected_bbox": [
+      5012,
+      4825,
+      5090,
+      4875
+    ]
+  },
+  {
+    "id": "part_103",
+    "old_file": "part_103.png",
+    "new_file": "pin_103.png",
+    "bbox": [
+      5014,
+      4914,
+      5106,
+      4926
+    ],
+    "width": 92,
+    "height": 12,
+    "area": 732,
+    "bbox_area": 1104,
+    "match_iou": null,
+    "old_json_bbox": [
+      5014,
+      4914,
+      5106,
+      4926
+    ],
+    "scaled_expected_bbox": [
+      5014,
+      4914,
+      5106,
+      4926
+    ]
+  },
+  {
+    "id": "part_104",
+    "old_file": "part_104.png",
+    "new_file": "shadow_104.png",
+    "bbox": [
+      5020,
+      4972,
+      5650,
+      5155
+    ],
+    "width": 630,
+    "height": 183,
+    "area": 77621,
+    "bbox_area": 115290,
+    "match_iou": null,
+    "old_json_bbox": [
+      5020,
+      4972,
+      5650,
+      5155
+    ],
+    "scaled_expected_bbox": [
+      5020,
+      4972,
+      5650,
+      5155
+    ]
+  },
+  {
+    "id": "part_105",
+    "old_file": "part_105.png",
+    "new_file": "hair_105.png",
+    "bbox": [
+      7258,
+      5130,
+      7482,
+      5851
+    ],
+    "width": 224,
+    "height": 721,
+    "area": 44525,
+    "bbox_area": 161504,
+    "match_iou": null,
+    "old_json_bbox": [
+      7258,
+      5130,
+      7482,
+      5851
+    ],
+    "scaled_expected_bbox": [
+      7258,
+      5130,
+      7482,
+      5851
+    ]
+  },
+  {
+    "id": "part_106",
+    "old_file": "part_106.png",
+    "new_file": "skin_106.png",
+    "bbox": [
+      7544,
+      5184,
+      7710,
+      5492
+    ],
+    "width": 166,
+    "height": 308,
+    "area": 35299,
+    "bbox_area": 51128,
+    "match_iou": null,
+    "old_json_bbox": [
+      7544,
+      5184,
+      7710,
+      5492
+    ],
+    "scaled_expected_bbox": [
+      7544,
+      5184,
+      7710,
+      5492
+    ]
+  },
+  {
+    "id": "part_108",
+    "old_file": "part_108.png",
+    "new_file": "skin_108.png",
+    "bbox": [
+      5569,
+      5208,
+      5672,
+      5326
+    ],
+    "width": 103,
+    "height": 118,
+    "area": 8297,
+    "bbox_area": 12154,
+    "match_iou": null,
+    "old_json_bbox": [
+      5569,
+      5208,
+      5672,
+      5326
+    ],
+    "scaled_expected_bbox": [
+      5569,
+      5208,
+      5672,
+      5326
+    ]
+  },
+  {
+    "id": "part_107",
+    "old_file": "part_107.png",
+    "new_file": "pin_107.png",
+    "bbox": [
+      5327,
+      5209,
+      5518,
+      5346
+    ],
+    "width": 191,
+    "height": 137,
+    "area": 11108,
+    "bbox_area": 26167,
+    "match_iou": null,
+    "old_json_bbox": [
+      5327,
+      5209,
+      5518,
+      5346
+    ],
+    "scaled_expected_bbox": [
+      5327,
+      5209,
+      5518,
+      5346
+    ]
+  },
+  {
+    "id": "part_109",
+    "old_file": "part_109.png",
+    "new_file": "hair_109.png",
+    "bbox": [
+      3887,
+      5216,
+      4541,
+      6099
+    ],
+    "width": 654,
+    "height": 883,
+    "area": 11647,
+    "bbox_area": 577482,
+    "match_iou": null,
+    "old_json_bbox": [
+      3887,
+      5216,
+      4541,
+      6099
+    ],
+    "scaled_expected_bbox": [
+      3887,
+      5216,
+      4541,
+      6099
+    ]
+  },
+  {
+    "id": "part_110",
+    "old_file": "part_110.png",
+    "new_file": "skin_110.png",
+    "bbox": [
+      4615,
+      5224,
+      5269,
+      6107
+    ],
+    "width": 654,
+    "height": 883,
+    "area": 453036,
+    "bbox_area": 577482,
+    "match_iou": null,
+    "old_json_bbox": [
+      4615,
+      5224,
+      5269,
+      6107
+    ],
+    "scaled_expected_bbox": [
+      4615,
+      5224,
+      5269,
+      6107
+    ]
+  },
+  {
+    "id": "part_111",
+    "old_file": "part_111.png",
+    "new_file": "cloth_111.png",
+    "bbox": [
+      5342,
+      5397,
+      6123,
+      5908
+    ],
+    "width": 781,
+    "height": 511,
+    "area": 308490,
+    "bbox_area": 399091,
+    "match_iou": null,
+    "old_json_bbox": [
+      5342,
+      5397,
+      6123,
+      5908
+    ],
+    "scaled_expected_bbox": [
+      5342,
+      5397,
+      6123,
+      5908
+    ]
+  },
+  {
+    "id": "part_112",
+    "old_file": "part_112.png",
+    "new_file": "cloth_112.png",
+    "bbox": [
+      6113,
+      5397,
+      6353,
+      5864
+    ],
+    "width": 240,
+    "height": 467,
+    "area": 55519,
+    "bbox_area": 112080,
+    "match_iou": null,
+    "old_json_bbox": [
+      6113,
+      5397,
+      6353,
+      5864
+    ],
+    "scaled_expected_bbox": [
+      6113,
+      5397,
+      6353,
+      5864
+    ]
+  },
+  {
+    "id": "part_113",
+    "old_file": "part_113.png",
+    "new_file": "eye_113.png",
+    "bbox": [
+      6891,
+      5468,
+      6984,
+      5505
+    ],
+    "width": 93,
+    "height": 37,
+    "area": 1508,
+    "bbox_area": 3441,
+    "match_iou": null,
+    "old_json_bbox": [
+      6891,
+      5468,
+      6984,
+      5505
+    ],
+    "scaled_expected_bbox": [
+      6891,
+      5468,
+      6984,
+      5505
+    ]
+  },
+  {
+    "id": "part_114",
+    "old_file": "part_114.png",
+    "new_file": "cloth_114.png",
+    "bbox": [
+      6421,
+      5485,
+      6842,
+      6574
+    ],
+    "width": 421,
+    "height": 1089,
+    "area": 321090,
+    "bbox_area": 458469,
+    "match_iou": null,
+    "old_json_bbox": [
+      6421,
+      5485,
+      6842,
+      6574
+    ],
+    "scaled_expected_bbox": [
+      6421,
+      5485,
+      6842,
+      6574
+    ]
+  },
+  {
+    "id": "part_115",
+    "old_file": "part_115.png",
+    "new_file": "pin_115.png",
+    "bbox": [
+      2733,
+      5496,
+      2772,
+      5521
+    ],
+    "width": 39,
+    "height": 25,
+    "area": 730,
+    "bbox_area": 975,
+    "match_iou": null,
+    "old_json_bbox": [
+      2733,
+      5496,
+      2772,
+      5521
+    ],
+    "scaled_expected_bbox": [
+      2733,
+      5496,
+      2772,
+      5521
+    ]
+  },
+  {
+    "id": "part_116",
+    "old_file": "part_116.png",
+    "new_file": "pin_116.png",
+    "bbox": [
+      1898,
+      5501,
+      2686,
+      5569
+    ],
+    "width": 788,
+    "height": 68,
+    "area": 41355,
+    "bbox_area": 53584,
+    "match_iou": null,
+    "old_json_bbox": [
+      1898,
+      5501,
+      2686,
+      5569
+    ],
+    "scaled_expected_bbox": [
+      1898,
+      5501,
+      2686,
+      5569
+    ]
+  },
+  {
+    "id": "part_117",
+    "old_file": "part_117.png",
+    "new_file": "skin_117.png",
+    "bbox": [
+      7546,
+      5536,
+      7663,
+      5776
+    ],
+    "width": 117,
+    "height": 240,
+    "area": 17721,
+    "bbox_area": 28080,
+    "match_iou": null,
+    "old_json_bbox": [
+      7546,
+      5536,
+      7663,
+      5776
+    ],
+    "scaled_expected_bbox": [
+      7546,
+      5536,
+      7663,
+      5776
+    ]
+  },
+  {
+    "id": "part_118",
+    "old_file": "part_118.png",
+    "new_file": "cloth_118.png",
+    "bbox": [
+      6900,
+      5572,
+      7197,
+      6118
+    ],
+    "width": 297,
+    "height": 546,
+    "area": 129756,
+    "bbox_area": 162162,
+    "match_iou": null,
+    "old_json_bbox": [
+      6900,
+      5572,
+      7197,
+      6118
+    ],
+    "scaled_expected_bbox": [
+      6900,
+      5572,
+      7197,
+      6118
+    ]
+  },
+  {
+    "id": "part_119",
+    "old_file": "part_119.png",
+    "new_file": "skin_119.png",
+    "bbox": [
+      2808,
+      5592,
+      2986,
+      5663
+    ],
+    "width": 178,
+    "height": 71,
+    "area": 5862,
+    "bbox_area": 12638,
+    "match_iou": null,
+    "old_json_bbox": [
+      2808,
+      5592,
+      2986,
+      5663
+    ],
+    "scaled_expected_bbox": [
+      2808,
+      5592,
+      2986,
+      5663
+    ]
+  },
+  {
+    "id": "part_120",
+    "old_file": "part_120.png",
+    "new_file": "skin_120.png",
+    "bbox": [
+      40,
+      5643,
+      2747,
+      6162
+    ],
+    "width": 2707,
+    "height": 519,
+    "area": 720893,
+    "bbox_area": 1404933,
+    "match_iou": null,
+    "old_json_bbox": [
+      40,
+      5643,
+      2747,
+      6162
+    ],
+    "scaled_expected_bbox": [
+      40,
+      5643,
+      2747,
+      6162
+    ]
+  },
+  {
+    "id": "part_121",
+    "old_file": "part_121.png",
+    "new_file": "pin_121.png",
+    "bbox": [
+      3672,
+      5720,
+      3785,
+      5868
+    ],
+    "width": 113,
+    "height": 148,
+    "area": 14074,
+    "bbox_area": 16724,
+    "match_iou": null,
+    "old_json_bbox": [
+      3672,
+      5720,
+      3785,
+      5868
+    ],
+    "scaled_expected_bbox": [
+      3672,
+      5720,
+      3785,
+      5868
+    ]
+  },
+  {
+    "id": "part_122",
+    "old_file": "part_122.png",
+    "new_file": "blusher_122.png",
+    "bbox": [
+      2828,
+      5726,
+      3618,
+      6301
+    ],
+    "width": 790,
+    "height": 575,
+    "area": 333349,
+    "bbox_area": 454250,
+    "match_iou": null,
+    "old_json_bbox": [
+      2828,
+      5726,
+      3618,
+      6301
+    ],
+    "scaled_expected_bbox": [
+      2828,
+      5726,
+      3618,
+      6301
+    ]
+  },
+  {
+    "id": "part_123",
+    "old_file": "part_123.png",
+    "new_file": "mouth_123.png",
+    "bbox": [
+      7537,
+      5816,
+      7677,
+      5881
+    ],
+    "width": 140,
+    "height": 65,
+    "area": 7154,
+    "bbox_area": 9100,
+    "match_iou": null,
+    "old_json_bbox": [
+      7537,
+      5816,
+      7677,
+      5881
+    ],
+    "scaled_expected_bbox": [
+      7537,
+      5816,
+      7677,
+      5881
+    ]
+  },
+  {
+    "id": "part_124",
+    "old_file": "part_124.png",
+    "new_file": "skin_124.png",
+    "bbox": [
+      3671,
+      5913,
+      3771,
+      6050
+    ],
+    "width": 100,
+    "height": 137,
+    "area": 7942,
+    "bbox_area": 13700,
+    "match_iou": null,
+    "old_json_bbox": [
+      3671,
+      5913,
+      3771,
+      6050
+    ],
+    "scaled_expected_bbox": [
+      3671,
+      5913,
+      3771,
+      6050
+    ]
+  },
+  {
+    "id": "part_125",
+    "old_file": "part_125.png",
+    "new_file": "skin_125.png",
+    "bbox": [
+      7246,
+      5913,
+      7387,
+      6010
+    ],
+    "width": 141,
+    "height": 97,
+    "area": 8756,
+    "bbox_area": 13677,
+    "match_iou": null,
+    "old_json_bbox": [
+      7246,
+      5913,
+      7387,
+      6010
+    ],
+    "scaled_expected_bbox": [
+      7246,
+      5913,
+      7387,
+      6010
+    ]
+  },
+  {
+    "id": "part_126",
+    "old_file": "part_126.png",
+    "new_file": "pin_126.png",
+    "bbox": [
+      7454,
+      5925,
+      7639,
+      6311
+    ],
+    "width": 185,
+    "height": 386,
+    "area": 40925,
+    "bbox_area": 71410,
+    "match_iou": null,
+    "old_json_bbox": [
+      7454,
+      5925,
+      7639,
+      6311
+    ],
+    "scaled_expected_bbox": [
+      7454,
+      5925,
+      7639,
+      6311
+    ]
+  },
+  {
+    "id": "part_127",
+    "old_file": "part_127.png",
+    "new_file": "cloth_127.png",
+    "bbox": [
+      5825,
+      5965,
+      6312,
+      6637
+    ],
+    "width": 487,
+    "height": 672,
+    "area": 207598,
+    "bbox_area": 327264,
+    "match_iou": null,
+    "old_json_bbox": [
+      5825,
+      5965,
+      6312,
+      6637
+    ],
+    "scaled_expected_bbox": [
+      5825,
+      5965,
+      6312,
+      6637
+    ]
+  },
+  {
+    "id": "part_128",
+    "old_file": "part_128.png",
+    "new_file": "cloth_128.png",
+    "bbox": [
+      5341,
+      5973,
+      5762,
+      7062
+    ],
+    "width": 421,
+    "height": 1089,
+    "area": 321087,
+    "bbox_area": 458469,
+    "match_iou": null,
+    "old_json_bbox": [
+      5341,
+      5973,
+      5762,
+      7062
+    ],
+    "scaled_expected_bbox": [
+      5341,
+      5973,
+      5762,
+      7062
+    ]
+  },
+  {
+    "id": "part_129",
+    "old_file": "part_129.png",
+    "new_file": "mouth_129.png",
+    "bbox": [
+      7252,
+      6066,
+      7381,
+      6121
+    ],
+    "width": 129,
+    "height": 55,
+    "area": 4558,
+    "bbox_area": 7095,
+    "match_iou": null,
+    "old_json_bbox": [
+      7252,
+      6066,
+      7381,
+      6121
+    ],
+    "scaled_expected_bbox": [
+      7252,
+      6066,
+      7381,
+      6121
+    ]
+  },
+  {
+    "id": "part_130",
+    "old_file": "part_130.png",
+    "new_file": "eye_130.png",
+    "bbox": [
+      3670,
+      6099,
+      3807,
+      6121
+    ],
+    "width": 137,
+    "height": 22,
+    "area": 645,
+    "bbox_area": 3014,
+    "match_iou": null,
+    "old_json_bbox": [
+      3670,
+      6099,
+      3807,
+      6121
+    ],
+    "scaled_expected_bbox": [
+      3670,
+      6099,
+      3807,
+      6121
+    ]
+  },
+  {
+    "id": "part_131",
+    "old_file": "part_131.png",
+    "new_file": "pin_131.png",
+    "bbox": [
+      5242,
+      6160,
+      5285,
+      6186
+    ],
+    "width": 43,
+    "height": 26,
+    "area": 951,
+    "bbox_area": 1118,
+    "match_iou": null,
+    "old_json_bbox": [
+      5242,
+      6160,
+      5285,
+      6186
+    ],
+    "scaled_expected_bbox": [
+      5242,
+      6160,
+      5285,
+      6186
+    ]
+  },
+  {
+    "id": "part_132",
+    "old_file": "part_132.png",
+    "new_file": "pin_132.png",
+    "bbox": [
+      6896,
+      6168,
+      7022,
+      6229
+    ],
+    "width": 126,
+    "height": 61,
+    "area": 3351,
+    "bbox_area": 7686,
+    "match_iou": null,
+    "old_json_bbox": [
+      6896,
+      6168,
+      7022,
+      6229
+    ],
+    "scaled_expected_bbox": [
+      6896,
+      6168,
+      7022,
+      6229
+    ]
+  },
+  {
+    "id": "part_133",
+    "old_file": "part_133.png",
+    "new_file": "cloth_133.png",
+    "bbox": [
+      3698,
+      6170,
+      4433,
+      6609
+    ],
+    "width": 735,
+    "height": 439,
+    "area": 212202,
+    "bbox_area": 322665,
+    "match_iou": null,
+    "old_json_bbox": [
+      3698,
+      6170,
+      4433,
+      6609
+    ],
+    "scaled_expected_bbox": [
+      3698,
+      6170,
+      4433,
+      6609
+    ]
+  },
+  {
+    "id": "part_134",
+    "old_file": "part_134.png",
+    "new_file": "cloth_134.png",
+    "bbox": [
+      7108,
+      6172,
+      7405,
+      6718
+    ],
+    "width": 297,
+    "height": 546,
+    "area": 129756,
+    "bbox_area": 162162,
+    "match_iou": null,
+    "old_json_bbox": [
+      7108,
+      6172,
+      7405,
+      6718
+    ],
+    "scaled_expected_bbox": [
+      7108,
+      6172,
+      7405,
+      6718
+    ]
+  },
+  {
+    "id": "part_135",
+    "old_file": "part_135.png",
+    "new_file": "shadow_135.png",
+    "bbox": [
+      4505,
+      6187,
+      5196,
+      6590
+    ],
+    "width": 691,
+    "height": 403,
+    "area": 219393,
+    "bbox_area": 278473,
+    "match_iou": null,
+    "old_json_bbox": [
+      4505,
+      6187,
+      5196,
+      6590
+    ],
+    "scaled_expected_bbox": [
+      4505,
+      6187,
+      5196,
+      6590
+    ]
+  },
+  {
+    "id": "part_136",
+    "old_file": "part_136.png",
+    "new_file": "mouth_136.png",
+    "bbox": [
+      2618,
+      6224,
+      2749,
+      6279
+    ],
+    "width": 131,
+    "height": 55,
+    "area": 4806,
+    "bbox_area": 7205,
+    "match_iou": null,
+    "old_json_bbox": [
+      2618,
+      6224,
+      2749,
+      6279
+    ],
+    "scaled_expected_bbox": [
+      2618,
+      6224,
+      2749,
+      6279
+    ]
+  },
+  {
+    "id": "part_137",
+    "old_file": "part_137.png",
+    "new_file": "pin_137.png",
+    "bbox": [
+      5242,
+      6225,
+      5286,
+      6245
+    ],
+    "width": 44,
+    "height": 20,
+    "area": 802,
+    "bbox_area": 880,
+    "match_iou": null,
+    "old_json_bbox": [
+      5242,
+      6225,
+      5286,
+      6245
+    ],
+    "scaled_expected_bbox": [
+      5242,
+      6225,
+      5286,
+      6245
+    ]
+  },
+  {
+    "id": "part_138",
+    "old_file": "part_138.png",
+    "new_file": "cloth_138.png",
+    "bbox": [
+      1609,
+      6226,
+      2054,
+      6877
+    ],
+    "width": 445,
+    "height": 651,
+    "area": 90509,
+    "bbox_area": 289695,
+    "match_iou": null,
+    "old_json_bbox": [
+      1609,
+      6226,
+      2054,
+      6877
+    ],
+    "scaled_expected_bbox": [
+      1609,
+      6226,
+      2054,
+      6877
+    ]
+  },
+  {
+    "id": "part_139",
+    "old_file": "part_139.png",
+    "new_file": "cloth_139.png",
+    "bbox": [
+      2113,
+      6229,
+      2558,
+      6880
+    ],
+    "width": 445,
+    "height": 651,
+    "area": 90385,
+    "bbox_area": 289695,
+    "match_iou": null,
+    "old_json_bbox": [
+      2113,
+      6229,
+      2558,
+      6880
+    ],
+    "scaled_expected_bbox": [
+      2113,
+      6229,
+      2558,
+      6880
+    ]
+  },
+  {
+    "id": "part_140",
+    "old_file": "part_140.png",
+    "new_file": "cloth_140.png",
+    "bbox": [
+      40,
+      6232,
+      1474,
+      6594
+    ],
+    "width": 1434,
+    "height": 362,
+    "area": 267567,
+    "bbox_area": 519108,
+    "match_iou": null,
+    "old_json_bbox": [
+      40,
+      6232,
+      1474,
+      6594
+    ],
+    "scaled_expected_bbox": [
+      40,
+      6232,
+      1474,
+      6594
+    ]
+  },
+  {
+    "id": "part_141",
+    "old_file": "part_141.png",
+    "new_file": "pin_141.png",
+    "bbox": [
+      6908,
+      6255,
+      7046,
+      6322
+    ],
+    "width": 138,
+    "height": 67,
+    "area": 3951,
+    "bbox_area": 9246,
+    "match_iou": null,
+    "old_json_bbox": [
+      6908,
+      6255,
+      7046,
+      6322
+    ],
+    "scaled_expected_bbox": [
+      6908,
+      6255,
+      7046,
+      6322
+    ]
+  },
+  {
+    "id": "part_142",
+    "old_file": "part_142.png",
+    "new_file": "pin_142.png",
+    "bbox": [
+      5242,
+      6281,
+      5288,
+      6298
+    ],
+    "width": 46,
+    "height": 17,
+    "area": 717,
+    "bbox_area": 782,
+    "match_iou": null,
+    "old_json_bbox": [
+      5242,
+      6281,
+      5288,
+      6298
+    ],
+    "scaled_expected_bbox": [
+      5242,
+      6281,
+      5288,
+      6298
+    ]
+  },
+  {
+    "id": "part_143",
+    "old_file": "part_143.png",
+    "new_file": "pin_143.png",
+    "bbox": [
+      2610,
+      6321,
+      2658,
+      6334
+    ],
+    "width": 48,
+    "height": 13,
+    "area": 563,
+    "bbox_area": 624,
+    "match_iou": null,
+    "old_json_bbox": [
+      2610,
+      6321,
+      2658,
+      6334
+    ],
+    "scaled_expected_bbox": [
+      2610,
+      6321,
+      2658,
+      6334
+    ]
+  },
+  {
+    "id": "part_144",
+    "old_file": "part_144.png",
+    "new_file": "pin_144.png",
+    "bbox": [
+      2698,
+      6321,
+      2746,
+      6334
+    ],
+    "width": 48,
+    "height": 13,
+    "area": 563,
+    "bbox_area": 624,
+    "match_iou": null,
+    "old_json_bbox": [
+      2698,
+      6321,
+      2746,
+      6334
+    ],
+    "scaled_expected_bbox": [
+      2698,
+      6321,
+      2746,
+      6334
+    ]
+  },
+  {
+    "id": "part_145",
+    "old_file": "part_145.png",
+    "new_file": "pin_145.png",
+    "bbox": [
+      5242,
+      6337,
+      5288,
+      6354
+    ],
+    "width": 46,
+    "height": 17,
+    "area": 720,
+    "bbox_area": 782,
+    "match_iou": null,
+    "old_json_bbox": [
+      5242,
+      6337,
+      5288,
+      6354
+    ],
+    "scaled_expected_bbox": [
+      5242,
+      6337,
+      5288,
+      6354
+    ]
+  },
+  {
+    "id": "part_146",
+    "old_file": "part_146.png",
+    "new_file": "pin_146.png",
+    "bbox": [
+      6925,
+      6344,
+      7065,
+      6413
+    ],
+    "width": 140,
+    "height": 69,
+    "area": 4083,
+    "bbox_area": 9660,
+    "match_iou": null,
+    "old_json_bbox": [
+      6925,
+      6344,
+      7065,
+      6413
+    ],
+    "scaled_expected_bbox": [
+      6925,
+      6344,
+      7065,
+      6413
+    ]
+  },
+  {
+    "id": "part_147",
+    "old_file": "part_147.png",
+    "new_file": "cloth_147.png",
+    "bbox": [
+      7456,
+      6366,
+      7650,
+      6751
+    ],
+    "width": 194,
+    "height": 385,
+    "area": 54781,
+    "bbox_area": 74690,
+    "match_iou": null,
+    "old_json_bbox": [
+      7456,
+      6366,
+      7650,
+      6751
+    ],
+    "scaled_expected_bbox": [
+      7456,
+      6366,
+      7650,
+      6751
+    ]
+  },
+  {
+    "id": "part_148",
+    "old_file": "part_148.png",
+    "new_file": "cloth_148.png",
+    "bbox": [
+      2620,
+      6372,
+      3039,
+      7006
+    ],
+    "width": 419,
+    "height": 634,
+    "area": 96410,
+    "bbox_area": 265646,
+    "match_iou": null,
+    "old_json_bbox": [
+      2620,
+      6372,
+      3039,
+      7006
+    ],
+    "scaled_expected_bbox": [
+      2620,
+      6372,
+      3039,
+      7006
+    ]
+  },
+  {
+    "id": "part_149",
+    "old_file": "part_149.png",
+    "new_file": "pin_149.png",
+    "bbox": [
+      3564,
+      6376,
+      3629,
+      6416
+    ],
+    "width": 65,
+    "height": 40,
+    "area": 1662,
+    "bbox_area": 2600,
+    "match_iou": null,
+    "old_json_bbox": [
+      3564,
+      6376,
+      3629,
+      6416
+    ],
+    "scaled_expected_bbox": [
+      3564,
+      6376,
+      3629,
+      6416
+    ]
+  },
+  {
+    "id": "part_150",
+    "old_file": "part_150.png",
+    "new_file": "skin_150.png",
+    "bbox": [
+      3100,
+      6380,
+      3514,
+      6978
+    ],
+    "width": 414,
+    "height": 598,
+    "area": 185710,
+    "bbox_area": 247572,
+    "match_iou": null,
+    "old_json_bbox": [
+      3100,
+      6380,
+      3514,
+      6978
+    ],
+    "scaled_expected_bbox": [
+      3100,
+      6380,
+      3514,
+      6978
+    ]
+  },
+  {
+    "id": "part_151",
+    "old_file": "part_151.png",
+    "new_file": "pin_151.png",
+    "bbox": [
+      5243,
+      6394,
+      5283,
+      6403
+    ],
+    "width": 40,
+    "height": 9,
+    "area": 345,
+    "bbox_area": 360,
+    "match_iou": null,
+    "old_json_bbox": [
+      5243,
+      6394,
+      5283,
+      6403
+    ],
+    "scaled_expected_bbox": [
+      5243,
+      6394,
+      5283,
+      6403
+    ]
+  },
+  {
+    "id": "part_152",
+    "old_file": "part_152.png",
+    "new_file": "pin_152.png",
+    "bbox": [
+      3568,
+      6464,
+      3611,
+      6491
+    ],
+    "width": 43,
+    "height": 27,
+    "area": 965,
+    "bbox_area": 1161,
+    "match_iou": null,
+    "old_json_bbox": [
+      3568,
+      6464,
+      3611,
+      6491
+    ],
+    "scaled_expected_bbox": [
+      3568,
+      6464,
+      3611,
+      6491
+    ]
+  },
+  {
+    "id": "part_153",
+    "old_file": "part_153.png",
+    "new_file": "skin_153.png",
+    "bbox": [
+      6897,
+      6464,
+      7000,
+      6582
+    ],
+    "width": 103,
+    "height": 118,
+    "area": 8297,
+    "bbox_area": 12154,
+    "match_iou": null,
+    "old_json_bbox": [
+      6897,
+      6464,
+      7000,
+      6582
+    ],
+    "scaled_expected_bbox": [
+      6897,
+      6464,
+      7000,
+      6582
+    ]
+  },
+  {
+    "id": "part_154",
+    "old_file": "part_154.png",
+    "new_file": "pin_154.png",
+    "bbox": [
+      3568,
+      6544,
+      3611,
+      6571
+    ],
+    "width": 43,
+    "height": 27,
+    "area": 965,
+    "bbox_area": 1161,
+    "match_iou": null,
+    "old_json_bbox": [
+      3568,
+      6544,
+      3611,
+      6571
+    ],
+    "scaled_expected_bbox": [
+      3568,
+      6544,
+      3611,
+      6571
+    ]
+  },
+  {
+    "id": "part_155",
+    "old_file": "part_155.png",
+    "new_file": "cloth_155.png",
+    "bbox": [
+      6387,
+      6639,
+      7054,
+      6912
+    ],
+    "width": 667,
+    "height": 273,
+    "area": 80463,
+    "bbox_area": 182091,
+    "match_iou": null,
+    "old_json_bbox": [
+      6387,
+      6639,
+      7054,
+      6912
+    ],
+    "scaled_expected_bbox": [
+      6387,
+      6639,
+      7054,
+      6912
+    ]
+  },
+  {
+    "id": "part_156",
+    "old_file": "part_156.png",
+    "new_file": "cloth_156.png",
+    "bbox": [
+      4497,
+      6657,
+      5253,
+      6987
+    ],
+    "width": 756,
+    "height": 330,
+    "area": 36039,
+    "bbox_area": 249480,
+    "match_iou": null,
+    "old_json_bbox": [
+      4497,
+      6657,
+      5253,
+      6987
+    ],
+    "scaled_expected_bbox": [
+      4497,
+      6657,
+      5253,
+      6987
+    ]
+  },
+  {
+    "id": "part_157",
+    "old_file": "part_157.png",
+    "new_file": "mouth_157.png",
+    "bbox": [
+      3582,
+      6684,
+      4352,
+      6897
+    ],
+    "width": 770,
+    "height": 213,
+    "area": 23621,
+    "bbox_area": 164010,
+    "match_iou": null,
+    "old_json_bbox": [
+      3582,
+      6684,
+      4352,
+      6897
+    ],
+    "scaled_expected_bbox": [
+      3582,
+      6684,
+      4352,
+      6897
+    ]
+  },
+  {
+    "id": "part_158",
+    "old_file": "part_158.png",
+    "new_file": "hair_158.png",
+    "bbox": [
+      5829,
+      6705,
+      6037,
+      7447
+    ],
+    "width": 208,
+    "height": 742,
+    "area": 41875,
+    "bbox_area": 154336,
+    "match_iou": null,
+    "old_json_bbox": [
+      5829,
+      6705,
+      6037,
+      7447
+    ],
+    "scaled_expected_bbox": [
+      5829,
+      6705,
+      6037,
+      7447
+    ]
+  },
+  {
+    "id": "part_159",
+    "old_file": "part_159.png",
+    "new_file": "hair_159.png",
+    "bbox": [
+      6110,
+      6705,
+      6300,
+      7458
+    ],
+    "width": 190,
+    "height": 753,
+    "area": 60084,
+    "bbox_area": 143070,
+    "match_iou": null,
+    "old_json_bbox": [
+      6110,
+      6705,
+      6300,
+      7458
+    ],
+    "scaled_expected_bbox": [
+      6110,
+      6705,
+      6300,
+      7458
+    ]
+  },
+  {
+    "id": "part_160",
+    "old_file": "part_160.png",
+    "new_file": "skin_160.png",
+    "bbox": [
+      95,
+      6765,
+      1504,
+      7096
+    ],
+    "width": 1409,
+    "height": 331,
+    "area": 195805,
+    "bbox_area": 466379,
+    "match_iou": null,
+    "old_json_bbox": [
+      95,
+      6765,
+      1504,
+      7096
+    ],
+    "scaled_expected_bbox": [
+      95,
+      6765,
+      1504,
+      7096
+    ]
+  },
+  {
+    "id": "part_161",
+    "old_file": "part_161.png",
+    "new_file": "hair_161.png",
+    "bbox": [
+      7110,
+      6769,
+      7414,
+      7289
+    ],
+    "width": 304,
+    "height": 520,
+    "area": 14640,
+    "bbox_area": 158080,
+    "match_iou": null,
+    "old_json_bbox": [
+      7110,
+      6769,
+      7414,
+      7289
+    ],
+    "scaled_expected_bbox": [
+      7110,
+      6769,
+      7414,
+      7289
+    ]
+  },
+  {
+    "id": "part_162",
+    "old_file": "part_162.png",
+    "new_file": "skin_162.png",
+    "bbox": [
+      7469,
+      6806,
+      7649,
+      7142
+    ],
+    "width": 180,
+    "height": 336,
+    "area": 40188,
+    "bbox_area": 60480,
+    "match_iou": null,
+    "old_json_bbox": [
+      7469,
+      6806,
+      7649,
+      7142
+    ],
+    "scaled_expected_bbox": [
+      7469,
+      6806,
+      7649,
+      7142
+    ]
+  },
+  {
+    "id": "part_163",
+    "old_file": "part_163.png",
+    "new_file": "skin_163.png",
+    "bbox": [
+      2240,
+      6936,
+      2500,
+      7432
+    ],
+    "width": 260,
+    "height": 496,
+    "area": 103186,
+    "bbox_area": 128960,
+    "match_iou": null,
+    "old_json_bbox": [
+      2240,
+      6936,
+      2500,
+      7432
+    ],
+    "scaled_expected_bbox": [
+      2240,
+      6936,
+      2500,
+      7432
+    ]
+  },
+  {
+    "id": "part_164",
+    "old_file": "part_164.png",
+    "new_file": "mouth_164.png",
+    "bbox": [
+      1634,
+      6966,
+      2190,
+      7204
+    ],
+    "width": 556,
+    "height": 238,
+    "area": 109550,
+    "bbox_area": 132328,
+    "match_iou": null,
+    "old_json_bbox": [
+      1634,
+      6966,
+      2190,
+      7204
+    ],
+    "scaled_expected_bbox": [
+      1634,
+      6966,
+      2190,
+      7204
+    ]
+  },
+  {
+    "id": "part_165",
+    "old_file": "part_165.png",
+    "new_file": "pin_165.png",
+    "bbox": [
+      3592,
+      6972,
+      4410,
+      7114
+    ],
+    "width": 818,
+    "height": 142,
+    "area": 61755,
+    "bbox_area": 116156,
+    "match_iou": null,
+    "old_json_bbox": [
+      3592,
+      6972,
+      4410,
+      7114
+    ],
+    "scaled_expected_bbox": [
+      3592,
+      6972,
+      4410,
+      7114
+    ]
+  },
+  {
+    "id": "part_166",
+    "old_file": "part_166.png",
+    "new_file": "cloth_166.png",
+    "bbox": [
+      6350,
+      6976,
+      6712,
+      7368
+    ],
+    "width": 362,
+    "height": 392,
+    "area": 71107,
+    "bbox_area": 141904,
+    "match_iou": null,
+    "old_json_bbox": [
+      6350,
+      6976,
+      6712,
+      7368
+    ],
+    "scaled_expected_bbox": [
+      6350,
+      6976,
+      6712,
+      7368
+    ]
+  },
+  {
+    "id": "part_167",
+    "old_file": "part_167.png",
+    "new_file": "pin_167.png",
+    "bbox": [
+      6993,
+      6984,
+      7070,
+      7027
+    ],
+    "width": 77,
+    "height": 43,
+    "area": 2639,
+    "bbox_area": 3311,
+    "match_iou": null,
+    "old_json_bbox": [
+      6993,
+      6984,
+      7070,
+      7027
+    ],
+    "scaled_expected_bbox": [
+      6993,
+      6984,
+      7070,
+      7027
+    ]
+  },
+  {
+    "id": "part_168",
+    "old_file": "part_168.png",
+    "new_file": "hair_168.png",
+    "bbox": [
+      6767,
+      6994,
+      6932,
+      7756
+    ],
+    "width": 165,
+    "height": 762,
+    "area": 40433,
+    "bbox_area": 125730,
+    "match_iou": null,
+    "old_json_bbox": [
+      6767,
+      6994,
+      6932,
+      7756
+    ],
+    "scaled_expected_bbox": [
+      6767,
+      6994,
+      6932,
+      7756
+    ]
+  },
+  {
+    "id": "part_169",
+    "old_file": "part_169.png",
+    "new_file": "cloth_169.png",
+    "bbox": [
+      3097,
+      7032,
+      3459,
+      7424
+    ],
+    "width": 362,
+    "height": 392,
+    "area": 71057,
+    "bbox_area": 141904,
+    "match_iou": null,
+    "old_json_bbox": [
+      3097,
+      7032,
+      3459,
+      7424
+    ],
+    "scaled_expected_bbox": [
+      3097,
+      7032,
+      3459,
+      7424
+    ]
+  },
+  {
+    "id": "part_170",
+    "old_file": "part_170.png",
+    "new_file": "cloth_170.png",
+    "bbox": [
+      4473,
+      7041,
+      4859,
+      7369
+    ],
+    "width": 386,
+    "height": 328,
+    "area": 67141,
+    "bbox_area": 126608,
+    "match_iou": null,
+    "old_json_bbox": [
+      4473,
+      7041,
+      4859,
+      7369
+    ],
+    "scaled_expected_bbox": [
+      4473,
+      7041,
+      4859,
+      7369
+    ]
+  },
+  {
+    "id": "part_171",
+    "old_file": "part_171.png",
+    "new_file": "eye_171.png",
+    "bbox": [
+      5118,
+      7043,
+      5260,
+      7072
+    ],
+    "width": 142,
+    "height": 29,
+    "area": 1812,
+    "bbox_area": 4118,
+    "match_iou": null,
+    "old_json_bbox": [
+      5118,
+      7043,
+      5260,
+      7072
+    ],
+    "scaled_expected_bbox": [
+      5118,
+      7043,
+      5260,
+      7072
+    ]
+  },
+  {
+    "id": "part_172",
+    "old_file": "part_172.png",
+    "new_file": "hair_172.png",
+    "bbox": [
+      4911,
+      7053,
+      5074,
+      7827
+    ],
+    "width": 163,
+    "height": 774,
+    "area": 24685,
+    "bbox_area": 126162,
+    "match_iou": null,
+    "old_json_bbox": [
+      4911,
+      7053,
+      5074,
+      7827
+    ],
+    "scaled_expected_bbox": [
+      4911,
+      7053,
+      5074,
+      7827
+    ]
+  },
+  {
+    "id": "part_173",
+    "old_file": "part_173.png",
+    "new_file": "hair_173.png",
+    "bbox": [
+      2552,
+      7062,
+      2737,
+      7737
+    ],
+    "width": 185,
+    "height": 675,
+    "area": 24381,
+    "bbox_area": 124875,
+    "match_iou": null,
+    "old_json_bbox": [
+      2552,
+      7062,
+      2737,
+      7737
+    ],
+    "scaled_expected_bbox": [
+      2552,
+      7062,
+      2737,
+      7737
+    ]
+  },
+  {
+    "id": "part_174",
+    "old_file": "part_174.png",
+    "new_file": "hair_174.png",
+    "bbox": [
+      2791,
+      7073,
+      2961,
+      7799
+    ],
+    "width": 170,
+    "height": 726,
+    "area": 48896,
+    "bbox_area": 123420,
+    "match_iou": null,
+    "old_json_bbox": [
+      2791,
+      7073,
+      2961,
+      7799
+    ],
+    "scaled_expected_bbox": [
+      2791,
+      7073,
+      2961,
+      7799
+    ]
+  },
+  {
+    "id": "part_175",
+    "old_file": "part_175.png",
+    "new_file": "pin_175.png",
+    "bbox": [
+      6990,
+      7080,
+      7067,
+      7123
+    ],
+    "width": 77,
+    "height": 43,
+    "area": 2638,
+    "bbox_area": 3311,
+    "match_iou": null,
+    "old_json_bbox": [
+      6990,
+      7080,
+      7067,
+      7123
+    ],
+    "scaled_expected_bbox": [
+      6990,
+      7080,
+      7067,
+      7123
+    ]
+  },
+  {
+    "id": "part_176",
+    "old_file": "part_176.png",
+    "new_file": "cloth_176.png",
+    "bbox": [
+      5120,
+      7113,
+      5504,
+      7439
+    ],
+    "width": 384,
+    "height": 326,
+    "area": 71953,
+    "bbox_area": 125184,
+    "match_iou": null,
+    "old_json_bbox": [
+      5120,
+      7113,
+      5504,
+      7439
+    ],
+    "scaled_expected_bbox": [
+      5120,
+      7113,
+      5504,
+      7439
+    ]
+  },
+  {
+    "id": "part_177",
+    "old_file": "part_177.png",
+    "new_file": "hair_177.png",
+    "bbox": [
+      5561,
+      7129,
+      5709,
+      7861
+    ],
+    "width": 148,
+    "height": 732,
+    "area": 53561,
+    "bbox_area": 108336,
+    "match_iou": null,
+    "old_json_bbox": [
+      5561,
+      7129,
+      5709,
+      7861
+    ],
+    "scaled_expected_bbox": [
+      5561,
+      7129,
+      5709,
+      7861
+    ]
+  },
+  {
+    "id": "part_178",
+    "old_file": "part_178.png",
+    "new_file": "pin_178.png",
+    "bbox": [
+      6986,
+      7170,
+      7080,
+      7200
+    ],
+    "width": 94,
+    "height": 30,
+    "area": 1456,
+    "bbox_area": 2820,
+    "match_iou": null,
+    "old_json_bbox": [
+      6986,
+      7170,
+      7080,
+      7200
+    ],
+    "scaled_expected_bbox": [
+      6986,
+      7170,
+      7080,
+      7200
+    ]
+  },
+  {
+    "id": "part_180",
+    "old_file": "part_180.png",
+    "new_file": "cloth_180.png",
+    "bbox": [
+      665,
+      7192,
+      1049,
+      7518
+    ],
+    "width": 384,
+    "height": 326,
+    "area": 66791,
+    "bbox_area": 125184,
+    "match_iou": null,
+    "old_json_bbox": [
+      665,
+      7192,
+      1049,
+      7518
+    ],
+    "scaled_expected_bbox": [
+      665,
+      7192,
+      1049,
+      7518
+    ]
+  },
+  {
+    "id": "part_182",
+    "old_file": "part_182.png",
+    "new_file": "eye_182.png",
+    "bbox": [
+      1424,
+      7192,
+      1566,
+      7221
+    ],
+    "width": 142,
+    "height": 29,
+    "area": 995,
+    "bbox_area": 4118,
+    "match_iou": null,
+    "old_json_bbox": [
+      1424,
+      7192,
+      1566,
+      7221
+    ],
+    "scaled_expected_bbox": [
+      1424,
+      7192,
+      1566,
+      7221
+    ]
+  },
+  {
+    "id": "part_183",
+    "old_file": "part_183.png",
+    "new_file": "skin_183.png",
+    "bbox": [
+      4246,
+      7192,
+      4432,
+      7296
+    ],
+    "width": 186,
+    "height": 104,
+    "area": 9021,
+    "bbox_area": 19344,
+    "match_iou": null,
+    "old_json_bbox": [
+      4246,
+      7192,
+      4432,
+      7296
+    ],
+    "scaled_expected_bbox": [
+      4246,
+      7192,
+      4432,
+      7296
+    ]
+  },
+  {
+    "id": "part_179",
+    "old_file": "part_179.png",
+    "new_file": "pin_179.png",
+    "bbox": [
+      33,
+      7193,
+      616,
+      7470
+    ],
+    "width": 583,
+    "height": 277,
+    "area": 130844,
+    "bbox_area": 161491,
+    "match_iou": null,
+    "old_json_bbox": [
+      33,
+      7193,
+      616,
+      7470
+    ],
+    "scaled_expected_bbox": [
+      33,
+      7193,
+      616,
+      7470
+    ]
+  },
+  {
+    "id": "part_181",
+    "old_file": "part_181.png",
+    "new_file": "cloth_181.png",
+    "bbox": [
+      1096,
+      7193,
+      1373,
+      7634
+    ],
+    "width": 277,
+    "height": 441,
+    "area": 103770,
+    "bbox_area": 122157,
+    "match_iou": null,
+    "old_json_bbox": [
+      1096,
+      7193,
+      1373,
+      7634
+    ],
+    "scaled_expected_bbox": [
+      1096,
+      7193,
+      1373,
+      7634
+    ]
+  },
+  {
+    "id": "part_184",
+    "old_file": "part_184.png",
+    "new_file": "eye_184.png",
+    "bbox": [
+      3513,
+      7198,
+      4195,
+      7378
+    ],
+    "width": 682,
+    "height": 180,
+    "area": 2574,
+    "bbox_area": 122760,
+    "match_iou": null,
+    "old_json_bbox": [
+      3513,
+      7198,
+      4195,
+      7378
+    ],
+    "scaled_expected_bbox": [
+      3513,
+      7198,
+      4195,
+      7378
+    ]
+  },
+  {
+    "id": "part_185",
+    "old_file": "part_185.png",
+    "new_file": "eye_185.png",
+    "bbox": [
+      7464,
+      7224,
+      7559,
+      7260
+    ],
+    "width": 95,
+    "height": 36,
+    "area": 698,
+    "bbox_area": 3420,
+    "match_iou": null,
+    "old_json_bbox": [
+      7464,
+      7224,
+      7559,
+      7260
+    ],
+    "scaled_expected_bbox": [
+      7464,
+      7224,
+      7559,
+      7260
+    ]
+  },
+  {
+    "id": "part_186",
+    "old_file": "part_186.png",
+    "new_file": "eye_186.png",
+    "bbox": [
+      7556,
+      7228,
+      7612,
+      7254
+    ],
+    "width": 56,
+    "height": 26,
+    "area": 265,
+    "bbox_area": 1456,
+    "match_iou": null,
+    "old_json_bbox": [
+      7556,
+      7228,
+      7612,
+      7254
+    ],
+    "scaled_expected_bbox": [
+      7556,
+      7228,
+      7612,
+      7254
+    ]
+  },
+  {
+    "id": "part_187",
+    "old_file": "part_187.png",
+    "new_file": "cloth_187.png",
+    "bbox": [
+      6987,
+      7232,
+      7062,
+      7263
+    ],
+    "width": 75,
+    "height": 31,
+    "area": 1734,
+    "bbox_area": 2325,
+    "match_iou": null,
+    "old_json_bbox": [
+      6987,
+      7232,
+      7062,
+      7263
+    ],
+    "scaled_expected_bbox": [
+      6987,
+      7232,
+      7062,
+      7263
+    ]
+  },
+  {
+    "id": "part_188",
+    "old_file": "part_188.png",
+    "new_file": "eye_188.png",
+    "bbox": [
+      7584,
+      7251,
+      7652,
+      7260
+    ],
+    "width": 68,
+    "height": 9,
+    "area": 197,
+    "bbox_area": 612,
+    "match_iou": null,
+    "old_json_bbox": [
+      7584,
+      7251,
+      7652,
+      7260
+    ],
+    "scaled_expected_bbox": [
+      7584,
+      7251,
+      7652,
+      7260
+    ]
+  },
+  {
+    "id": "part_189",
+    "old_file": "part_189.png",
+    "new_file": "cloth_189.png",
+    "bbox": [
+      1424,
+      7264,
+      1675,
+      7709
+    ],
+    "width": 251,
+    "height": 445,
+    "area": 64805,
+    "bbox_area": 111695,
+    "match_iou": null,
+    "old_json_bbox": [
+      1424,
+      7264,
+      1675,
+      7709
+    ],
+    "scaled_expected_bbox": [
+      1424,
+      7264,
+      1675,
+      7709
+    ]
+  },
+  {
+    "id": "part_190",
+    "old_file": "part_190.png",
+    "new_file": "cloth_190.png",
+    "bbox": [
+      1720,
+      7272,
+      2140,
+      7532
+    ],
+    "width": 420,
+    "height": 260,
+    "area": 78253,
+    "bbox_area": 109200,
+    "match_iou": null,
+    "old_json_bbox": [
+      1720,
+      7272,
+      2140,
+      7532
+    ],
+    "scaled_expected_bbox": [
+      1720,
+      7272,
+      2140,
+      7532
+    ]
+  },
+  {
+    "id": "part_191",
+    "old_file": "part_191.png",
+    "new_file": "cloth_191.png",
+    "bbox": [
+      6992,
+      7325,
+      7245,
+      7750
+    ],
+    "width": 253,
+    "height": 425,
+    "area": 38304,
+    "bbox_area": 107525,
+    "match_iou": null,
+    "old_json_bbox": [
+      6992,
+      7325,
+      7245,
+      7750
+    ],
+    "scaled_expected_bbox": [
+      6992,
+      7325,
+      7245,
+      7750
+    ]
+  },
+  {
+    "id": "part_192",
+    "old_file": "part_192.png",
+    "new_file": "cloth_192.png",
+    "bbox": [
+      7292,
+      7336,
+      7710,
+      7518
+    ],
+    "width": 418,
+    "height": 182,
+    "area": 31582,
+    "bbox_area": 76076,
+    "match_iou": null,
+    "old_json_bbox": [
+      7292,
+      7336,
+      7710,
+      7518
+    ],
+    "scaled_expected_bbox": [
+      7292,
+      7336,
+      7710,
+      7518
+    ]
+  },
+  {
+    "id": "part_193",
+    "old_file": "part_193.png",
+    "new_file": "pin_193.png",
+    "bbox": [
+      4247,
+      7338,
+      4375,
+      7366
+    ],
+    "width": 128,
+    "height": 28,
+    "area": 3325,
+    "bbox_area": 3584,
+    "match_iou": null,
+    "old_json_bbox": [
+      4247,
+      7338,
+      4375,
+      7366
+    ],
+    "scaled_expected_bbox": [
+      4247,
+      7338,
+      4375,
+      7366
+    ]
+  },
+  {
+    "id": "part_194",
+    "old_file": "part_194.png",
+    "new_file": "cloth_194.png",
+    "bbox": [
+      4248,
+      7406,
+      4489,
+      7849
+    ],
+    "width": 241,
+    "height": 443,
+    "area": 52257,
+    "bbox_area": 106763,
+    "match_iou": null,
+    "old_json_bbox": [
+      4248,
+      7406,
+      4489,
+      7849
+    ],
+    "scaled_expected_bbox": [
+      4248,
+      7406,
+      4489,
+      7849
+    ]
+  },
+  {
+    "id": "part_195",
+    "old_file": "part_195.png",
+    "new_file": "cloth_195.png",
+    "bbox": [
+      4797,
+      7409,
+      4872,
+      7440
+    ],
+    "width": 75,
+    "height": 31,
+    "area": 1746,
+    "bbox_area": 2325,
+    "match_iou": null,
+    "old_json_bbox": [
+      4797,
+      7409,
+      4872,
+      7440
+    ],
+    "scaled_expected_bbox": [
+      4797,
+      7409,
+      4872,
+      7440
+    ]
+  },
+  {
+    "id": "part_196",
+    "old_file": "part_196.png",
+    "new_file": "skin_196.png",
+    "bbox": [
+      4534,
+      7416,
+      4750,
+      7650
+    ],
+    "width": 216,
+    "height": 234,
+    "area": 33565,
+    "bbox_area": 50544,
+    "match_iou": null,
+    "old_json_bbox": [
+      4534,
+      7416,
+      4750,
+      7650
+    ],
+    "scaled_expected_bbox": [
+      4534,
+      7416,
+      4750,
+      7650
+    ]
+  },
+  {
+    "id": "part_197",
+    "old_file": "part_197.png",
+    "new_file": "pin_197.png",
+    "bbox": [
+      6440,
+      7416,
+      6572,
+      7481
+    ],
+    "width": 132,
+    "height": 65,
+    "area": 3597,
+    "bbox_area": 8580,
+    "match_iou": null,
+    "old_json_bbox": [
+      6440,
+      7416,
+      6572,
+      7481
+    ],
+    "scaled_expected_bbox": [
+      6440,
+      7416,
+      6572,
+      7481
+    ]
+  },
+  {
+    "id": "part_198",
+    "old_file": "part_198.png",
+    "new_file": "cloth_198.png",
+    "bbox": [
+      3504,
+      7430,
+      3908,
+      7690
+    ],
+    "width": 404,
+    "height": 260,
+    "area": 78144,
+    "bbox_area": 105040,
+    "match_iou": null,
+    "old_json_bbox": [
+      3504,
+      7430,
+      3908,
+      7690
+    ],
+    "scaled_expected_bbox": [
+      3504,
+      7430,
+      3908,
+      7690
+    ]
+  },
+  {
+    "id": "part_199",
+    "old_file": "part_199.png",
+    "new_file": "pin_199.png",
+    "bbox": [
+      3960,
+      7432,
+      4092,
+      7497
+    ],
+    "width": 132,
+    "height": 65,
+    "area": 3597,
+    "bbox_area": 8580,
+    "match_iou": null,
+    "old_json_bbox": [
+      3960,
+      7432,
+      4092,
+      7497
+    ],
+    "scaled_expected_bbox": [
+      3960,
+      7432,
+      4092,
+      7497
+    ]
+  },
+  {
+    "id": "part_200",
+    "old_file": "part_200.png",
+    "new_file": "pin_200.png",
+    "bbox": [
+      3016,
+      7464,
+      3142,
+      7525
+    ],
+    "width": 126,
+    "height": 61,
+    "area": 3351,
+    "bbox_area": 7686,
+    "match_iou": null,
+    "old_json_bbox": [
+      3016,
+      7464,
+      3142,
+      7525
+    ],
+    "scaled_expected_bbox": [
+      3016,
+      7464,
+      3142,
+      7525
+    ]
+  },
+  {
+    "id": "part_201",
+    "old_file": "part_201.png",
+    "new_file": "eye_201.png",
+    "bbox": [
+      2190,
+      7473,
+      2454,
+      7541
+    ],
+    "width": 264,
+    "height": 68,
+    "area": 9391,
+    "bbox_area": 17952,
+    "match_iou": null,
+    "old_json_bbox": [
+      2190,
+      7473,
+      2454,
+      7541
+    ],
+    "scaled_expected_bbox": [
+      2190,
+      7473,
+      2454,
+      7541
+    ]
+  },
+  {
+    "id": "part_202",
+    "old_file": "part_202.png",
+    "new_file": "pin_202.png",
+    "bbox": [
+      3232,
+      7473,
+      3436,
+      7652
+    ],
+    "width": 204,
+    "height": 179,
+    "area": 12215,
+    "bbox_area": 36516,
+    "match_iou": null,
+    "old_json_bbox": [
+      3232,
+      7473,
+      3436,
+      7652
+    ],
+    "scaled_expected_bbox": [
+      3232,
+      7473,
+      3436,
+      7652
+    ]
+  },
+  {
+    "id": "part_203",
+    "old_file": "part_203.png",
+    "new_file": "mouth_203.png",
+    "bbox": [
+      5376,
+      7483,
+      5466,
+      7520
+    ],
+    "width": 90,
+    "height": 37,
+    "area": 1433,
+    "bbox_area": 3330,
+    "match_iou": null,
+    "old_json_bbox": [
+      5376,
+      7483,
+      5466,
+      7520
+    ],
+    "scaled_expected_bbox": [
+      5376,
+      7483,
+      5466,
+      7520
+    ]
+  },
+  {
+    "id": "part_204",
+    "old_file": "part_204.png",
+    "new_file": "pin_204.png",
+    "bbox": [
+      5120,
+      7488,
+      5326,
+      7659
+    ],
+    "width": 206,
+    "height": 171,
+    "area": 11133,
+    "bbox_area": 35226,
+    "match_iou": null,
+    "old_json_bbox": [
+      5120,
+      7488,
+      5326,
+      7659
+    ],
+    "scaled_expected_bbox": [
+      5120,
+      7488,
+      5326,
+      7659
+    ]
+  },
+  {
+    "id": "part_205",
+    "old_file": "part_205.png",
+    "new_file": "pin_205.png",
+    "bbox": [
+      6454,
+      7506,
+      6586,
+      7571
+    ],
+    "width": 132,
+    "height": 65,
+    "area": 3583,
+    "bbox_area": 8580,
+    "match_iou": null,
+    "old_json_bbox": [
+      6454,
+      7506,
+      6586,
+      7571
+    ],
+    "scaled_expected_bbox": [
+      6454,
+      7506,
+      6586,
+      7571
+    ]
+  },
+  {
+    "id": "part_206",
+    "old_file": "part_206.png",
+    "new_file": "blusher_206.png",
+    "bbox": [
+      5782,
+      7514,
+      6008,
+      7649
+    ],
+    "width": 226,
+    "height": 135,
+    "area": 24898,
+    "bbox_area": 30510,
+    "match_iou": null,
+    "old_json_bbox": [
+      5782,
+      7514,
+      6008,
+      7649
+    ],
+    "scaled_expected_bbox": [
+      5782,
+      7514,
+      6008,
+      7649
+    ]
+  },
+  {
+    "id": "part_207",
+    "old_file": "part_207.png",
+    "new_file": "blusher_207.png",
+    "bbox": [
+      6169,
+      7514,
+      6396,
+      7649
+    ],
+    "width": 227,
+    "height": 135,
+    "area": 25291,
+    "bbox_area": 30645,
+    "match_iou": null,
+    "old_json_bbox": [
+      6169,
+      7514,
+      6396,
+      7649
+    ],
+    "scaled_expected_bbox": [
+      6169,
+      7514,
+      6396,
+      7649
+    ]
+  },
+  {
+    "id": "part_208",
+    "old_file": "part_208.png",
+    "new_file": "pin_208.png",
+    "bbox": [
+      3974,
+      7522,
+      4106,
+      7587
+    ],
+    "width": 132,
+    "height": 65,
+    "area": 3583,
+    "bbox_area": 8580,
+    "match_iou": null,
+    "old_json_bbox": [
+      3974,
+      7522,
+      4106,
+      7587
+    ],
+    "scaled_expected_bbox": [
+      3974,
+      7522,
+      4106,
+      7587
+    ]
+  },
+  {
+    "id": "part_209",
+    "old_file": "part_209.png",
+    "new_file": "pin_209.png",
+    "bbox": [
+      65,
+      7531,
+      530,
+      7839
+    ],
+    "width": 465,
+    "height": 308,
+    "area": 87020,
+    "bbox_area": 143220,
+    "match_iou": null,
+    "old_json_bbox": [
+      65,
+      7531,
+      530,
+      7839
+    ],
+    "scaled_expected_bbox": [
+      65,
+      7531,
+      530,
+      7839
+    ]
+  },
+  {
+    "id": "part_210",
+    "old_file": "part_210.png",
+    "new_file": "pin_210.png",
+    "bbox": [
+      3028,
+      7551,
+      3166,
+      7618
+    ],
+    "width": 138,
+    "height": 67,
+    "area": 3951,
+    "bbox_area": 9246,
+    "match_iou": null,
+    "old_json_bbox": [
+      3028,
+      7551,
+      3166,
+      7618
+    ],
+    "scaled_expected_bbox": [
+      3028,
+      7551,
+      3166,
+      7618
+    ]
+  },
+  {
+    "id": "part_211",
+    "old_file": "part_211.png",
+    "new_file": "eye_211.png",
+    "bbox": [
+      709,
+      7560,
+      804,
+      7596
+    ],
+    "width": 95,
+    "height": 36,
+    "area": 703,
+    "bbox_area": 3420,
+    "match_iou": null,
+    "old_json_bbox": [
+      709,
+      7560,
+      804,
+      7596
+    ],
+    "scaled_expected_bbox": [
+      709,
+      7560,
+      804,
+      7596
+    ]
+  },
+  {
+    "id": "part_212",
+    "old_file": "part_212.png",
+    "new_file": "pin_212.png",
+    "bbox": [
+      847,
+      7562,
+      975,
+      7591
+    ],
+    "width": 128,
+    "height": 29,
+    "area": 3555,
+    "bbox_area": 3712,
+    "match_iou": null,
+    "old_json_bbox": [
+      847,
+      7562,
+      975,
+      7591
+    ],
+    "scaled_expected_bbox": [
+      847,
+      7562,
+      975,
+      7591
+    ]
+  },
+  {
+    "id": "part_213",
+    "old_file": "part_213.png",
+    "new_file": "eye_213.png",
+    "bbox": [
+      656,
+      7564,
+      712,
+      7590
+    ],
+    "width": 56,
+    "height": 26,
+    "area": 266,
+    "bbox_area": 1456,
+    "match_iou": null,
+    "old_json_bbox": [
+      656,
+      7564,
+      712,
+      7590
+    ],
+    "scaled_expected_bbox": [
+      656,
+      7564,
+      712,
+      7590
+    ]
+  },
+  {
+    "id": "part_214",
+    "old_file": "part_214.png",
+    "new_file": "eye_back_214.png",
+    "bbox": [
+      5377,
+      7567,
+      5472,
+      7602
+    ],
+    "width": 95,
+    "height": 35,
+    "area": 1910,
+    "bbox_area": 3325,
+    "match_iou": null,
+    "old_json_bbox": [
+      5377,
+      7567,
+      5472,
+      7602
+    ],
+    "scaled_expected_bbox": [
+      5377,
+      7567,
+      5472,
+      7602
+    ]
+  },
+  {
+    "id": "part_215",
+    "old_file": "part_215.png",
+    "new_file": "eye_back_215.png",
+    "bbox": [
+      7552,
+      7567,
+      7646,
+      7601
+    ],
+    "width": 94,
+    "height": 34,
+    "area": 1761,
+    "bbox_area": 3196,
+    "match_iou": null,
+    "old_json_bbox": [
+      7552,
+      7567,
+      7646,
+      7601
+    ],
+    "scaled_expected_bbox": [
+      7552,
+      7567,
+      7646,
+      7601
+    ]
+  },
+  {
+    "id": "part_216",
+    "old_file": "part_216.png",
+    "new_file": "skin_216.png",
+    "bbox": [
+      7301,
+      7569,
+      7501,
+      7730
+    ],
+    "width": 200,
+    "height": 161,
+    "area": 15332,
+    "bbox_area": 32200,
+    "match_iou": null,
+    "old_json_bbox": [
+      7301,
+      7569,
+      7501,
+      7730
+    ],
+    "scaled_expected_bbox": [
+      7301,
+      7569,
+      7501,
+      7730
+    ]
+  },
+  {
+    "id": "part_217",
+    "old_file": "part_217.png",
+    "new_file": "eye_217.png",
+    "bbox": [
+      616,
+      7587,
+      684,
+      7596
+    ],
+    "width": 68,
+    "height": 9,
+    "area": 201,
+    "bbox_area": 612,
+    "match_iou": null,
+    "old_json_bbox": [
+      616,
+      7587,
+      684,
+      7596
+    ],
+    "scaled_expected_bbox": [
+      616,
+      7587,
+      684,
+      7596
+    ]
+  },
+  {
+    "id": "part_218",
+    "old_file": "part_218.png",
+    "new_file": "eye_218.png",
+    "bbox": [
+      1737,
+      7595,
+      2059,
+      7690
+    ],
+    "width": 322,
+    "height": 95,
+    "area": 11961,
+    "bbox_area": 30590,
+    "match_iou": null,
+    "old_json_bbox": [
+      1737,
+      7595,
+      2059,
+      7690
+    ],
+    "scaled_expected_bbox": [
+      1737,
+      7595,
+      2059,
+      7690
+    ]
+  },
+  {
+    "id": "part_219",
+    "old_file": "part_219.png",
+    "new_file": "eye_219.png",
+    "bbox": [
+      2088,
+      7596,
+      2414,
+      7690
+    ],
+    "width": 326,
+    "height": 94,
+    "area": 12059,
+    "bbox_area": 30644,
+    "match_iou": null,
+    "old_json_bbox": [
+      2088,
+      7596,
+      2414,
+      7690
+    ],
+    "scaled_expected_bbox": [
+      2088,
+      7596,
+      2414,
+      7690
+    ]
+  },
+  {
+    "id": "part_220",
+    "old_file": "part_220.png",
+    "new_file": "pin_220.png",
+    "bbox": [
+      6467,
+      7597,
+      6611,
+      7668
+    ],
+    "width": 144,
+    "height": 71,
+    "area": 4179,
+    "bbox_area": 10224,
+    "match_iou": null,
+    "old_json_bbox": [
+      6467,
+      7597,
+      6611,
+      7668
+    ],
+    "scaled_expected_bbox": [
+      6467,
+      7597,
+      6611,
+      7668
+    ]
+  },
+  {
+    "id": "part_221",
+    "old_file": "part_221.png",
+    "new_file": "pin_221.png",
+    "bbox": [
+      3987,
+      7613,
+      4131,
+      7684
+    ],
+    "width": 144,
+    "height": 71,
+    "area": 4179,
+    "bbox_area": 10224,
+    "match_iou": null,
+    "old_json_bbox": [
+      3987,
+      7613,
+      4131,
+      7684
+    ],
+    "scaled_expected_bbox": [
+      3987,
+      7613,
+      4131,
+      7684
+    ]
+  },
+  {
+    "id": "part_222",
+    "old_file": "part_222.png",
+    "new_file": "pin_222.png",
+    "bbox": [
+      3045,
+      7640,
+      3185,
+      7709
+    ],
+    "width": 140,
+    "height": 69,
+    "area": 4083,
+    "bbox_area": 9660,
+    "match_iou": null,
+    "old_json_bbox": [
+      3045,
+      7640,
+      3185,
+      7709
+    ],
+    "scaled_expected_bbox": [
+      3045,
+      7640,
+      3185,
+      7709
+    ]
+  },
+  {
+    "id": "part_223",
+    "old_file": "part_223.png",
+    "new_file": "eye_223.png",
+    "bbox": [
+      5373,
+      7642,
+      5427,
+      7666
+    ],
+    "width": 54,
+    "height": 24,
+    "area": 206,
+    "bbox_area": 1296,
+    "match_iou": null,
+    "old_json_bbox": [
+      5373,
+      7642,
+      5427,
+      7666
+    ],
+    "scaled_expected_bbox": [
+      5373,
+      7642,
+      5427,
+      7666
+    ]
+  },
+  {
+    "id": "part_224",
+    "old_file": "part_224.png",
+    "new_file": "eye_224.png",
+    "bbox": [
+      5432,
+      7642,
+      5487,
+      7666
+    ],
+    "width": 55,
+    "height": 24,
+    "area": 204,
+    "bbox_area": 1320,
+    "match_iou": null,
+    "old_json_bbox": [
+      5432,
+      7642,
+      5487,
+      7666
+    ],
+    "scaled_expected_bbox": [
+      5432,
+      7642,
+      5487,
+      7666
+    ]
+  },
+  {
+    "id": "part_225",
+    "old_file": "part_225.png",
+    "new_file": "pin_225.png",
+    "bbox": [
+      7553,
+      7649,
+      7648,
+      7680
+    ],
+    "width": 95,
+    "height": 31,
+    "area": 1513,
+    "bbox_area": 2945,
+    "match_iou": null,
+    "old_json_bbox": [
+      7553,
+      7649,
+      7648,
+      7680
+    ],
+    "scaled_expected_bbox": [
+      7553,
+      7649,
+      7648,
+      7680
+    ]
+  },
+  {
+    "id": "part_226",
+    "old_file": "part_226.png",
+    "new_file": "blusher_226.png",
+    "bbox": [
+      622,
+      7677,
+      781,
+      7750
+    ],
+    "width": 159,
+    "height": 73,
+    "area": 8137,
+    "bbox_area": 11607,
+    "match_iou": null,
+    "old_json_bbox": [
+      622,
+      7677,
+      781,
+      7750
+    ],
+    "scaled_expected_bbox": [
+      622,
+      7677,
+      781,
+      7750
+    ]
+  },
+  {
+    "id": "part_227",
+    "old_file": "part_227.png",
+    "new_file": "blusher_227.png",
+    "bbox": [
+      975,
+      7677,
+      1145,
+      7750
+    ],
+    "width": 170,
+    "height": 73,
+    "area": 8688,
+    "bbox_area": 12410,
+    "match_iou": null,
+    "old_json_bbox": [
+      975,
+      7677,
+      1145,
+      7750
+    ],
+    "scaled_expected_bbox": [
+      975,
+      7677,
+      1145,
+      7750
+    ]
+  },
+  {
+    "id": "part_228",
+    "old_file": "part_228.png",
+    "new_file": "mouth_228.png",
+    "bbox": [
+      7390,
+      7696,
+      7415,
+      7710
+    ],
+    "width": 25,
+    "height": 14,
+    "area": 150,
+    "bbox_area": 350,
+    "match_iou": null,
+    "old_json_bbox": [
+      7390,
+      7696,
+      7415,
+      7710
+    ],
+    "scaled_expected_bbox": [
+      7390,
+      7696,
+      7415,
+      7710
+    ]
+  },
+  {
+    "id": "part_229",
+    "old_file": "part_229.png",
+    "new_file": "eye_back_229.png",
+    "bbox": [
+      4544,
+      7699,
+      4749,
+      7834
+    ],
+    "width": 205,
+    "height": 135,
+    "area": 22652,
+    "bbox_area": 27675,
+    "match_iou": null,
+    "old_json_bbox": [
+      4544,
+      7699,
+      4749,
+      7834
+    ],
+    "scaled_expected_bbox": [
+      4544,
+      7699,
+      4749,
+      7834
+    ]
+  },
+  {
+    "id": "part_231",
+    "old_file": "part_231.png",
+    "new_file": "cloth_231.png",
+    "bbox": [
+      5768,
+      7704,
+      5781,
+      7775
+    ],
+    "width": 13,
+    "height": 71,
+    "area": 922,
+    "bbox_area": 923,
+    "match_iou": null,
+    "old_json_bbox": [
+      5768,
+      7704,
+      5781,
+      7775
+    ],
+    "scaled_expected_bbox": [
+      5768,
+      7704,
+      5781,
+      7775
+    ]
+  },
+  {
+    "id": "part_232",
+    "old_file": "part_232.png",
+    "new_file": "cloth_232.png",
+    "bbox": [
+      6265,
+      7704,
+      6278,
+      7775
+    ],
+    "width": 13,
+    "height": 71,
+    "area": 922,
+    "bbox_area": 923,
+    "match_iou": null,
+    "old_json_bbox": [
+      6265,
+      7704,
+      6278,
+      7775
+    ],
+    "scaled_expected_bbox": [
+      6265,
+      7704,
+      6278,
+      7775
+    ]
+  },
+  {
+    "id": "part_230",
+    "old_file": "part_230.png",
+    "new_file": "pin_230.png",
+    "bbox": [
+      5116,
+      7705,
+      5470,
+      7795
+    ],
+    "width": 354,
+    "height": 90,
+    "area": 17253,
+    "bbox_area": 31860,
+    "match_iou": null,
+    "old_json_bbox": [
+      5116,
+      7705,
+      5470,
+      7795
+    ],
+    "scaled_expected_bbox": [
+      5116,
+      7705,
+      5470,
+      7795
+    ]
+  },
+  {
+    "id": "part_233",
+    "old_file": "part_233.png",
+    "new_file": "eye_back_233.png",
+    "bbox": [
+      3233,
+      7707,
+      3443,
+      7842
+    ],
+    "width": 210,
+    "height": 135,
+    "area": 23302,
+    "bbox_area": 28350,
+    "match_iou": null,
+    "old_json_bbox": [
+      3233,
+      7707,
+      3443,
+      7842
+    ],
+    "scaled_expected_bbox": [
+      3233,
+      7707,
+      3443,
+      7842
+    ]
+  },
+  {
+    "id": "part_234",
+    "old_file": "part_234.png",
+    "new_file": "cloth_234.png",
+    "bbox": [
+      5959,
+      7711,
+      5972,
+      7779
+    ],
+    "width": 13,
+    "height": 68,
+    "area": 883,
+    "bbox_area": 884,
+    "match_iou": null,
+    "old_json_bbox": [
+      5959,
+      7711,
+      5972,
+      7779
+    ],
+    "scaled_expected_bbox": [
+      5959,
+      7711,
+      5972,
+      7779
+    ]
+  },
+  {
+    "id": "part_235",
+    "old_file": "part_235.png",
+    "new_file": "cloth_235.png",
+    "bbox": [
+      6074,
+      7711,
+      6087,
+      7734
+    ],
+    "width": 13,
+    "height": 23,
+    "area": 271,
+    "bbox_area": 299,
+    "match_iou": null,
+    "old_json_bbox": [
+      6074,
+      7711,
+      6087,
+      7734
+    ],
+    "scaled_expected_bbox": [
+      6074,
+      7711,
+      6087,
+      7734
+    ]
+  },
+  {
+    "id": "part_236",
+    "old_file": "part_236.png",
+    "new_file": "pin_236.png",
+    "bbox": [
+      6327,
+      7713,
+      6518,
+      7850
+    ],
+    "width": 191,
+    "height": 137,
+    "area": 11108,
+    "bbox_area": 26167,
+    "match_iou": null,
+    "old_json_bbox": [
+      6327,
+      7713,
+      6518,
+      7850
+    ],
+    "scaled_expected_bbox": [
+      6327,
+      7713,
+      6518,
+      7850
+    ]
+  },
+  {
+    "id": "part_237",
+    "old_file": "part_237.png",
+    "new_file": "eye_back_237.png",
+    "bbox": [
+      3496,
+      7728,
+      3692,
+      7853
+    ],
+    "width": 196,
+    "height": 125,
+    "area": 18912,
+    "bbox_area": 24500,
+    "match_iou": null,
+    "old_json_bbox": [
+      3496,
+      7728,
+      3692,
+      7853
+    ],
+    "scaled_expected_bbox": [
+      3496,
+      7728,
+      3692,
+      7853
+    ]
+  },
+  {
+    "id": "part_238",
+    "old_file": "part_238.png",
+    "new_file": "eye_back_238.png",
+    "bbox": [
+      3740,
+      7734,
+      3936,
+      7860
+    ],
+    "width": 196,
+    "height": 126,
+    "area": 19160,
+    "bbox_area": 24696,
+    "match_iou": null,
+    "old_json_bbox": [
+      3740,
+      7734,
+      3936,
+      7860
+    ],
+    "scaled_expected_bbox": [
+      3740,
+      7734,
+      3936,
+      7860
+    ]
+  },
+  {
+    "id": "part_239",
+    "old_file": "part_239.png",
+    "new_file": "hair_239.png",
+    "bbox": [
+      3984,
+      7737,
+      4182,
+      7850
+    ],
+    "width": 198,
+    "height": 113,
+    "area": 15581,
+    "bbox_area": 22374,
+    "match_iou": null,
+    "old_json_bbox": [
+      3984,
+      7737,
+      4182,
+      7850
+    ],
+    "scaled_expected_bbox": [
+      3984,
+      7737,
+      4182,
+      7850
+    ]
+  },
+  {
+    "id": "part_240",
+    "old_file": "part_240.png",
+    "new_file": "skin_240.png",
+    "bbox": [
+      1198,
+      7748,
+      1426,
+      7839
+    ],
+    "width": 228,
+    "height": 91,
+    "area": 10498,
+    "bbox_area": 20748,
+    "match_iou": null,
+    "old_json_bbox": [
+      1198,
+      7748,
+      1426,
+      7839
+    ],
+    "scaled_expected_bbox": [
+      1198,
+      7748,
+      1426,
+      7839
+    ]
+  },
+  {
+    "id": "part_241",
+    "old_file": "part_241.png",
+    "new_file": "skin_241.png",
+    "bbox": [
+      1721,
+      7752,
+      1900,
+      7853
+    ],
+    "width": 179,
+    "height": 101,
+    "area": 7833,
+    "bbox_area": 18079,
+    "match_iou": null,
+    "old_json_bbox": [
+      1721,
+      7752,
+      1900,
+      7853
+    ],
+    "scaled_expected_bbox": [
+      1721,
+      7752,
+      1900,
+      7853
+    ]
+  },
+  {
+    "id": "part_242",
+    "old_file": "part_242.png",
+    "new_file": "skin_242.png",
+    "bbox": [
+      2183,
+      7756,
+      2380,
+      7835
+    ],
+    "width": 197,
+    "height": 79,
+    "area": 8805,
+    "bbox_area": 15563,
+    "match_iou": null,
+    "old_json_bbox": [
+      2183,
+      7756,
+      2380,
+      7835
+    ],
+    "scaled_expected_bbox": [
+      2183,
+      7756,
+      2380,
+      7835
+    ]
+  },
+  {
+    "id": "part_243",
+    "old_file": "part_243.png",
+    "new_file": "skin_243.png",
+    "bbox": [
+      1953,
+      7758,
+      2127,
+      7855
+    ],
+    "width": 174,
+    "height": 97,
+    "area": 10062,
+    "bbox_area": 16878,
+    "match_iou": null,
+    "old_json_bbox": [
+      1953,
+      7758,
+      2127,
+      7855
+    ],
+    "scaled_expected_bbox": [
+      1953,
+      7758,
+      2127,
+      7855
+    ]
+  },
+  {
+    "id": "part_244",
+    "old_file": "part_244.png",
+    "new_file": "eye_244.png",
+    "bbox": [
+      6996,
+      7804,
+      7243,
+      7818
+    ],
+    "width": 247,
+    "height": 14,
+    "area": 1176,
+    "bbox_area": 3458,
+    "match_iou": null,
+    "old_json_bbox": [
+      6996,
+      7804,
+      7243,
+      7818
+    ],
+    "scaled_expected_bbox": [
+      6996,
+      7804,
+      7243,
+      7818
+    ]
+  },
+  {
+    "id": "part_245",
+    "old_file": "part_245.png",
+    "new_file": "eye_245.png",
+    "bbox": [
+      7385,
+      7804,
+      7632,
+      7818
+    ],
+    "width": 247,
+    "height": 14,
+    "area": 1214,
+    "bbox_area": 3458,
+    "match_iou": null,
+    "old_json_bbox": [
+      7385,
+      7804,
+      7632,
+      7818
+    ],
+    "scaled_expected_bbox": [
+      7385,
+      7804,
+      7632,
+      7818
+    ]
+  }
+]
