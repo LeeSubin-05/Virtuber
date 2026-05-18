@@ -1,0 +1,22 @@
+{
+    "collar_left": "pure blue",
+    "collar_right": "pure blue",
+    "shirt_shoulder_left": "pure blue",
+    "shirt_shoulder_right": "pure blue",
+    "shirt_chest_right": "pure blue",
+    "shirt_chest_left": "pure blue",
+    "shirt_stomach_right": "pure blue",
+    "shirt_stomach_left": "pure blue",
+    "hair_extra_outter_right": "pure black",
+    "hair_root_base": "whole black",
+    "hair_extra_outter_left": "pure black",
+    "hair_outter_left": "whole black",
+    "hair_outter_right": "whole black",
+    "hair_front_left": "pure black",
+    "hair_front_right": "pure black",
+    "hair_mid": "pure black",
+    "hair_back": "whole black",
+    "eye_left": "#00ff00",
+    "eye_right": "#ffff00",
+    "skin": "#78996e"
+}

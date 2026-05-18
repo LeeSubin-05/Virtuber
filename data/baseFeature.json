@@ -1,0 +1,117 @@
+{
+    "collar_left": {
+        "role": "Decorative left collar piece of the shirt",
+        "silhouette": "Symmetric triangular or curved collar wing on the left side",
+        "boundary": "Upper chest area, connected to the neck base"
+    },
+    "collar_right": {
+        "role": "Decorative right collar piece of the shirt",
+        "silhouette": "Symmetric triangular or curved collar wing on the right side",
+        "boundary": "Upper chest area, connected to the neck base"
+    },
+    "headband_accessory_left": {
+        "role": "Left-side decorative element attached to the headband",
+        "silhouette": "Small ornamental shape on the left top head",
+        "boundary": "Attached to the headband frame"
+    },
+    "headband_accessory_right": {
+        "role": "Right-side decorative element attached to the headband",
+        "silhouette": "Small ornamental shape on the right top head",
+        "boundary": "Attached to the headband frame"
+    },
+    "shirt_shoulder_left": {
+        "role": "Left shoulder garment section for upper outfit, not include skin",
+        "silhouette": "Curved fabric covering the left shoulder joint",
+        "boundary": "Between neck and left arm"
+    },
+    "shirt_shoulder_right": {
+        "role": "Right shoulder garment section for upper outfit, not include skin",
+        "silhouette": "Curved fabric covering the right shoulder joint",
+        "boundary": "Between neck and right arm"
+    },
+    "shirt_neck_background": {
+        "role": "Inner back-neck lining of the shirt for depth",
+        "silhouette": "Internal U-shaped fabric behind the neck",
+        "boundary": "Inside the neck opening of the shirt"
+    },
+    "headband": {
+        "role": "Main headwear accessory base",
+        "silhouette": "Arc-shaped frame across the top of the head",
+        "boundary": "Sits atop the hair root area"
+    },
+    "shirt_chest_right": {
+        "role": "Upper right chest garment section, not include skin",
+        "silhouette": "Main fabric covering the right pectoral region",
+        "boundary": "Upper torso, right side"
+    },
+    "shirt_chest_left": {
+        "role": "Upper left chest garment section, not include skin",
+        "silhouette": "Main fabric covering the left pectoral region",
+        "boundary": "Upper torso, left side"
+    },
+    "shirt_stomach_right": {
+        "role": "Lower right torso garment section covering the abdominal area, not including the skirt",
+        "silhouette": "Fabric covering the right abdominal area",
+        "boundary": "Lower torso, right side"
+    },
+    "shirt_stomach_left": {
+        "role": "Lower left torso garment section covering the abdominal area, not including the skirt",
+        "silhouette": "Fabric covering the left abdominal area",
+        "boundary": "Lower torso, left side"
+    },
+    "hair_extra_outter_right": {
+        "role": "The most exterior decorative hair strands on the right side",
+        "silhouette": "Fine, floating strands away from the main volume",
+        "boundary": "Right side, outermost layer"
+    },
+    "hair_root_base": {
+        "role": "The crown of the head where all hair strands originate",
+        "silhouette": "Central hub or scalp whorl texture",
+        "boundary": "Top center of the head"
+    },
+    "hair_extra_outter_left": {
+        "role": "The most exterior decorative hair strands on the left side",
+        "silhouette": "Fine, floating strands away from the main volume",
+        "boundary": "Left side, outermost layer"
+    },
+    "hair_outter_left": {
+        "role": "Left-side main volume hair layer",
+        "silhouette": "Large chunks of hair defining the left head shape",
+        "boundary": "Left side, secondary exterior layer"
+    },
+    "hair_outter_right": {
+        "role": "Right-side main volume hair layer",
+        "silhouette": "Large chunks of hair defining the right head shape",
+        "boundary": "Right side, secondary exterior layer"
+    },
+    "hair_front_left": {
+        "role": "Left side-bangs framing the face",
+        "silhouette": "Curved hair strands along the left jawline",
+        "boundary": "Front left, framing face contour"
+    },
+    "hair_front_right": {
+        "role": "Right side-bangs framing the face",
+        "silhouette": "Curved hair strands along the right jawline",
+        "boundary": "Front right, framing face contour"
+    },
+    "hair_mid": {
+        "role": "Central bangs/fringe located at the forehead",
+        "silhouette": "Pointed or flat strands covering the forehead center",
+        "boundary": "Center front, above eyes"
+    },
+    "hair_back": {
+        "role": "Large silhouette hair layer located behind the head and back",
+        "silhouette": "Full width hair curtain extending below shoulders",
+        "boundary": "Lowest hair layer, behind shoulders"
+    },
+    "eye_left": {
+        "role": "Left eye assembly including pupil, iris, and sclera",
+        "silhouette": "Almond or round eye shape on left face",
+        "boundary": "Upper left facial region"
+    },
+    "eye_right": {
+        "role": "Right eye assembly including pupil, iris, and sclera",
+        "silhouette": "Almond or round eye shape on right face",
+        "boundary": "Upper right facial region"
+    }
+}
