@@ -1,23 +1,17 @@
 import os
-import sys
 import json
 import io
 from PIL import Image
 from google import genai
 from google.genai import types
-
-# scripts 폴더에서 상위 Virtuber 폴더의 config.py를 찾도록 경로를 추가
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
-
-from config import JSON_PATH, FEATURE_PATH
+from config import JSON_PATH, FEATURE_PATH, SCRIPT_DIR
 
 # ── 설정 ─────────────────────────────────────────────────
 # 발급받은 Gemini API 키를 입력하세요
-API_KEY = ""
+API_KEY = "AIzaSyDohfHOE0BjkKWMvfC6CrtfHvmfTkmQPLE"
 
 # 파일 경로 설정 (환경변수에서 로드)
+PARTS_LIST_PATH = os.path.join(SCRIPT_DIR, "parts_list.json")
 BASE_FEATURE_PATH = FEATURE_PATH
 OUTPUT_JSON_PATH = JSON_PATH
 
@@ -28,6 +22,8 @@ def generate_part_prompts(user_image_path, user_instruction):
     
     # 1. 파츠 데이터 및 설명 로드
     try:
+        with open(PARTS_LIST_PATH, "r", encoding="utf-8") as f:
+            part_names = json.load(f)
         with open(BASE_FEATURE_PATH, "r", encoding="utf-8") as f:
             base_features = json.load(f)
     except Exception as e:
@@ -56,8 +52,6 @@ def generate_part_prompts(user_image_path, user_instruction):
     3-2. 결과 프롬프트의 색상이 단 한개일 경우, 앞에 pure라는 수식어를 반드시 추가해야 합니다. 예시) "hair_back": "pure black" (형태 묘사 X)
     4. [피부색] 피부 색깔은 json의 마지막 항목으로 지정되어야 하며, 키는 "skin"으로 고정되어야 합니다. 또한 값은 hexcode로 표현되어야 합니다. 예시) "skin": "#f5c9b8"
     5. [눈동자 색] 눈동자 색깔의 값 또한 hexcode로 표현되어야 합니다. 필요하다면 두 값이 다를 수 있습니다. 예시) "eye_left": "#a52a2a", "eye_right": "#00ff00"
-    6. [참조 파츠 명세] 참조 파츠 명세를 확인하여 누락되는 파츠가 없도록 합니다. 특히 "skirt"는 반드시 포함해야 합니다.
-    7. 만약 사진 속에 특정 파츠가 거의 보이지 않거나 색깔을 식별하기 어려운 경우, 해당 파츠는 생략 해도 좋습니다. 그러나 "skirt"는 절대로 생략하지 않도록 합니다.
     [참조 파츠 명세]
     {json.dumps(base_features, ensure_ascii=False, indent=2)}
     """
@@ -90,7 +84,7 @@ def generate_part_prompts(user_image_path, user_instruction):
 if __name__ == "__main__":
     # 테스트용 설정
     input_user_photo = r"C:\DKU\동아리\SWAG\SWAG5\전공 알림제\Vtube\Virtuber\user.png"
-    instruction = "눈동자가 오드아이였으면 좋겠어요. 그리고 피부색은 오크처럼 되었으면 좋겠어"
+    instruction = "눈동자가 오드아이였으면 좋겠어요"
 
     result = generate_part_prompts(input_user_photo, instruction)
 

@@ -34,7 +34,8 @@ rename_mapping = {
     "eye_left_1": "part_115",
     "eye_right_1": "part_116",
     "eye_left_2": "part_117",
-    "eye_right_2": "part_119"
+    "eye_right_2": "part_119",
+    "skirt": "part_040"
 }
 
 OUTPUT_DIR = MODIFIED_PARTS_DIR

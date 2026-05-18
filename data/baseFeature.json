@@ -113,5 +113,10 @@
         "role": "Right eye assembly including pupil, iris, and sclera",
         "silhouette": "Almond or round eye shape on right face",
         "boundary": "Upper right facial region"
+    },
+    "skirt": {
+        "role": "Main lower garment and bottoms covering from the waist to the legs",
+        "silhouette": "Fabric layer covering the entire lower body structure",
+        "boundary": "Starts from the lower torso waistline line down to the bottom edge of the garment"
     }
 }
